@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title>Cluzeau - python</title>
-    <link href="https://cluzeau.pro/tags/python/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://cluzeau.pro"/>
+    <link href="https://blog.cluzeau.pro/tags/python/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://blog.cluzeau.pro"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2023-03-25T00:00:00+00:00</updated>
-    <id>https://cluzeau.pro/tags/python/atom.xml</id>
+    <id>https://blog.cluzeau.pro/tags/python/atom.xml</id>
     <entry xml:lang="en">
         <title>Opinionated Python tools &amp;  libraries</title>
         <published>2023-03-25T00:00:00+00:00</published>
@@ -13,8 +13,8 @@
         <author>
           <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://cluzeau.pro/0-python-setup/" type="text/html"/>
-        <id>https://cluzeau.pro/0-python-setup/</id>
+        <link rel="alternate" href="https://blog.cluzeau.pro/0-python-setup/" type="text/html"/>
+        <id>https://blog.cluzeau.pro/0-python-setup/</id>
         
         <content type="html">&lt;p&gt;Here are my gotta tools &amp;amp; libraries for &lt;code&gt;Python&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;for-all-projects&quot;&gt;For all projects&lt;&#x2F;h2&gt;

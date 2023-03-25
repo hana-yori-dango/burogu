@@ -1,4 +1,4 @@
-base_url = "https://cluzeau.pro"
+base_url = "https://blog.cluzeau.pro"
 title = "Cluzeau"
 
 compile_sass = true
