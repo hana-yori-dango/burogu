@@ -1,11 +1,16 @@
-# The URL the site will be built for
 base_url = "https://cluzeau.pro"
+title = "Cluzeau"
 
-# Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
+build_search_index = false
 
-# Whether to build a search index to be used later on by a JavaScript library
-build_search_index = true
+theme = "even"
+
+taxonomies = [
+    # You can enable/disable RSS
+    #{ name = "categories", feed = true },
+    { name = "tags", feed = true },
+]
 
 [markdown]
 # Whether to do syntax highlighting
@@ -13,4 +18,13 @@ build_search_index = true
 highlight_code = true
 
 [extra]
-# Put all your custom variables here
+even_menu = [
+    { url = "$BASE_URL", name = "Home" },
+    #{ url = "$BASE_URL/categories", name = "Categories" },
+    { url = "$BASE_URL/tags", name = "Tags" },
+    # { url = "$BASE_URL/about", name = "About" },
+    { url = "https://resume.cluzeau.pro", name = "Resume" },
+    { url = "https://github.com/aurelien-clu", name = "Github" },
+    { url = "https://www.linkedin.com/in/aurelien-clu/", name = "LinkedIn" },
+]
+even_title = "Cluzeau"
