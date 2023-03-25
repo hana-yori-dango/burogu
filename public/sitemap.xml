@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://blog.cluzeau.pro/</loc>
+        <loc>https://cluzeau.pro/</loc>
     </url>
     <url>
-        <loc>https://blog.cluzeau.pro/0-python-setup/</loc>
+        <loc>https://cluzeau.pro/0-python-setup/</loc>
         <lastmod>2023-03-25</lastmod>
     </url>
     <url>
-        <loc>https://blog.cluzeau.pro/about/</loc>
+        <loc>https://cluzeau.pro/about/</loc>
     </url>
     <url>
-        <loc>https://blog.cluzeau.pro/page/1/</loc>
+        <loc>https://cluzeau.pro/page/1/</loc>
     </url>
     <url>
-        <loc>https://blog.cluzeau.pro/tags/</loc>
+        <loc>https://cluzeau.pro/tags/</loc>
     </url>
     <url>
-        <loc>https://blog.cluzeau.pro/tags/python/</loc>
+        <loc>https://cluzeau.pro/tags/python/</loc>
     </url>
     <url>
-        <loc>https://blog.cluzeau.pro/tags/setup/</loc>
+        <loc>https://cluzeau.pro/tags/setup/</loc>
     </url>
     <url>
-        <loc>https://blog.cluzeau.pro/tags/tldr/</loc>
+        <loc>https://cluzeau.pro/tags/tldr/</loc>
     </url>
 </urlset>

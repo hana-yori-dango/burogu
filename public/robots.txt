@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Allow: /
-Sitemap: https://blog.cluzeau.pro/sitemap.xml
+Sitemap: https://cluzeau.pro/sitemap.xml
