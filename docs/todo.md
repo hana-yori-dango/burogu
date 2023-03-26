@@ -1,0 +1,39 @@
+# TODO
+
+In no particular order:
+
+- [ ] Add a Table of Contents whenever there are many posts
+- [ ] Add post
+  - [x] My dev library
+  - [ ] My business library
+  - [ ] Bookmarks worth having
+  - Business
+    - [ ] Lean methodology
+    - [ ] MVP
+  - Management
+    - [ ] Tech roles
+    - [ ] Dos and don'ts
+  - Development
+    - [x] Opinionated Python tools & libraries
+    - [ ] Development conventions
+    - [ ] Domain Driven Design
+    - [ ] Event sourcing
+    - [ ] CQRS
+    - [ ] State Machine
+    - [ ] Machine Learning
+    - [ ] Reinforcement Learning
+    - [ ] Deep Learning
+    - [ ] Databases
+    - [ ] A/B Testing
+  - Projects
+    - [x] This blog
+    - [ ] Silex
+    - [ ] Manabu
+    - [ ] Rust DDD cookbook
+  - Examples / Tutorials
+    - [ ] FastAPI hexagonal template
+    - [ ] Rust pointers
+    - [ ] Rust CQRS
+    - [ ] Building a static website using Zola
+  - Book reviews / tldr
+    - [ ] *to be defined*
