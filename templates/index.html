@@ -107,16 +107,16 @@
             </header>
 
             <main>
-                <div>
-                    <p>
-                    {% for item in config.extra.descriptions %}
-                    {{ item.content }}<br>
-                    {% endfor %}
-                    </p>
-                </div>
-                <div class="horizontal-line"></div>
                 <div class="content" id="mobile-panel">
                     {% block content %}
+                        <div class="description">
+                            <p>
+                            {% for item in config.extra.descriptions %}
+                            {{ item.content }}<br>
+                            {% endfor %}
+                            </p>
+                        </div>
+                        <div class="horizontal-line"></div>
                         <div class="posts">
                             {% for page in paginator.pages %}
                                 <article class="post">
