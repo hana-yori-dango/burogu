@@ -4,14 +4,14 @@
         <loc>https://cluzeau.pro/</loc>
     </url>
     <url>
-        <loc>https://cluzeau.pro/0-python-setup/</loc>
-        <lastmod>2023-03-25</lastmod>
-    </url>
-    <url>
         <loc>https://cluzeau.pro/about/</loc>
     </url>
     <url>
         <loc>https://cluzeau.pro/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://cluzeau.pro/python-setup/</loc>
+        <lastmod>2023-03-25</lastmod>
     </url>
     <url>
         <loc>https://cluzeau.pro/tags/</loc>
