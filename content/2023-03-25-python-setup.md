@@ -8,7 +8,7 @@ insert_anchor_links = "right"
 tags = ["python", "tldr", "setup"]
 +++
 
-Here are my gotta tools & libraries for `Python`.
+Here are my go-to tools & libraries for `Python`.
 
 ## For all projects
 
