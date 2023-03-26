@@ -28,3 +28,10 @@ even_menu = [
     { url = "https://www.linkedin.com/in/aurelien-clu/", name = "LinkedIn" },
 ]
 even_title = "Cluzeau"
+
+descriptions = [
+    { content = "Welcome to my blog!"},
+    { content = ""},
+    { content = "Here you will find concise & opinionated posts about development, data science, business & management."},
+    # { content = "Feel free to reach out :)"},
+]
