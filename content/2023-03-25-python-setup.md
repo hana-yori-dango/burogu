@@ -5,7 +5,7 @@ order = 1
 date = 2023-03-25
 insert_anchor_links = "right"
 [taxonomies]
-tags = ["python", "tldr", "setup"]
+tags = ["python", "setup", "tldr"]
 +++
 
 Here are my go-to tools & libraries for `Python`.

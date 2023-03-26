@@ -7,6 +7,10 @@
         <loc>https://cluzeau.pro/about/</loc>
     </url>
     <url>
+        <loc>https://cluzeau.pro/my-dev-library/</loc>
+        <lastmod>2023-03-26</lastmod>
+    </url>
+    <url>
         <loc>https://cluzeau.pro/page/1/</loc>
     </url>
     <url>
@@ -15,6 +19,12 @@
     </url>
     <url>
         <loc>https://cluzeau.pro/tags/</loc>
+    </url>
+    <url>
+        <loc>https://cluzeau.pro/tags/books/</loc>
+    </url>
+    <url>
+        <loc>https://cluzeau.pro/tags/dev/</loc>
     </url>
     <url>
         <loc>https://cluzeau.pro/tags/python/</loc>

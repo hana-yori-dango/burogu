@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-    <title>Cluzeau - tldr</title>
-    <link href="https://cluzeau.pro/tags/tldr/atom.xml" rel="self" type="application/atom+xml"/>
+    <title>Cluzeau - dev</title>
+    <link href="https://cluzeau.pro/tags/dev/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://cluzeau.pro"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2023-03-26T00:00:00+00:00</updated>
-    <id>https://cluzeau.pro/tags/tldr/atom.xml</id>
+    <id>https://cluzeau.pro/tags/dev/atom.xml</id>
     <entry xml:lang="en">
         <title>My dev library</title>
         <published>2023-03-26T00:00:00+00:00</published>
@@ -39,46 +39,6 @@
 &lt;tr&gt;&lt;td&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.incompleteideas.net&#x2F;book&#x2F;the-book.html&quot;&gt;Reinforcement Learning&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Sutton and Barto&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.oreilly.com&#x2F;library&#x2F;view&#x2F;statistics-in-a&#x2F;9781449361129&#x2F;&quot;&gt;Statistics in a Nutshell&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Boslaugh&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
-</content>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>Opinionated Python tools &amp;  libraries</title>
-        <published>2023-03-25T00:00:00+00:00</published>
-        <updated>2023-03-25T00:00:00+00:00</updated>
-        <author>
-          <name>Unknown</name>
-        </author>
-        <link rel="alternate" href="https://cluzeau.pro/python-setup/" type="text/html"/>
-        <id>https://cluzeau.pro/python-setup/</id>
-        
-        <content type="html">&lt;p&gt;Here are my go-to tools &amp;amp; libraries for &lt;code&gt;Python&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;for-all-projects&quot;&gt;For all projects&lt;&#x2F;h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;pyenv&#x2F;pyenv&quot;&gt;pyenv&lt;&#x2F;a&gt; - Simple Python Version Management&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;python-poetry.org&#x2F;&quot;&gt;poetry&lt;&#x2F;a&gt; - Python packaging and dependency management made easy&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;psf&#x2F;black&quot;&gt;black&lt;&#x2F;a&gt; - The uncompromising Python code formatter&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;PyCQA&#x2F;isort&quot;&gt;isort&lt;&#x2F;a&gt; - A Python utility &#x2F; library to sort imports.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;charliermarsh&#x2F;ruff&quot;&gt;ruff&lt;&#x2F;a&gt; - An extremely fast Python linter, written in Rust.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.pytest.org&quot;&gt;pytest&lt;&#x2F;a&gt; - The pytest framework makes it easy to write small, readable tests, and can scale to support complex functional testing for applications and libraries.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;behave&#x2F;behave&quot;&gt;behave&lt;&#x2F;a&gt; - Behave is behavior-driven development, Python style.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;PyCQA&#x2F;bandit&quot;&gt;bandit&lt;&#x2F;a&gt; - Bandit is a tool designed to find common security issues in Python code.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;pyupio&#x2F;safety&quot;&gt;safety&lt;&#x2F;a&gt; - Safety checks Python dependencies for known security vulnerabilities and suggests the proper remediations for vulnerabilities detected.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;guilatrova&#x2F;tryceratops&quot;&gt;tryceratops&lt;&#x2F;a&gt; - A linter to prevent exception handling antipatterns in Python (limited only for those who like dinosaurs).&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Delgan&#x2F;loguru&quot;&gt;loguru&lt;&#x2F;a&gt; - Python logging made (stupidly) simple&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;extras&quot;&gt;Extras&lt;&#x2F;h2&gt;
-&lt;p&gt;In no particular order:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tiangolo&#x2F;fastapi&quot;&gt;FastAPI&lt;&#x2F;a&gt; - FastAPI framework, high performance, easy to learn, fast to code, ready for production&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;google&#x2F;python-fire&quot;&gt;fire&lt;&#x2F;a&gt; - Python Fire is a library for automatically generating command line interfaces (CLIs) from absolutely any Python object.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Lightning-AI&#x2F;lightning&quot;&gt;lightning&lt;&#x2F;a&gt; (aka &lt;em&gt;Pytorch Lightning&lt;&#x2F;em&gt;) - Deep learning framework to train, deploy, and ship AI products Lightning fast.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;pola-rs&#x2F;polars&quot;&gt;polars&lt;&#x2F;a&gt; - Fast multi-threaded, hybrid-out-of-core DataFrame library in Rust | Python | Node.js&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;scikit-learn.org&#x2F;&quot;&gt;scikit-learn&lt;&#x2F;a&gt; - Machine Learning in Python&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.sqlalchemy.org&#x2F;&quot;&gt;SQLAlchemy&lt;&#x2F;a&gt; - The Python SQL Toolkit and Object Relational Mapper&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;temporal.io&#x2F;&quot;&gt;temporal.io&lt;&#x2F;a&gt; - Temporal is a microservice orchestration platform which enables developers to build scalable applications without sacrificing productivity or reliability.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.ray.io&#x2F;&quot;&gt;ray.io&lt;&#x2F;a&gt; - Ray is a unified framework for scaling AI and Python applications.&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
 </content>
         
     </entry>
