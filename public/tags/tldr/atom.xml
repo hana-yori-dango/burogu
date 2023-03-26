@@ -43,6 +43,43 @@
         
     </entry>
     <entry xml:lang="en">
+        <title>This blog</title>
+        <published>2023-03-26T00:00:00+00:00</published>
+        <updated>2023-03-26T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://cluzeau.pro/this-blog/" type="text/html"/>
+        <id>https://cluzeau.pro/this-blog/</id>
+        
+        <content type="html">&lt;p&gt;Source code can be found at &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;hana-yori-dango&#x2F;burogu&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;hana-yori-dango&#x2F;burogu&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-to-reproduce&quot;&gt;How to reproduce&lt;&#x2F;h2&gt;
+&lt;p&gt;In short, to reproduce you will need:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.rust-lang.org&#x2F;tools&#x2F;install&quot;&gt;Rust&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;documentation&#x2F;getting-started&#x2F;installation&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;few minutes&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# install rust &amp;amp; zola with above links if not already installed
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# then
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;git&lt;&#x2F;span&gt;&lt;span&gt; clone https:&#x2F;&#x2F;github.com&#x2F;hana-yori-dango&#x2F;burogu
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;cd&lt;&#x2F;span&gt;&lt;span&gt; burogu
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;zola&lt;&#x2F;span&gt;&lt;span&gt; serve
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# go to http:&#x2F;&#x2F;127.0.0.1:1111 or http:&#x2F;&#x2F;localhost:1111 or similar
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# and voila
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;why-is-it-named-burogu&quot;&gt;Why is it named Burogu?&lt;&#x2F;h2&gt;
+&lt;p&gt;I always want to know why a project is named a certain name.
+Often it is obvious. Sometimes it is not and the information is nowhere to be found.&lt;&#x2F;p&gt;
+&lt;p&gt;I won&#x27;t do that to you.&lt;&#x2F;p&gt;
+
+&lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;cluzeau.pro&amp;#x2F;processed_images&amp;#x2F;generous-god.0ba88e44834b33e2.jpg&quot; &#x2F;&gt;
+&lt;p&gt;In Japanese you can find English words &lt;em&gt;Japanized&lt;&#x2F;em&gt;, e.g. &lt;code&gt;blog&lt;&#x2F;code&gt; -&amp;gt; &lt;code&gt;burogu&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Such a reveal &lt;img src=&quot;{{ config.base_url }}&#x2F;parrot-party.gif&quot; alt= &quot;:)&quot; width=&quot;5%&quot; height=&quot;5%&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>Opinionated Python tools &amp;  libraries</title>
         <published>2023-03-25T00:00:00+00:00</published>
         <updated>2023-03-25T00:00:00+00:00</updated>
