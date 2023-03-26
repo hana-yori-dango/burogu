@@ -20,6 +20,7 @@ In no particular order:
     - [ ] Event sourcing
     - [ ] CQRS
     - [ ] State Machine
+    - [ ] Workflow & activities
     - [ ] Machine Learning
     - [ ] Reinforcement Learning
     - [ ] Deep Learning
@@ -32,6 +33,7 @@ In no particular order:
     - [ ] Rust DDD cookbook
   - Examples / Tutorials
     - [ ] FastAPI hexagonal template
+    - [ ] Temporal python
     - [ ] Rust pointers
     - [ ] Rust CQRS
     - [ ] Building a static website using Zola
