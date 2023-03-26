@@ -14,6 +14,7 @@ In no particular order:
     - [ ] Tech roles
     - [ ] Dos and don'ts
   - Development
+    - [ ] My setup: hardware & software
     - [x] Opinionated Python tools & libraries
     - [ ] Development conventions
     - [ ] Domain Driven Design
@@ -39,3 +40,4 @@ In no particular order:
     - [ ] Building a static website using Zola
   - Book reviews / tldr
     - [ ] *to be defined*
+    - [ ] HPMOR
