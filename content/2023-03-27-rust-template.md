@@ -15,6 +15,28 @@ The repository can be found there: [https://github.com/aurelien-clu/template-rus
 - have a rust project in which we can have multiple libraries & multiple binaries
 - logging should be setup for each crate (library or binary)
 
+### Layout
+
+```
+.
+├── Cargo.lock
+├── Cargo.toml
+├── README.md
+└── crates
+    ├── bin-client
+    │   ├── Cargo.toml
+    │   └── src
+    │       └── main.rs
+    ├── bin-server
+    │   ├── Cargo.toml
+    │   └── src
+    │       └── main.rs
+    └── domain
+        ├── Cargo.toml
+        └── src
+            └── lib.rs
+```
+
 ## How to reuse
 
 ```bash

@@ -149,6 +149,14 @@
                 <li>
                     <a href="https://cluzeau.pro/rust-template/#target" class="toc-link">Target</a>
                     
+                    <ul>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/rust-template/#layout" class="toc-link">Layout</a>
+                        </li>
+                        
+                    </ul>
+                    
                 </li>
                 
                 <li>
@@ -221,6 +229,25 @@
 <li>have a rust project in which we can have multiple libraries &amp; multiple binaries</li>
 <li>logging should be setup for each crate (library or binary)</li>
 </ul>
+<h3 id="layout">Layout</h3>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>.
+</span><span>├── Cargo.lock
+</span><span>├── Cargo.toml
+</span><span>├── README.md
+</span><span>└── crates
+</span><span>    ├── bin-client
+</span><span>    │   ├── Cargo.toml
+</span><span>    │   └── src
+</span><span>    │       └── main.rs
+</span><span>    ├── bin-server
+</span><span>    │   ├── Cargo.toml
+</span><span>    │   └── src
+</span><span>    │       └── main.rs
+</span><span>    └── domain
+</span><span>        ├── Cargo.toml
+</span><span>        └── src
+</span><span>            └── lib.rs
+</span></code></pre>
 <h2 id="how-to-reuse">How to reuse</h2>
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> clone https://github.com/aurelien-clu/template-rust &lt;your-project&gt;
 </span></code></pre>

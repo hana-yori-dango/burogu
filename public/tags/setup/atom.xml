@@ -22,6 +22,25 @@
 &lt;li&gt;have a rust project in which we can have multiple libraries &amp;amp; multiple binaries&lt;&#x2F;li&gt;
 &lt;li&gt;logging should be setup for each crate (library or binary)&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;layout&quot;&gt;Layout&lt;&#x2F;h3&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;.
+&lt;&#x2F;span&gt;&lt;span&gt;├── Cargo.lock
+&lt;&#x2F;span&gt;&lt;span&gt;├── Cargo.toml
+&lt;&#x2F;span&gt;&lt;span&gt;├── README.md
+&lt;&#x2F;span&gt;&lt;span&gt;└── crates
+&lt;&#x2F;span&gt;&lt;span&gt;    ├── bin-client
+&lt;&#x2F;span&gt;&lt;span&gt;    │   ├── Cargo.toml
+&lt;&#x2F;span&gt;&lt;span&gt;    │   └── src
+&lt;&#x2F;span&gt;&lt;span&gt;    │       └── main.rs
+&lt;&#x2F;span&gt;&lt;span&gt;    ├── bin-server
+&lt;&#x2F;span&gt;&lt;span&gt;    │   ├── Cargo.toml
+&lt;&#x2F;span&gt;&lt;span&gt;    │   └── src
+&lt;&#x2F;span&gt;&lt;span&gt;    │       └── main.rs
+&lt;&#x2F;span&gt;&lt;span&gt;    └── domain
+&lt;&#x2F;span&gt;&lt;span&gt;        ├── Cargo.toml
+&lt;&#x2F;span&gt;&lt;span&gt;        └── src
+&lt;&#x2F;span&gt;&lt;span&gt;            └── lib.rs
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;h2 id=&quot;how-to-reuse&quot;&gt;How to reuse&lt;&#x2F;h2&gt;
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;git&lt;&#x2F;span&gt;&lt;span&gt; clone https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu&#x2F;template-rust &amp;lt;your-project&amp;gt;
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
