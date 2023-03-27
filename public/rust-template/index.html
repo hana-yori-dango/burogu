@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+      <link rel="icon" type="image/png" sizes="32x32" href="https:&#x2F;&#x2F;cluzeau.pro/laptop.png" meta_source="https://www.flaticon.com">
+
+      <title>Cluzeau - Rust template with workspace and logging</title>
+
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https://cluzeau.pro/site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Cluzeau</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;cluzeau.pro">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;cluzeau.pro&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;resume.cluzeau.pro">
+                            Resume
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu">
+                            Github
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;aurelien-clu&#x2F;">
+                            LinkedIn
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;cluzeau.pro">Cluzeau</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;cluzeau.pro">
+                                    Home
+                                </a>
+                            </li>
+                            
+                        
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;cluzeau.pro&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                            
+                        
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;resume.cluzeau.pro">
+                                    Resume
+                                </a>
+                            </li>
+                            
+                        
+                            
+                            <li>
+                                <div class="social-icon">
+                                    <a href="https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu" class="github" title="Github">
+                                      <svg viewBox="0 0 512 512" height="2rem" width="2rem">
+                                        <path
+                                          d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z">
+                                        </path>
+                                      </svg></a>
+                                  </div>
+                            </li>
+                            
+                        
+                            
+                            <li>
+                                <div class="social-icon">
+                                    <a href="https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;aurelien-clu&#x2F;" class="linkedin" title="Linkedin">
+                                      <svg viewBox="0 0 512 512" height="2rem" width="2rem">
+                                        <path
+                                          d="M186.4 142.4c0 19-15.3 34.5-34.2 34.5 -18.9 0-34.2-15.4-34.2-34.5 0-19 15.3-34.5 34.2-34.5C171.1 107.9 186.4 123.4 186.4 142.4zM181.4 201.3h-57.8V388.1h57.8V201.3zM273.8 201.3h-55.4V388.1h55.4c0 0 0-69.3 0-98 0-26.3 12.1-41.9 35.2-41.9 21.3 0 31.5 15 31.5 41.9 0 26.9 0 98 0 98h57.5c0 0 0-68.2 0-118.3 0-50-28.3-74.2-68-74.2 -39.6 0-56.3 30.9-56.3 30.9v-25.2H273.8z">
+                                        </path>
+                                      </svg></a>
+                                  </div>
+                            </li>
+                            
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://cluzeau.pro/rust-template/#target" class="toc-link">Target</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://cluzeau.pro/rust-template/#how-to-reuse" class="toc-link">How to reuse</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://cluzeau.pro/rust-template/#how-to-reproduce-the-template" class="toc-link">How to reproduce the template</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/rust-template/#gitignore" class="toc-link">.gitignore</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/rust-template/#cargo-toml" class="toc-link">Cargo.toml</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/rust-template/#crates" class="toc-link">crates&#x2F;</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/rust-template/#run" class="toc-link">Run</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;cluzeau.pro&#x2F;rust-template&#x2F;">Rust template with workspace and logging</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2023-03-27</span>
+            
+        </div>
+        
+        <div class="post-tags">
+            
+                <a href="https://cluzeau.pro/tags/rust/">#rust</a>
+            
+                <a href="https://cluzeau.pro/tags/setup/">#setup</a>
+            
+                <a href="https://cluzeau.pro/tags/tldr/">#tldr</a>
+            
+        </div>
+        
+
+    </header>
+
+
+    <div class="horizontal-line"></div>
+
+    <div class="post-content">
+      <p>The repository can be found there: <a href="https://github.com/aurelien-clu/template-rust">https://github.com/aurelien-clu/template-rust</a></p>
+<h2 id="target">Target</h2>
+<ul>
+<li>have a rust project in which we can have multiple libraries &amp; multiple binaries</li>
+<li>logging should be setup for each crate (library or binary)</li>
+</ul>
+<h2 id="how-to-reuse">How to reuse</h2>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> clone https://github.com/aurelien-clu/template-rust &lt;your-project&gt;
+</span></code></pre>
+<h2 id="how-to-reproduce-the-template">How to reproduce the template</h2>
+<h3 id="gitignore">.gitignore</h3>
+<p>Let's create the <code>.gitignore</code> file with:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#96b5b4;">echo</span><span> target &gt; .gitignore
+</span></code></pre>
+<h3 id="cargo-toml">Cargo.toml</h3>
+<p>Let's create the <code>Cargo.toml</code> file with:</p>
+<pre data-lang="toml" style="background-color:#2b303b;color:#c0c5ce;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[workspace]
+</span><span>
+</span><span style="color:#bf616a;">members </span><span>= [&quot;</span><span style="color:#a3be8c;">crates/*</span><span>&quot;]
+</span><span>
+</span><span>[workspace.package]
+</span><span style="color:#bf616a;">version </span><span>= &quot;</span><span style="color:#a3be8c;">0.1.0</span><span>&quot;
+</span><span style="color:#bf616a;">authors </span><span>= [&quot;</span><span style="color:#a3be8c;">Aurélien Clu. &lt;john@doe.johndoe&gt;</span><span>&quot;]
+</span><span style="color:#bf616a;">description </span><span>= &quot;</span><span style="color:#a3be8c;">template-rust</span><span>&quot;
+</span><span style="color:#bf616a;">readme </span><span>= &quot;</span><span style="color:#a3be8c;">README.md</span><span>&quot;
+</span><span style="color:#bf616a;">edition </span><span>= &quot;</span><span style="color:#a3be8c;">2021</span><span>&quot;
+</span><span style="color:#bf616a;">license </span><span>= &quot;</span><span style="color:#a3be8c;">UNLICENSE</span><span>&quot;
+</span></code></pre>
+<h3 id="crates">crates/</h3>
+<p>Now we add the crates we want to have:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">cargo</span><span> new crates/bin-client
+</span><span style="color:#bf616a;">cargo</span><span> new crates/bin-server
+</span><span style="color:#bf616a;">cargo</span><span> new crates/domain</span><span style="color:#bf616a;"> --lib
+</span><span style="color:#65737e;"># feel free to add more libraries
+</span></code></pre>
+<p>And update their configuration (Cargo.toml) to have a proper name, inherit fields from the workspace configuration and have some useful default dependencies.</p>
+<h4 id="crates-bin-client-cargo-toml">crates/bin-client/Cargo.toml</h4>
+<pre data-lang="toml" style="background-color:#2b303b;color:#c0c5ce;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[package]
+</span><span style="color:#bf616a;">name </span><span>= &quot;</span><span style="color:#a3be8c;">client</span><span>&quot;
+</span><span>
+</span><span style="color:#bf616a;">version</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span style="color:#bf616a;">authors</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span style="color:#bf616a;">description</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span style="color:#bf616a;">readme</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span style="color:#bf616a;">edition</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span style="color:#bf616a;">license</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span>
+</span><span>[dependencies]
+</span><span style="color:#bf616a;">domain </span><span>= { </span><span style="color:#bf616a;">path </span><span>= &quot;</span><span style="color:#a3be8c;">../domain</span><span>&quot; }
+</span><span>
+</span><span style="color:#65737e;"># logging
+</span><span style="color:#bf616a;">log </span><span>= &quot;</span><span style="color:#a3be8c;">^0</span><span>&quot;
+</span><span style="color:#bf616a;">pretty_env_logger </span><span>= &quot;</span><span style="color:#a3be8c;">^0</span><span>&quot;
+</span></code></pre>
+<h4 id="crates-bin-server-cargo-toml">crates/bin-server/Cargo.toml</h4>
+<pre data-lang="toml" style="background-color:#2b303b;color:#c0c5ce;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[package]
+</span><span style="color:#bf616a;">name </span><span>= &quot;</span><span style="color:#a3be8c;">server</span><span>&quot;
+</span><span>
+</span><span style="color:#bf616a;">version</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span style="color:#bf616a;">authors</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span style="color:#bf616a;">description</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span style="color:#bf616a;">readme</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span style="color:#bf616a;">edition</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span style="color:#bf616a;">license</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span>
+</span><span>[dependencies]
+</span><span style="color:#bf616a;">domain </span><span>= { </span><span style="color:#bf616a;">path </span><span>= &quot;</span><span style="color:#a3be8c;">../domain</span><span>&quot; }
+</span><span>
+</span><span style="color:#65737e;"># logging
+</span><span style="color:#bf616a;">tracing </span><span>= &quot;</span><span style="color:#a3be8c;">^0</span><span>&quot;
+</span><span style="color:#bf616a;">tracing-log </span><span>= &quot;</span><span style="color:#a3be8c;">^0</span><span>&quot;  </span><span style="color:#65737e;"># to handle logs from log, e.g. from our domain library here
+</span><span style="color:#bf616a;">tracing-subscriber </span><span>= &quot;</span><span style="color:#a3be8c;">^0</span><span>&quot;  </span><span style="color:#65737e;"># to output to stdout
+</span><span>
+</span><span style="color:#65737e;"># error handling
+</span><span style="color:#bf616a;">thiserror </span><span>= &quot;</span><span style="color:#a3be8c;">^1</span><span>&quot;
+</span></code></pre>
+<h4 id="crates-domain-cargo-toml">crates/domain/Cargo.toml</h4>
+<pre data-lang="toml" style="background-color:#2b303b;color:#c0c5ce;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[package]
+</span><span style="color:#bf616a;">name </span><span>= &quot;</span><span style="color:#a3be8c;">domain</span><span>&quot;
+</span><span>
+</span><span style="color:#bf616a;">version</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span style="color:#bf616a;">authors</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span style="color:#bf616a;">description</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span style="color:#bf616a;">readme</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span style="color:#bf616a;">edition</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span style="color:#bf616a;">license</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span>
+</span><span>[dependencies]
+</span><span style="color:#65737e;"># logging
+</span><span style="color:#bf616a;">log </span><span>= &quot;</span><span style="color:#a3be8c;">^0</span><span>&quot;
+</span><span>
+</span><span style="color:#65737e;"># error handling
+</span><span style="color:#bf616a;">thiserror </span><span>= &quot;</span><span style="color:#a3be8c;">^1</span><span>&quot;
+</span></code></pre>
+<h3 id="run">Run</h3>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">cargo</span><span> test
+</span><span>
+</span><span style="color:#bf616a;">cargo</span><span> run</span><span style="color:#bf616a;"> --bin</span><span> server
+</span><span style="color:#bf616a;">cargo</span><span> run</span><span style="color:#bf616a;"> --bin</span><span> client
+</span><span>
+</span><span style="color:#65737e;"># or building and then running
+</span><span style="color:#bf616a;">cargo</span><span> build</span><span style="color:#bf616a;"> --release --bin</span><span> server
+</span><span style="color:#bf616a;">cargo</span><span> build</span><span style="color:#bf616a;"> --release --bin</span><span> client
+</span><span style="color:#bf616a;">./target/release/server
+</span><span style="color:#bf616a;">RUST_LOG</span><span>=</span><span style="color:#a3be8c;">TRACE </span><span style="color:#bf616a;">./target/release/client
+</span></code></pre>
+<p>To print logs, feel free to update your files alike:</p>
+<ul>
+<li><a href="https://github.com/aurelien-clu/template-rust/blob/main/crates/bin-client/src/main.rs">crates/bin-client/src/main.rs</a></li>
+<li><a href="https://github.com/aurelien-clu/template-rust/blob/main/crates/bin-server/src/main.rs">crates/bin-server/src/main.rs</a></li>
+<li><a href="https://github.com/aurelien-clu/template-rust/blob/main/crates/domain/src/lib.rs">crates/domain/src/lib.rs</a></li>
+</ul>
+<p>And running again should give the following:</p>
+<img src="https://raw.githubusercontent.com/aurelien-clu/template-rust/main/docs/terminal.png" alt= "terminal" width="75%" height="75%"/>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            <!-- 
+                <div class="post-tags">
+                    
+                        <a href="https://cluzeau.pro/tags/rust/">#rust</a>
+                    
+                        <a href="https://cluzeau.pro/tags/setup/">#setup</a>
+                    
+                        <a href="https://cluzeau.pro/tags/tldr/">#tldr</a>
+                    
+                </div>
+             -->
+            
+                <div class="post-nav">
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;cluzeau.pro&#x2F;my-dev-library&#x2F;">My dev library ›</a>
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https://cluzeau.pro/even.js" ></script>
+      
+    </body>
+
+</html>
