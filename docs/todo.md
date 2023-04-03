@@ -36,7 +36,7 @@ In no particular order:
     - [ ] FastAPI hexagonal template
     - [ ] Temporal python
     - [ ] Rust pointers
-    - [ ] Rust CQRS
+    - [x] Rust CQRS
     - [ ] Building a static website using Zola
   - Book reviews / tldr
     - [ ] *to be defined*

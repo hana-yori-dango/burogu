@@ -110,11 +110,22 @@
                 <div class="content" id="mobile-panel">
                     {% block content %}
                         <div class="description">
+                            {% if config.extra.descriptions %}
                             <p>
                             {% for item in config.extra.descriptions %}
                             {{ item.content }}<br>
                             {% endfor %}
                             </p>
+                            {% endif %}
+
+                            {% if config.extra.top_tags %}
+                            Top tags:
+                            <ul>
+                                {% for item in config.extra.top_tags %}
+                                <li><a href="{{ config.base_url }}/{{ item.content }}">{{item.content}}</a></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
                         </div>
                         <div class="horizontal-line"></div>
                         <div class="posts">

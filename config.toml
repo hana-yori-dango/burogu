@@ -35,3 +35,9 @@ descriptions = [
     { content = "Here you will find concise & opinionated posts about development, data science, business & management."},
     # { content = "Feel free to reach out :)"},
 ]
+top_tags = [
+    # { content = "tags/tldr"},
+    # { content = "tags/rust"},
+    # { content = "tags/event-sourcing"},
+    # { content = "tags/python"},
+]
