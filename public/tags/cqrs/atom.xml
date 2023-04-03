@@ -23,7 +23,7 @@
 &lt;li&gt;fly it&lt;&#x2F;li&gt;
 &lt;li&gt;land it&lt;&#x2F;li&gt;
 &lt;li&gt;change its position&lt;&#x2F;li&gt;
-&lt;li&gt;track for the current or previous journey, all past positions&lt;&#x2F;li&gt;
+&lt;li&gt;track all past positions for the current or previous journey&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;For such simple needs, a &lt;code&gt;CRUD API&lt;&#x2F;code&gt; would suffice but for the sake of learning we will use &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Domain-driven_design&quot;&gt;DDD&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Event-driven_architecture&quot;&gt;event-sourcing&lt;&#x2F;a&gt; &amp;amp; &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Command%E2%80%93query_separation#Command_Query_Responsibility_Segregation&quot;&gt;CQRS&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;event-storming&quot;&gt;Event storming&lt;&#x2F;h2&gt;

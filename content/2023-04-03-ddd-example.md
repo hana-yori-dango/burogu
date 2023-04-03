@@ -17,7 +17,7 @@ Let's create an API controlling a `Plane`. We want to be able to:
 - fly it
 - land it
 - change its position
-- track for the current or previous journey, all past positions
+- track all past positions for the current or previous journey
 
 For such simple needs, a `CRUD API` would suffice but for the sake of learning we will use [DDD](https://en.wikipedia.org/wiki/Domain-driven_design), [event-sourcing](https://en.wikipedia.org/wiki/Event-driven_architecture) & [CQRS](https://en.wikipedia.org/wiki/Command%E2%80%93query_separation#Command_Query_Responsibility_Segregation).
 
