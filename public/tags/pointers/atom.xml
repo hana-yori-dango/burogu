@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Cluzeau - pointers</title>
+    <link href="https://cluzeau.pro/tags/pointers/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://cluzeau.pro"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-04-03T00:00:00+00:00</updated>
+    <id>https://cluzeau.pro/tags/pointers/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Rust smart pointers</title>
+        <published>2023-04-03T00:00:00+00:00</published>
+        <updated>2023-04-03T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://cluzeau.pro/rust-pointers/" type="text/html"/>
+        <id>https://cluzeau.pro/rust-pointers/</id>
+        
+        <content type="html">&lt;h2 id=&quot;common-rust-smart-pointers&quot;&gt;Common Rust smart pointers&lt;&#x2F;h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;name&lt;&#x2F;th&gt;&lt;th&gt;thread-safe&lt;&#x2F;th&gt;&lt;th&gt;description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;book&#x2F;ch15-01-box.html&quot;&gt;Box&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;❌&lt;&#x2F;td&gt;&lt;td&gt;Boxes allow you to store data on the heap rather than the stack. Useful for unknown size at compile time (e.g. recursive objects, lists, dynamic types), prevents data copy.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;book&#x2F;ch15-04-rc.html&quot;&gt;Rc&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;❌&lt;&#x2F;td&gt;&lt;td&gt;Reference Counted: enable multiple ownership to the same value.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;book&#x2F;ch15-05-interior-mutability.html&quot;&gt;RefCell&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;❌&lt;&#x2F;td&gt;&lt;td&gt;Allows to mutate data even if there immutable references to that data. Borrowing rules are enforced at runtime.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;std&#x2F;borrow&#x2F;enum.Cow.html&quot;&gt;Cow&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;❌&lt;&#x2F;td&gt;&lt;td&gt;Clone on write. Provides immutable access to borrowed data, and clone the data lazily when mutation or ownership is required.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;std&#x2F;sync&#x2F;struct.Arc.html&quot;&gt;Arc&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;✅&lt;&#x2F;td&gt;&lt;td&gt;Atomically Reference Counted. Provides read shared ownership of data allocated in the heap. (~thread safe Box + Rc)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;std&#x2F;sync&#x2F;struct.Mutex.html&quot;&gt;Mutex&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;✅&lt;&#x2F;td&gt;&lt;td&gt;Mutual exclusion to shared data. The data is only ever accessed when the mutex is locked and it blocks other thread attempting to access it. Beware of &lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;std&#x2F;sync&#x2F;struct.Mutex.html#poisoning&quot;&gt;poisoning&lt;&#x2F;a&gt; that occurs if a thread holding the mutex panics.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;std&#x2F;sync&#x2F;struct.RwLock.html&quot;&gt;RwLock&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;✅&lt;&#x2F;td&gt;&lt;td&gt;Reader-Writer lock. Allows at most 1 writer or any number of readers. Beware of &lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;std&#x2F;sync&#x2F;struct.RwLock.html#poisoning&quot;&gt;poisoning&lt;&#x2F;a&gt; that occurs if a writer holding the mutex panics.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;Examples: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu&#x2F;tutorial-rust&#x2F;blob&#x2F;main&#x2F;crates&#x2F;smart-pointers&#x2F;src&#x2F;main.rs&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu&#x2F;tutorial-rust&#x2F;blob&#x2F;main&#x2F;crates&#x2F;smart-pointers&#x2F;src&#x2F;main.rs&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

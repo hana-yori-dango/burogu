@@ -18,6 +18,10 @@
         <lastmod>2023-03-25</lastmod>
     </url>
     <url>
+        <loc>https://cluzeau.pro/rust-pointers/</loc>
+        <lastmod>2023-04-03</lastmod>
+    </url>
+    <url>
         <loc>https://cluzeau.pro/rust-template/</loc>
         <lastmod>2023-03-27</lastmod>
     </url>
@@ -29,6 +33,9 @@
     </url>
     <url>
         <loc>https://cluzeau.pro/tags/dev/</loc>
+    </url>
+    <url>
+        <loc>https://cluzeau.pro/tags/pointers/</loc>
     </url>
     <url>
         <loc>https://cluzeau.pro/tags/project/</loc>
