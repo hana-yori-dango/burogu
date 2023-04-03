@@ -7,11 +7,18 @@
         <loc>https://cluzeau.pro/about/</loc>
     </url>
     <url>
+        <loc>https://cluzeau.pro/ddd-example/</loc>
+        <lastmod>2023-04-03</lastmod>
+    </url>
+    <url>
         <loc>https://cluzeau.pro/my-dev-library/</loc>
         <lastmod>2023-03-26</lastmod>
     </url>
     <url>
         <loc>https://cluzeau.pro/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://cluzeau.pro/page/2/</loc>
     </url>
     <url>
         <loc>https://cluzeau.pro/python-setup/</loc>
@@ -32,7 +39,16 @@
         <loc>https://cluzeau.pro/tags/books/</loc>
     </url>
     <url>
+        <loc>https://cluzeau.pro/tags/cqrs/</loc>
+    </url>
+    <url>
+        <loc>https://cluzeau.pro/tags/ddd/</loc>
+    </url>
+    <url>
         <loc>https://cluzeau.pro/tags/dev/</loc>
+    </url>
+    <url>
+        <loc>https://cluzeau.pro/tags/event-sourcing/</loc>
     </url>
     <url>
         <loc>https://cluzeau.pro/tags/pointers/</loc>

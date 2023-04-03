@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+      <link rel="icon" type="image/png" sizes="32x32" href="https:&#x2F;&#x2F;cluzeau.pro/laptop.png" meta_source="https://www.flaticon.com">
+
+      <title>Cluzeau - Example of Domain Driven Design</title>
+
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https://cluzeau.pro/site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Cluzeau</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;cluzeau.pro">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;cluzeau.pro&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;resume.cluzeau.pro">
+                            Resume
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu">
+                            Github
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;aurelien-clu&#x2F;">
+                            LinkedIn
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;cluzeau.pro">Cluzeau</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;cluzeau.pro">
+                                    Home
+                                </a>
+                            </li>
+                            
+                        
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;cluzeau.pro&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                            
+                        
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;resume.cluzeau.pro">
+                                    Resume
+                                </a>
+                            </li>
+                            
+                        
+                            
+                            <li>
+                                <div class="social-icon">
+                                    <a href="https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu" class="github" title="Github">
+                                      <svg viewBox="0 0 512 512" height="2rem" width="2rem">
+                                        <path
+                                          d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z">
+                                        </path>
+                                      </svg></a>
+                                  </div>
+                            </li>
+                            
+                        
+                            
+                            <li>
+                                <div class="social-icon">
+                                    <a href="https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;aurelien-clu&#x2F;" class="linkedin" title="Linkedin">
+                                      <svg viewBox="0 0 512 512" height="2rem" width="2rem">
+                                        <path
+                                          d="M186.4 142.4c0 19-15.3 34.5-34.2 34.5 -18.9 0-34.2-15.4-34.2-34.5 0-19 15.3-34.5 34.2-34.5C171.1 107.9 186.4 123.4 186.4 142.4zM181.4 201.3h-57.8V388.1h57.8V201.3zM273.8 201.3h-55.4V388.1h55.4c0 0 0-69.3 0-98 0-26.3 12.1-41.9 35.2-41.9 21.3 0 31.5 15 31.5 41.9 0 26.9 0 98 0 98h57.5c0 0 0-68.2 0-118.3 0-50-28.3-74.2-68-74.2 -39.6 0-56.3 30.9-56.3 30.9v-25.2H273.8z">
+                                        </path>
+                                      </svg></a>
+                                  </div>
+                            </li>
+                            
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://cluzeau.pro/ddd-example/#our-objectives" class="toc-link">Our objectives</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://cluzeau.pro/ddd-example/#event-storming" class="toc-link">Event storming</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://cluzeau.pro/ddd-example/#let-s-code-it" class="toc-link">Let&#x27;s code it</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/ddd-example/#which-library" class="toc-link">Which library?</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/ddd-example/#setup" class="toc-link">Setup</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/ddd-example/#events" class="toc-link">Events</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/ddd-example/#commands" class="toc-link">Commands</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/ddd-example/#errors" class="toc-link">Errors</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/ddd-example/#aggregate" class="toc-link">Aggregate</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/ddd-example/#queries" class="toc-link">Queries</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/ddd-example/#server" class="toc-link">Server</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/ddd-example/#tests-1" class="toc-link">Tests</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://cluzeau.pro/ddd-example/#going-further-on-ddd" class="toc-link">Going further on DDD</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;cluzeau.pro&#x2F;ddd-example&#x2F;">Example of Domain Driven Design</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2023-04-03</span>
+            
+        </div>
+        
+        <div class="post-tags">
+            
+                <a href="https://cluzeau.pro/tags/rust/">#rust</a>
+            
+                <a href="https://cluzeau.pro/tags/ddd/">#DDD</a>
+            
+                <a href="https://cluzeau.pro/tags/event-sourcing/">#event-sourcing</a>
+            
+                <a href="https://cluzeau.pro/tags/cqrs/">#cqrs</a>
+            
+        </div>
+        
+
+    </header>
+
+
+    <div class="horizontal-line"></div>
+
+    <div class="post-content">
+      <p>Code can be found at: <a href="https://github.com/aurelien-clu/example-ddd-es/tree/main/rust-cqrs">github.com/aurelien-clu/example-ddd-es/rust-cqrs</a></p>
+<h2 id="our-objectives">Our objectives</h2>
+<p>Let's create an API controlling a <code>Plane</code>. We want to be able to:</p>
+<ul>
+<li>fly it</li>
+<li>land it</li>
+<li>change its position</li>
+<li>track for the current or previous journey, all past positions</li>
+</ul>
+<p>For such simple needs, a <code>CRUD API</code> would suffice but for the sake of learning we will use <code>DDD</code>, <code>event-sourcing</code> &amp; <code>CQRS</code>.</p>
+<h2 id="event-storming">Event storming</h2>
+<blockquote>
+<p>Event storming is a workshop-based method to quickly find out what is happening in the domain of a software program. Compared to other methods it is extremely lightweight and intentionally requires no support by a computer. The result is expressed in sticky notes on a wide wall.</p>
+</blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Event_storming">wikipedia.org/Event storming</a></p>
+<p>We will follow the following steps:</p>
+<ol>
+<li>Collect domain events</li>
+<li>Refine domain events</li>
+<li>Track causes</li>
+<li>Find aggregates</li>
+</ol>
+<p>We end up with the following:</p>
+<img src="https://cluzeau.pro/ddd-example-plane.jpg" alt= "event storming" width="30%" height="30%"/>
+<p><em>Graph made using: <a href="https://miro.com/miroverse/event-storming/">miro.com/miroverse/event-storming/</a></em></p>
+<p>Notes:</p>
+<ul>
+<li>Event storming should be done with domain experts, I am not an expert in aviation, thus this is incomplete but sufficient for this example :)</li>
+<li><em>OnGround</em> event is not necessarily following <em>PlaneRegistered</em> but happens at the same time. It makes more sense to have an event describing that the plane is on ground without knowing whether the plane has flew before or not.</li>
+</ul>
+<h2 id="let-s-code-it">Let's code it</h2>
+<p>Below you will find code samples, full code can be found here: <a href="https://github.com/aurelien-clu/example-ddd-es/tree/main/rust-cqrs">github.com/aurelien-clu/example-ddd-es/rust-cqrs</a>.</p>
+<h3 id="which-library">Which library?</h3>
+<p>We want a <code>rust</code> library to help us with <code>DDD</code>, <code>event-sourcing</code> &amp; <code>CQRS</code>. <a href="https://github.com/serverlesstechnology/cqrs">github.com/serverlesstechnology/cqrs</a> fits our needs.</p>
+<p>Reasons to use it:</p>
+<ul>
+<li>great documentation: <a href="https://doc.rust-cqrs.org/">doc.rust-cqrs.org/</a></li>
+<li>ease of use</li>
+</ul>
+<p>Reasons not to use it:</p>
+<ul>
+<li>aggregate ids have to be <code>Strings</code>, we could want to use <code>UUID</code></li>
+<li>maybe less feature complete than <a href="https://github.com/get-eventually/eventually-rs">github.com/get-eventually/eventually-rs</a></li>
+<li>not <code>wasm</code> if you have reasons to need this, then go with <a href="https://github.com/thalo-rs/thalo">github.com/thalo-rs/thalo</a></li>
+</ul>
+<h3 id="setup">Setup</h3>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#96b5b4;">.
+</span><span style="color:#bf616a;">├──</span><span> Cargo.toml
+</span><span style="color:#bf616a;">├──</span><span> crates
+</span><span style="color:#bf616a;">│</span><span>   ├── domain-plane
+</span><span style="color:#bf616a;">│</span><span>   └── server
+</span><span style="color:#bf616a;">├──</span><span> db
+</span><span style="color:#bf616a;">│</span><span>   └── init.sql
+</span><span style="color:#bf616a;">├──</span><span> docker-compose.yml
+</span><span style="color:#bf616a;">└──</span><span> test
+</span><span>    </span><span style="color:#bf616a;">└──</span><span> test_api_plane.sh
+</span></code></pre>
+<p>We need to have a crate for our <code>plane domain</code> and another for our <code>server</code>.
+By separating <code>domain</code> from <code>server</code> (and other <code>infrastructure</code> concerns we adhere to <a href="https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)">wikipedia.org/Hexagonal architecture</a>)</p>
+<h4 id="cargo-toml"><strong>Cargo.toml</strong></h4>
+<pre data-lang="toml" style="background-color:#2b303b;color:#c0c5ce;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[workspace]
+</span><span style="color:#bf616a;">members </span><span>= [&quot;</span><span style="color:#a3be8c;">crates/*</span><span>&quot;]
+</span></code></pre>
+<h4 id="crates"><strong>crates/</strong></h4>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">cargo</span><span> new crates/domain-plane</span><span style="color:#bf616a;"> --lib
+</span><span style="color:#bf616a;">cargo</span><span> new crates/server
+</span></code></pre>
+<h4 id="docker-compose-yml"><strong>docker-compose.yml</strong></h4>
+<p>To store our events and our <code>queries</code> (views on our aggregate) we will need a database, <a href="https://github.com/serverlesstechnology/cqrs">github.com/serverlesstechnology/cqrs</a> works with <code>PostgreSQL</code> &amp; few other <code>databases</code>. <code>PostgreSQL</code> being my go to database, we will use it. (it is also the one in the demo project, let's keep it simple)</p>
+<pre data-lang="yaml" style="background-color:#2b303b;color:#c0c5ce;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span style="color:#bf616a;">version</span><span>: &#39;</span><span style="color:#a3be8c;">3.1</span><span>&#39;
+</span><span>
+</span><span style="color:#bf616a;">services</span><span>:
+</span><span>  </span><span style="color:#bf616a;">cqrs-postgres-db</span><span>:
+</span><span>    </span><span style="color:#bf616a;">image</span><span>: </span><span style="color:#a3be8c;">postgres
+</span><span>    </span><span style="color:#bf616a;">restart</span><span>: </span><span style="color:#a3be8c;">always
+</span><span>    </span><span style="color:#bf616a;">ports</span><span>:
+</span><span>      - </span><span style="color:#a3be8c;">5432:5432
+</span><span>    </span><span style="color:#bf616a;">environment</span><span>:
+</span><span>      </span><span style="color:#bf616a;">POSTGRES_DB</span><span>: </span><span style="color:#a3be8c;">demo
+</span><span>      </span><span style="color:#bf616a;">POSTGRES_USER</span><span>: </span><span style="color:#a3be8c;">demo_user
+</span><span>      </span><span style="color:#bf616a;">POSTGRES_PASSWORD</span><span>: </span><span style="color:#a3be8c;">demo_pass
+</span><span>    </span><span style="color:#bf616a;">volumes</span><span>:
+</span><span>      - &#39;</span><span style="color:#a3be8c;">./db:/docker-entrypoint-initdb.d</span><span>&#39;
+</span></code></pre>
+<h4 id="db-init-sql"><strong>db/init.sql</strong></h4>
+<p>We need to store our events and create a database user:</p>
+<pre data-lang="sql" style="background-color:#2b303b;color:#c0c5ce;" class="language-sql "><code class="language-sql" data-lang="sql"><span style="color:#b48ead;">CREATE TABLE </span><span style="color:#8fa1b3;">events
+</span><span>(
+</span><span>    aggregate_type </span><span style="color:#b48ead;">text                         </span><span>NOT </span><span style="color:#d08770;">NULL</span><span>,
+</span><span>    aggregate_id   </span><span style="color:#b48ead;">text                         </span><span>NOT </span><span style="color:#d08770;">NULL</span><span>,
+</span><span>    sequence       </span><span style="color:#b48ead;">bigint CHECK</span><span> (sequence &gt;= </span><span style="color:#d08770;">0</span><span>) NOT </span><span style="color:#d08770;">NULL</span><span>,
+</span><span>    event_type     </span><span style="color:#b48ead;">text                         </span><span>NOT </span><span style="color:#d08770;">NULL</span><span>,
+</span><span>    event_version  </span><span style="color:#b48ead;">text                         </span><span>NOT </span><span style="color:#d08770;">NULL</span><span>,
+</span><span>    payload        json                         NOT </span><span style="color:#d08770;">NULL</span><span>,
+</span><span>    metadata       json                         NOT </span><span style="color:#d08770;">NULL</span><span>,
+</span><span>    </span><span style="color:#b48ead;">PRIMARY KEY</span><span> (aggregate_type, aggregate_id, sequence)
+</span><span>);
+</span><span>
+</span><span style="color:#b48ead;">CREATE USER </span><span>demo_user WITH ENCRYPTED PASSWORD &#39;</span><span style="color:#8fa1b3;">demo_pass</span><span>&#39;;
+</span><span style="color:#b48ead;">GRANT</span><span> ALL PRIVILEGES ON DATABASE postgres TO demo_user;
+</span></code></pre>
+<h3 id="events">Events</h3>
+<p>From our <code>event storming</code> session, we need to have the following events:</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">use </span><span>serde::{Deserialize, Serialize};
+</span><span>
+</span><span>#[</span><span style="color:#bf616a;">derive</span><span>(Debug, Clone, Serialize, Deserialize, PartialEq)]
+</span><span style="color:#b48ead;">pub enum </span><span>Event {
+</span><span>    Registered { registration_id: String },
+</span><span>    OnGround,
+</span><span>    TookOff,
+</span><span>    Landed,
+</span><span>    PositionedAt {
+</span><span>        latitude: </span><span style="color:#b48ead;">f64</span><span>,
+</span><span>        longitude: </span><span style="color:#b48ead;">f64</span><span>,
+</span><span>        altitude: </span><span style="color:#b48ead;">usize</span><span>,
+</span><span>    },
+</span><span>}
+</span></code></pre>
+<p>they will be serialized as <code>json</code> in the database (column <code>payload</code>) thus we need to make them serializable.</p>
+<h3 id="commands">Commands</h3>
+<p>And also the following commands:</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">use </span><span>serde::Deserialize;
+</span><span>
+</span><span>#[</span><span style="color:#bf616a;">derive</span><span>(Debug, Deserialize)]
+</span><span style="color:#b48ead;">pub enum </span><span>Command {
+</span><span>    Register {
+</span><span>        registration_id: String,
+</span><span>    },
+</span><span>    UpdatePosition {
+</span><span>        latitude: </span><span style="color:#b48ead;">f64</span><span>,
+</span><span>        longitude: </span><span style="color:#b48ead;">f64</span><span>,
+</span><span>        altitude: </span><span style="color:#b48ead;">usize</span><span>,
+</span><span>    },
+</span><span>    TakeOff,
+</span><span>    Land,
+</span><span>}
+</span></code></pre>
+<p>They will be <code>Deserialized</code> from <code>http</code> queries, so it is not needed by our <code>domain-plane</code> crate but will be useful by the <code>server</code> crate.</p>
+<h3 id="errors">Errors</h3>
+<p>Commands may not always return successfully, and some errors can be expected and returned.
+We create an <code>enum</code> with all possible errors and define a message associated to each (<code>#[error(&quot;&lt;MSG&gt;&quot;)]</code>).</p>
+<p>Usually this will be updated while implementing the aggregate. To fasten the reading, here are all of our error cases.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#bf616a;">derive</span><span>(thiserror::Error, Clone, Debug, PartialEq)]
+</span><span style="color:#b48ead;">pub enum </span><span>Error {
+</span><span>    #[</span><span style="color:#bf616a;">error</span><span>(&quot;</span><span style="color:#a3be8c;">Unable to take off in curent state</span><span>&quot;)]
+</span><span>    CannotTakeOff,
+</span><span>    #[</span><span style="color:#bf616a;">error</span><span>(&quot;</span><span style="color:#a3be8c;">Unable to land in current state</span><span>&quot;)]
+</span><span>    CannotLand,
+</span><span>    #[</span><span style="color:#bf616a;">error</span><span>(&quot;</span><span style="color:#a3be8c;">Cannot register again, identification is immutable</span><span>&quot;)]
+</span><span>    AlreadyRegistered,
+</span><span>}
+</span></code></pre>
+<p>Note: <a href="https://docs.rs/thiserror/latest/thiserror/">docs.rs/thiserror/latest/thiserror/</a> reduces the boilerplate around error definitions.</p>
+<h3 id="aggregate">Aggregate</h3>
+<h4 id="state"><strong>State</strong></h4>
+<p>Let's define our <code>Plane</code> state. We want it to have:</p>
+<ul>
+<li>an identification (relating to its domain -&gt; <a href="https://en.wikipedia.org/wiki/Aircraft_registration">wikipedia.org/Aircraft_registration</a>)</li>
+<li>a last known position</li>
+<li>a flying status</li>
+</ul>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#bf616a;">derive</span><span>(Serialize, Deserialize, Debug, Clone, PartialEq)]
+</span><span style="color:#b48ead;">pub struct </span><span>Position {
+</span><span>    </span><span style="color:#b48ead;">pub </span><span style="color:#bf616a;">latitude</span><span>: </span><span style="color:#b48ead;">f64</span><span>,
+</span><span>    </span><span style="color:#b48ead;">pub </span><span style="color:#bf616a;">longitude</span><span>: </span><span style="color:#b48ead;">f64</span><span>,
+</span><span>    </span><span style="color:#b48ead;">pub </span><span style="color:#bf616a;">altitude</span><span>: </span><span style="color:#b48ead;">usize</span><span>,
+</span><span>}
+</span><span>
+</span><span>#[</span><span style="color:#bf616a;">derive</span><span>(Serialize, Deserialize, Default, Debug, Clone, PartialEq)]
+</span><span style="color:#b48ead;">pub enum </span><span>Status {
+</span><span>    #[</span><span style="color:#bf616a;">default</span><span>]
+</span><span>    OnGround,
+</span><span>    InAir,
+</span><span>}
+</span><span>
+</span><span>#[</span><span style="color:#bf616a;">derive</span><span>(Serialize, Deserialize)]
+</span><span style="color:#b48ead;">pub struct </span><span>Plane {
+</span><span>    </span><span style="color:#bf616a;">registration_id</span><span>: String,
+</span><span>    </span><span style="color:#bf616a;">last_position</span><span>: Option&lt;Position&gt;,
+</span><span>    </span><span style="color:#bf616a;">status</span><span>: Status,
+</span><span>}
+</span><span>
+</span><span style="color:#b48ead;">impl </span><span>Default </span><span style="color:#b48ead;">for </span><span>Plane {
+</span><span>    </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">default</span><span>() -&gt; </span><span style="color:#b48ead;">Self </span><span>{
+</span><span>        </span><span style="color:#b48ead;">Self </span><span>{
+</span><span>            registration_id: &quot;&quot;.</span><span style="color:#96b5b4;">to_string</span><span>(),
+</span><span>            last_position: None,
+</span><span>            status: OnGround,
+</span><span>        }
+</span><span>    }
+</span><span>}
+</span></code></pre>
+<p>We then need to be able to build a <code>Plane</code> state based on past events:</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">apply</span><span>(&amp;</span><span style="color:#b48ead;">mut </span><span style="color:#bf616a;">self</span><span>, </span><span style="color:#bf616a;">event</span><span>: </span><span style="color:#b48ead;">Self::</span><span>Event) {
+</span><span>    </span><span style="color:#b48ead;">match</span><span> event {
+</span><span>        Event::Registered { registration_id } =&gt; </span><span style="color:#bf616a;">self</span><span>.registration_id = registration_id,
+</span><span>        Event::PositionedAt {
+</span><span>            latitude,
+</span><span>            longitude,
+</span><span>            altitude,
+</span><span>        } =&gt; {
+</span><span>            </span><span style="color:#b48ead;">let</span><span> p = Position {
+</span><span>                latitude,
+</span><span>                longitude,
+</span><span>                altitude,
+</span><span>            };
+</span><span>            </span><span style="color:#bf616a;">self</span><span>.last_position = Some(p);
+</span><span>        }
+</span><span>        Event::TookOff =&gt; </span><span style="color:#bf616a;">self</span><span>.status = Status::InAir,
+</span><span>        Event::Landed =&gt; </span><span style="color:#bf616a;">self</span><span>.status = Status::OnGround,
+</span><span>        Event::OnGround =&gt; </span><span style="color:#bf616a;">self</span><span>.status = Status::OnGround,
+</span><span>    }
+</span><span>}
+</span></code></pre>
+<h4 id="command-handler"><strong>Command handler</strong></h4>
+<p>We have a <code>Plane</code> that can be constructed with past events but we have no way of creating events.</p>
+<p>That where the <code>handle</code> function comes in, it will translate successful commands into events:</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span>async </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">handle</span><span>(
+</span><span>    &amp;</span><span style="color:#bf616a;">self</span><span>,
+</span><span>    </span><span style="color:#bf616a;">command</span><span>: </span><span style="color:#b48ead;">Self::</span><span>Command,
+</span><span>    </span><span style="color:#bf616a;">_services</span><span>: &amp;</span><span style="color:#b48ead;">Self::</span><span>Services,
+</span><span>) -&gt; Result&lt;Vec&lt;</span><span style="color:#b48ead;">Self::</span><span>Event&gt;, </span><span style="color:#b48ead;">Self::</span><span>Error&gt; {
+</span><span>    </span><span style="color:#b48ead;">match</span><span> command {
+</span><span>        Command::Register { registration_id } =&gt; {
+</span><span>            </span><span style="color:#b48ead;">if </span><span style="color:#bf616a;">self</span><span>.registration_id != &quot;&quot; {
+</span><span>                </span><span style="color:#b48ead;">return </span><span>Err(Error::AlreadyRegistered);
+</span><span>            }
+</span><span>            Ok(vec![Event::Registered { registration_id }, Event::OnGround])
+</span><span>        }
+</span><span>        Command::UpdatePosition {
+</span><span>            latitude,
+</span><span>            longitude,
+</span><span>            altitude,
+</span><span>        } =&gt; Ok(vec![Event::PositionedAt {
+</span><span>            </span><span style="color:#65737e;">// here we should validate that coordinates are valid
+</span><span>            latitude,
+</span><span>            longitude,
+</span><span>            altitude,
+</span><span>        }]),
+</span><span>        Command::TakeOff =&gt; {
+</span><span>            </span><span style="color:#b48ead;">if </span><span style="color:#bf616a;">self</span><span>.status == Status::OnGround {
+</span><span>                </span><span style="color:#65737e;">// here we should call the TowerControl service to ensure we can takeoff
+</span><span>                Ok(vec![Event::TookOff])
+</span><span>            } </span><span style="color:#b48ead;">else </span><span>{
+</span><span>                Err(Error::CannotTakeOff)
+</span><span>            }
+</span><span>        }
+</span><span>        Command::Land =&gt; {
+</span><span>            </span><span style="color:#b48ead;">if </span><span style="color:#bf616a;">self</span><span>.status == Status::InAir {
+</span><span>                </span><span style="color:#65737e;">// here we should call the TowerControl service to ensure we can land
+</span><span>                Ok(vec![Event::Landed])
+</span><span>            } </span><span style="color:#b48ead;">else </span><span>{
+</span><span>                Err(Error::CannotLand)
+</span><span>            }
+</span><span>        }
+</span><span>    }
+</span><span>}
+</span></code></pre>
+<p><a href="https://github.com/aurelien-clu/example-ddd-es/blob/main/rust-cqrs/crates/domain-plane/src/domain/aggregate.rs">rust-cqrs/crates/domain-plane/src/domain/aggregate.rs</a></p>
+<h4 id="services"><strong>Services</strong></h4>
+<p>Our aggregate <code>Plane</code> can do some things on its own but for others it should be working with a <code>Control Tower</code> service.</p>
+<p>In this example, we are not going to implement a &quot;real&quot; or a mocked version.</p>
+<p>Know that we could define a <code>trait</code> within the <code>domain-plane</code> crate and have a <code>svc-tower-control</code> crate, for instance, implementing the <code>trait</code>. It would for instance ensure that no other planes are currently landing or departing whenever a plane asks to land or take off.</p>
+<p>Services may be covered in future post, stay tuned!</p>
+<h4 id="tests"><strong>Tests</strong></h4>
+<p>How to ensure that everything is working properly? Let's test the aggregate with the following:</p>
+<ul>
+<li>a plane can be registered</li>
+<li>a plane can update its position</li>
+<li>a plane can take off if it is on ground</li>
+<li>a plane can land if it is airborne</li>
+<li>a plane cannot land if already on ground</li>
+<li>a plane cannot take off if already airborne</li>
+<li>a plane cannot register once it is registered</li>
+</ul>
+<p>Example of a test, following <a href="https://en.wikipedia.org/wiki/Behavior-driven_development">wikipedia.org/Behavior driven development</a>:</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#bf616a;">test</span><span>]
+</span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">test_a_plane_should_land</span><span>() {
+</span><span>    </span><span style="color:#b48ead;">let</span><span> past = vec![
+</span><span>        Event::Registered {
+</span><span>            registration_id: &quot;</span><span style="color:#a3be8c;">F-TEST</span><span>&quot;.</span><span style="color:#96b5b4;">to_string</span><span>(),
+</span><span>        },
+</span><span>        Event::OnGround,
+</span><span>        Event::TookOff,
+</span><span>    ];
+</span><span>    </span><span style="color:#b48ead;">let</span><span> command = Command::Land;
+</span><span>    </span><span style="color:#b48ead;">let</span><span> expected = vec![Event::Landed];
+</span><span>    </span><span style="color:#b48ead;">let</span><span> services = ();
+</span><span>    PlaneTestFramework::with(services)
+</span><span>        .</span><span style="color:#96b5b4;">given</span><span>(past)
+</span><span>        .</span><span style="color:#96b5b4;">when</span><span>(command)
+</span><span>        .</span><span style="color:#96b5b4;">then_expect_events</span><span>(expected);
+</span><span>}
+</span></code></pre>
+<p><a href="https://github.com/aurelien-clu/example-ddd-es/blob/main/rust-cqrs/crates/domain-plane/src/domain/tests.rs">rust-cqrs/crates/domain-plane/src/domain/tests.rs</a></p>
+<p>We verify everything works as expected with:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">cargo</span><span> test
+</span></code></pre>
+<h3 id="queries">Queries</h3>
+<blockquote>
+<p>track for the current or previous journey, all past positions</p>
+</blockquote>
+<p>With <code>Command Query Responsibility Segregation</code> (CQRS) we should access past events with a &quot;Query&quot;.</p>
+<p>With our chosen library this means that we build a query over past event for our aggregate and as events happen, we will update the state of our query.</p>
+<p>Our <code>CurrentJourneyView</code> will track in its state the past <code>positions</code> so we don't need to access directly the event log whenever we want this information, we will look up our new query table (cf below).</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#bf616a;">derive</span><span>(Debug, Default, Serialize, Deserialize)]
+</span><span style="color:#b48ead;">pub struct </span><span>CurrentJourneyView {
+</span><span>    </span><span style="color:#bf616a;">registration_id</span><span>: String,
+</span><span>    </span><span style="color:#bf616a;">status</span><span>: Status,
+</span><span>    </span><span style="color:#bf616a;">positions</span><span>: Vec&lt;Position&gt;,
+</span><span>}
+</span><span>
+</span><span style="color:#b48ead;">pub type </span><span>CurrentJourneyQuery =
+</span><span>    GenericQuery&lt;PostgresViewRepository&lt;CurrentJourneyView, Plane&gt;, CurrentJourneyView, Plane&gt;;
+</span><span>
+</span><span style="color:#b48ead;">impl </span><span>View&lt;Plane&gt; </span><span style="color:#b48ead;">for </span><span>CurrentJourneyView {
+</span><span>    </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">update</span><span>(&amp;</span><span style="color:#b48ead;">mut </span><span style="color:#bf616a;">self</span><span>, </span><span style="color:#bf616a;">event</span><span>: &amp;EventEnvelope&lt;Plane&gt;) {
+</span><span>        </span><span style="color:#b48ead;">match </span><span>&amp;event.payload {
+</span><span>            Event::Registered { registration_id } =&gt; </span><span style="color:#bf616a;">self</span><span>.registration_id = registration_id.</span><span style="color:#96b5b4;">clone</span><span>(),
+</span><span>            Event::OnGround =&gt; </span><span style="color:#bf616a;">self</span><span>.status = Status::OnGround,
+</span><span>            Event::TookOff =&gt; {
+</span><span>                </span><span style="color:#bf616a;">self</span><span>.status = Status::InAir;
+</span><span>                </span><span style="color:#bf616a;">self</span><span>.positions.</span><span style="color:#96b5b4;">clear</span><span>();
+</span><span>            }
+</span><span>            Event::Landed =&gt; </span><span style="color:#bf616a;">self</span><span>.status = Status::OnGround,
+</span><span>            Event::PositionedAt {
+</span><span>                latitude,
+</span><span>                longitude,
+</span><span>                altitude,
+</span><span>            } =&gt; </span><span style="color:#bf616a;">self</span><span>.positions.</span><span style="color:#96b5b4;">push</span><span>(Position {
+</span><span>                latitude: *latitude,
+</span><span>                longitude: *longitude,
+</span><span>                altitude: *altitude,
+</span><span>            }),
+</span><span>        }
+</span><span>    }
+</span><span>}
+</span></code></pre>
+<p><a href="https://github.com/aurelien-clu/example-ddd-es/blob/main/rust-cqrs/crates/domain-plane/src/queries/current_journey.rs">rust-cqrs/crates/domain-plane/src/queries/current_journey.rs</a></p>
+<p>Let's update the <code>init.sql</code> with our new query:</p>
+<pre data-lang="sql" style="background-color:#2b303b;color:#c0c5ce;" class="language-sql "><code class="language-sql" data-lang="sql"><span style="color:#b48ead;">CREATE TABLE </span><span style="color:#8fa1b3;">plane_current_journey_query
+</span><span>(
+</span><span>    view_id </span><span style="color:#b48ead;">text                        </span><span>NOT </span><span style="color:#d08770;">NULL</span><span>,
+</span><span>    version           </span><span style="color:#b48ead;">bigint CHECK</span><span> (version &gt;= </span><span style="color:#d08770;">0</span><span>) NOT </span><span style="color:#d08770;">NULL</span><span>,
+</span><span>    payload           json                        NOT </span><span style="color:#d08770;">NULL</span><span>,
+</span><span>    </span><span style="color:#b48ead;">PRIMARY KEY</span><span> (view_id)
+</span><span>);
+</span></code></pre>
+<h3 id="server">Server</h3>
+<p>Let's use <a href="https://github.com/tokio-rs/axum">github.com/tokio-rs/axum</a> for our server:</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#bf616a;">tokio</span><span>::</span><span style="color:#bf616a;">main</span><span>]
+</span><span>async </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">main</span><span>() {
+</span><span>    </span><span style="color:#b48ead;">let</span><span> pool = </span><span style="color:#96b5b4;">default_postgress_pool</span><span>(&quot;</span><span style="color:#a3be8c;">postgresql://demo_user:demo_pass@localhost:5432/demo</span><span>&quot;).await;
+</span><span>
+</span><span>    </span><span style="color:#65737e;">// we setup and get ownership of our aggregate and query
+</span><span>    </span><span style="color:#b48ead;">let </span><span>(cqrs, current_journey_query) = domain_plane::config::cqrs_framework(pool);
+</span><span>
+</span><span>    </span><span style="color:#b48ead;">let</span><span> router = Router::new()
+</span><span>        .</span><span style="color:#96b5b4;">route</span><span>(
+</span><span>            &quot;</span><span style="color:#a3be8c;">/plane/:registration_id</span><span>&quot;,
+</span><span>            </span><span style="color:#96b5b4;">get</span><span>(routes::plane::query_handler).</span><span style="color:#96b5b4;">post</span><span>(routes::plane::command_handler),
+</span><span>        )
+</span><span>        </span><span style="color:#65737e;">// we use axum extensions to provide:
+</span><span>        .</span><span style="color:#96b5b4;">layer</span><span>(Extension(cqrs)) </span><span style="color:#65737e;">// - our aggregate to our command_handler
+</span><span>        .</span><span style="color:#96b5b4;">layer</span><span>(Extension(current_journey_query)); </span><span style="color:#65737e;">// - our current_journey_query to our query_handler
+</span><span>
+</span><span>    axum::Server::bind(&amp;&quot;</span><span style="color:#a3be8c;">0.0.0.0:3030</span><span>&quot;.</span><span style="color:#96b5b4;">parse</span><span>().</span><span style="color:#96b5b4;">unwrap</span><span>())
+</span><span>        .</span><span style="color:#96b5b4;">serve</span><span>(router.</span><span style="color:#96b5b4;">into_make_service</span><span>())
+</span><span>        .await
+</span><span>        .</span><span style="color:#96b5b4;">unwrap</span><span>();
+</span><span>}
+</span></code></pre>
+<p><a href="https://github.com/aurelien-clu/example-ddd-es/blob/main/rust-cqrs/crates/server/src/main.rs">rust-cqrs/crates/server/src/main.rs</a></p>
+<h4 id="queries-1"><strong>Queries</strong></h4>
+<p>We lookup our query for the given <code>registration_id</code> and return the response as <code>json</code> or an error.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">pub</span><span> async </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">query_handler</span><span>(
+</span><span>    Path(</span><span style="color:#bf616a;">registration_id</span><span>): Path&lt;String&gt;,
+</span><span>    Extension(</span><span style="color:#bf616a;">view_repo</span><span>): Extension&lt;Arc&lt;PostgresViewRepository&lt;CurrentJourneyView, Plane&gt;&gt;&gt;,
+</span><span>) -&gt; Response {
+</span><span>    </span><span style="color:#b48ead;">let</span><span> view = </span><span style="color:#b48ead;">match</span><span> view_repo.</span><span style="color:#96b5b4;">load</span><span>(&amp;registration_id).await {
+</span><span>        Ok(view) =&gt; view,
+</span><span>        Err(err) =&gt; {
+</span><span>            </span><span style="color:#b48ead;">return </span><span>(StatusCode::</span><span style="color:#d08770;">INTERNAL_SERVER_ERROR</span><span>, err.</span><span style="color:#96b5b4;">to_string</span><span>()).</span><span style="color:#96b5b4;">into_response</span><span>();
+</span><span>        }
+</span><span>    };
+</span><span>    </span><span style="color:#b48ead;">match</span><span> view {
+</span><span>        None =&gt; StatusCode::</span><span style="color:#d08770;">NOT_FOUND</span><span>.</span><span style="color:#96b5b4;">into_response</span><span>(),
+</span><span>        Some(account_view) =&gt; (StatusCode::</span><span style="color:#d08770;">OK</span><span>, Json(account_view)).</span><span style="color:#96b5b4;">into_response</span><span>(),
+</span><span>    }
+</span><span>}
+</span></code></pre>
+<h4 id="commands-1"><strong>Commands</strong></h4>
+<p>We receive a command as <code>json</code> and apply it to the aggregate matching the <code>registration_id</code>.</p>
+<p>Commands don't return data (cf <code>CQRS</code>) but a simple <code>204 NO CONTENT</code> successful response or an error.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">pub</span><span> async </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">command_handler</span><span>(
+</span><span>    Path(</span><span style="color:#bf616a;">registration_id</span><span>): Path&lt;String&gt;,
+</span><span>    Extension(</span><span style="color:#bf616a;">cqrs</span><span>): Extension&lt;Arc&lt;PostgresCqrs&lt;Plane&gt;&gt;&gt;,
+</span><span>    MetadataExtension(</span><span style="color:#bf616a;">metadata</span><span>): MetadataExtension,
+</span><span>    Json(</span><span style="color:#bf616a;">command</span><span>): Json&lt;Command&gt;,
+</span><span>) -&gt; Response {
+</span><span>    </span><span style="color:#b48ead;">match</span><span> cqrs
+</span><span>        .</span><span style="color:#96b5b4;">execute_with_metadata</span><span>(&amp;registration_id, command, metadata)
+</span><span>        .await
+</span><span>    {
+</span><span>        Ok(_) =&gt; StatusCode::</span><span style="color:#d08770;">NO_CONTENT</span><span>.</span><span style="color:#96b5b4;">into_response</span><span>(),
+</span><span>        Err(err) =&gt; (StatusCode::</span><span style="color:#d08770;">BAD_REQUEST</span><span>, err.</span><span style="color:#96b5b4;">to_string</span><span>()).</span><span style="color:#96b5b4;">into_response</span><span>(),
+</span><span>    }
+</span><span>}
+</span></code></pre>
+<h3 id="tests-1">Tests</h3>
+<p>Let's see if our <code>API</code> works properly!</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">RANDOM</span><span>=$</span><span style="color:#bf616a;">$
+</span><span style="color:#bf616a;">TEST_ACCT</span><span>=&quot;</span><span style="color:#a3be8c;">test-plane-</span><span>$</span><span style="color:#bf616a;">RANDOM</span><span>&quot;
+</span><span style="color:#bf616a;">TEST_URL</span><span>=&quot;</span><span style="color:#a3be8c;">localhost:3030/plane/</span><span>$</span><span style="color:#bf616a;">TEST_ACCT</span><span>&quot;
+</span><span>
+</span><span style="color:#96b5b4;">echo </span><span>&quot;</span><span style="color:#a3be8c;">***************************</span><span>&quot;
+</span><span style="color:#96b5b4;">echo </span><span>&quot;</span><span style="color:#a3be8c;">* Plane: </span><span>$</span><span style="color:#bf616a;">TEST_ACCT</span><span>&quot;
+</span><span style="color:#96b5b4;">echo </span><span>&quot;</span><span style="color:#a3be8c;">***************************</span><span>&quot;
+</span><span>
+</span><span style="color:#96b5b4;">echo </span><span>&quot;</span><span style="color:#a3be8c;">Registering plane</span><span>&quot;
+</span><span style="color:#bf616a;">curl --location --request</span><span> POST $</span><span style="color:#bf616a;">TEST_URL --header </span><span>&#39;</span><span style="color:#a3be8c;">Content-Type: application/json</span><span>&#39;</span><span style="color:#bf616a;"> --data-raw </span><span>&quot;</span><span style="color:#a3be8c;">{</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">Register</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">: {</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">registration_id</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">: </span><span style="color:#96b5b4;">\&quot;</span><span>$</span><span style="color:#bf616a;">TEST_ACCT</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">}}</span><span>&quot;
+</span><span>
+</span><span style="color:#96b5b4;">echo </span><span style="color:#bf616a;">-e </span><span>&quot;</span><span style="color:#a3be8c;">\nUpdating position</span><span>&quot;
+</span><span style="color:#bf616a;">curl --location --request</span><span> POST $</span><span style="color:#bf616a;">TEST_URL --header </span><span>&#39;</span><span style="color:#a3be8c;">Content-Type: application/json</span><span>&#39;</span><span style="color:#bf616a;"> --data-raw </span><span>&quot;</span><span style="color:#a3be8c;">{</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">UpdatePosition</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">: {</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">latitude</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">: 1.0, </span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">longitude</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">: 2.0, </span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">altitude</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">: 0 }}</span><span>&quot;
+</span><span>
+</span><span style="color:#65737e;"># [...]
+</span></code></pre>
+<p><a href="https://github.com/aurelien-clu/example-ddd-es/blob/main/rust-cqrs/test/test_api_plane.sh">rust-cqrs/test/test_api_plane.sh</a></p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;"># terminal 1
+</span><span style="color:#bf616a;">docker-compose</span><span> up</span><span style="color:#bf616a;"> -d
+</span><span style="color:#bf616a;">cargo</span><span> run
+</span><span>
+</span><span style="color:#65737e;"># terminal 2
+</span><span style="color:#bf616a;">./test/test_api_plane.sh
+</span></code></pre>
+<h4 id="expected-terminal-1-output"><strong>Expected terminal 1 output</strong></h4>
+<p><a href="https://github.com/aurelien-clu/example-ddd-es/blob/main/rust-cqrs/crates/domain-plane/src/queries/logger.rs">rust-cqrs/crates/domain-plane/src/queries/logger.rs</a> logs every <code>Plane</code> events, useful for debugging.</p>
+<p>Format:</p>
+<blockquote>
+<p>id: '{{Aggregate ID}}', sequence: {{Event number for the given aggregate}}</p>
+<p>{{event as a JSON unless the event contains no data (e.g. &quot;OnGround&quot;)}}</p>
+</blockquote>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>******************************************************
+</span><span>id: &#39;test-plane-27355&#39;, sequence: 1
+</span><span>{
+</span><span>  &quot;Registered&quot;: {
+</span><span>    &quot;registration_id&quot;: &quot;test-plane-27355&quot;
+</span><span>  }
+</span><span>}
+</span><span>******************************************************
+</span><span>id: &#39;test-plane-27355&#39;, sequence: 2
+</span><span>&quot;OnGround&quot;
+</span><span>******************************************************
+</span><span>id: &#39;test-plane-27355&#39;, sequence: 3
+</span><span>{
+</span><span>  &quot;PositionedAt&quot;: {
+</span><span>    &quot;latitude&quot;: 1.0,
+</span><span>    &quot;longitude&quot;: 2.0,
+</span><span>    &quot;altitude&quot;: 0
+</span><span>  }
+</span><span>}
+</span><span>******************************************************
+</span><span>id: &#39;test-plane-27355&#39;, sequence: 4
+</span><span>&quot;TookOff&quot;
+</span><span>******************************************************
+</span><span>id: &#39;test-plane-27355&#39;, sequence: 5
+</span><span>{
+</span><span>  &quot;PositionedAt&quot;: {
+</span><span>    &quot;latitude&quot;: 10.0,
+</span><span>    &quot;longitude&quot;: 20.0,
+</span><span>    &quot;altitude&quot;: 10
+</span><span>  }
+</span><span>}
+</span><span>******************************************************
+</span><span>id: &#39;test-plane-27355&#39;, sequence: 6
+</span><span>{
+</span><span>  &quot;PositionedAt&quot;: {
+</span><span>    &quot;latitude&quot;: 11.0,
+</span><span>    &quot;longitude&quot;: 21.0,
+</span><span>    &quot;altitude&quot;: 20
+</span><span>  }
+</span><span>}
+</span><span>******************************************************
+</span><span>id: &#39;test-plane-27355&#39;, sequence: 7
+</span><span>&quot;Landed&quot;
+</span></code></pre>
+<h4 id="expected-terminal-2-output"><strong>Expected terminal 2 output</strong></h4>
+<p>The journey shows the plane's status and the current or last journey positions (history is cleared upon take off)</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>***************************
+</span><span>* Plane: test-plane-27355
+</span><span>***************************
+</span><span>Registering plane
+</span><span>
+</span><span>Updating position
+</span><span>
+</span><span>Prepare for take off!
+</span><span>
+</span><span>Updating position
+</span><span>
+</span><span>Journey
+</span><span>{&quot;registration_id&quot;:&quot;test-plane-27355&quot;,&quot;status&quot;:&quot;InAir&quot;,&quot;positions&quot;:[{&quot;latitude&quot;:10.0,&quot;longitude&quot;:20.0,&quot;altitude&quot;:10}]}
+</span><span>
+</span><span>Updating position
+</span><span>
+</span><span>Prepare for usual landing!
+</span><span>
+</span><span>Journey
+</span><span>{&quot;registration_id&quot;:&quot;test-plane-27355&quot;,&quot;status&quot;:&quot;OnGround&quot;,&quot;positions&quot;:[{&quot;latitude&quot;:10.0,&quot;longitude&quot;:20.0,&quot;altitude&quot;:10},{&quot;latitude&quot;:11.0,&quot;longitude&quot;:21.0,&quot;altitude&quot;:20}]}
+</span></code></pre>
+<h2 id="going-further-on-ddd">Going further on DDD</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Domain-driven_design">wikipedia.org/domain driven design</a></li>
+<li><a href="https://martinfowler.com/tags/domain%20driven%20design.html">martinfowler.com/tags/domain driven design</a></li>
+<li>books
+<ul>
+<li><a href="https://kalele.io/books/">Implementing DDD</a></li>
+<li><a href="https://kalele.io/books/">DDD Distilled</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            <!-- 
+                <div class="post-tags">
+                    
+                        <a href="https://cluzeau.pro/tags/rust/">#rust</a>
+                    
+                        <a href="https://cluzeau.pro/tags/ddd/">#DDD</a>
+                    
+                        <a href="https://cluzeau.pro/tags/event-sourcing/">#event-sourcing</a>
+                    
+                        <a href="https://cluzeau.pro/tags/cqrs/">#cqrs</a>
+                    
+                </div>
+             -->
+            
+                <div class="post-nav">
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;cluzeau.pro&#x2F;rust-pointers&#x2F;">Rust smart pointers ›</a>
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https://cluzeau.pro/even.js" ></script>
+      
+    </body>
+
+</html>

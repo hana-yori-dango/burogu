@@ -8,7 +8,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
       <link rel="icon" type="image/png" sizes="32x32" href="https:&#x2F;&#x2F;cluzeau.pro/laptop.png" meta_source="https://www.flaticon.com">
 
-      <title>Cluzeau - Rust smart pointers</title>
+      <title>Cluzeau</title>
 
       
 
@@ -138,102 +138,17 @@
             <main>
                 <div class="content" id="mobile-panel">
                     
-
-
-<div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">Contents</h2>
-    <div class="post-toc-content always-active">
-        <nav id="TableOfContents">
-            <ul>
-                
-                <li>
-                    <a href="https://cluzeau.pro/rust-pointers/#common-rust-smart-pointers" class="toc-link">Common Rust smart pointers</a>
-                    
-                </li>
-                
-            </ul>
-        </nav>
+    <div class="taxonomy">
+        <h2>DDD</h2>
+        
+            <div class="taxonomy__item">
+                <span class="taxonomy__item__time">2023-04-03</span>
+                <span class="taxonomy__item__title">
+                    <a href="https:&#x2F;&#x2F;cluzeau.pro&#x2F;ddd-example&#x2F;">Example of Domain Driven Design</a>
+                </span>
+            </div>
+        
     </div>
-</div>
-
-
-<article class="post">
-    
-    <header class="post__header">
-        <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;cluzeau.pro&#x2F;rust-pointers&#x2F;">Rust smart pointers</a>
-        </h1>
-        <div class="post__meta">
-            <span class="post__time">2023-04-03</span>
-            
-        </div>
-        
-        <div class="post-tags">
-            
-                <a href="https://cluzeau.pro/tags/rust/">#rust</a>
-            
-                <a href="https://cluzeau.pro/tags/pointers/">#pointers</a>
-            
-                <a href="https://cluzeau.pro/tags/tldr/">#tldr</a>
-            
-        </div>
-        
-
-    </header>
-
-
-    <div class="horizontal-line"></div>
-
-    <div class="post-content">
-      <h2 id="common-rust-smart-pointers">Common Rust smart pointers</h2>
-<table><thead><tr><th>name</th><th>thread-safe</th><th>description</th></tr></thead><tbody>
-<tr><td><a href="https://doc.rust-lang.org/book/ch15-01-box.html">Box</a></td><td>❌</td><td>Boxes allow you to store data on the heap rather than the stack. Useful for unknown size at compile time (e.g. recursive objects, lists, dynamic types), prevents data copy.</td></tr>
-<tr><td><a href="https://doc.rust-lang.org/book/ch15-04-rc.html">Rc</a></td><td>❌</td><td>Reference Counted: enable multiple ownership to the same value.</td></tr>
-<tr><td><a href="https://doc.rust-lang.org/book/ch15-05-interior-mutability.html">RefCell</a></td><td>❌</td><td>Allows to mutate data even if there immutable references to that data. Borrowing rules are enforced at runtime.</td></tr>
-<tr><td><a href="https://doc.rust-lang.org/std/borrow/enum.Cow.html">Cow</a></td><td>❌</td><td>Clone on write. Provides immutable access to borrowed data, and clone the data lazily when mutation or ownership is required.</td></tr>
-<tr><td><a href="https://doc.rust-lang.org/std/sync/struct.Arc.html">Arc</a></td><td>✅</td><td>Atomically Reference Counted. Provides read shared ownership of data allocated in the heap. (~thread safe Box + Rc)</td></tr>
-<tr><td><a href="https://doc.rust-lang.org/std/sync/struct.Mutex.html">Mutex</a></td><td>✅</td><td>Mutual exclusion to shared data. The data is only ever accessed when the mutex is locked and it blocks other thread attempting to access it. Beware of <a href="https://doc.rust-lang.org/std/sync/struct.Mutex.html#poisoning">poisoning</a> that occurs if a thread holding the mutex panics.</td></tr>
-<tr><td><a href="https://doc.rust-lang.org/std/sync/struct.RwLock.html">RwLock</a></td><td>✅</td><td>Reader-Writer lock. Allows at most 1 writer or any number of readers. Beware of <a href="https://doc.rust-lang.org/std/sync/struct.RwLock.html#poisoning">poisoning</a> that occurs if a writer holding the mutex panics.</td></tr>
-</tbody></table>
-<p>Examples: <a href="https://github.com/aurelien-clu/tutorial-rust/blob/main/crates/smart-pointers/src/main.rs">https://github.com/aurelien-clu/tutorial-rust/blob/main/crates/smart-pointers/src/main.rs</a></p>
-
-    </div>
-
-    
-    
-
-    <div class="post-footer">
-        
-            <!-- 
-                <div class="post-tags">
-                    
-                        <a href="https://cluzeau.pro/tags/rust/">#rust</a>
-                    
-                        <a href="https://cluzeau.pro/tags/pointers/">#pointers</a>
-                    
-                        <a href="https://cluzeau.pro/tags/tldr/">#tldr</a>
-                    
-                </div>
-             -->
-            
-                <div class="post-nav">
-                    
-                        <a class="previous" href="https:&#x2F;&#x2F;cluzeau.pro&#x2F;ddd-example&#x2F;">‹ Example of Domain Driven Design</a>
-                    
-                    
-                        <a class="next" href="https:&#x2F;&#x2F;cluzeau.pro&#x2F;rust-template&#x2F;">Rust template with workspace and logging ›</a>
-                    
-                </div>
-            
-
-        
-
-    </div>
-
-    
-    
-</article>
-
 
                 </div>
             </main>
