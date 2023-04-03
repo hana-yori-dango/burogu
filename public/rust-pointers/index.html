@@ -151,6 +151,31 @@
                     
                 </li>
                 
+                <li>
+                    <a href="https://cluzeau.pro/rust-pointers/#box" class="toc-link">Box</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://cluzeau.pro/rust-pointers/#rc-reference-counted" class="toc-link">Rc - Reference Counted</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://cluzeau.pro/rust-pointers/#refcell" class="toc-link">Refcell</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://cluzeau.pro/rust-pointers/#arc-atomically-reference-counted" class="toc-link">Arc - Atomically Reference Counted</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://cluzeau.pro/rust-pointers/#cow-copy-on-write" class="toc-link">Cow - Copy on write</a>
+                    
+                </li>
+                
             </ul>
         </nav>
     </div>
@@ -189,13 +214,144 @@
 <table><thead><tr><th>name</th><th>thread-safe</th><th>description</th></tr></thead><tbody>
 <tr><td><a href="https://doc.rust-lang.org/book/ch15-01-box.html">Box</a></td><td>❌</td><td>Boxes allow you to store data on the heap rather than the stack. Useful for unknown size at compile time (e.g. recursive objects, lists, dynamic types), prevents data copy.</td></tr>
 <tr><td><a href="https://doc.rust-lang.org/book/ch15-04-rc.html">Rc</a></td><td>❌</td><td>Reference Counted: enable multiple ownership to the same value.</td></tr>
-<tr><td><a href="https://doc.rust-lang.org/book/ch15-05-interior-mutability.html">RefCell</a></td><td>❌</td><td>Allows to mutate data even if there immutable references to that data. Borrowing rules are enforced at runtime.</td></tr>
+<tr><td><a href="https://doc.rust-lang.org/book/ch15-05-interior-mutability.html">RefCell</a></td><td>❌</td><td>Allows to mutate data even if there are immutable references to that data. Borrowing rules are enforced at runtime.</td></tr>
 <tr><td><a href="https://doc.rust-lang.org/std/borrow/enum.Cow.html">Cow</a></td><td>❌</td><td>Clone on write. Provides immutable access to borrowed data, and clone the data lazily when mutation or ownership is required.</td></tr>
 <tr><td><a href="https://doc.rust-lang.org/std/sync/struct.Arc.html">Arc</a></td><td>✅</td><td>Atomically Reference Counted. Provides read shared ownership of data allocated in the heap. (~thread safe Box + Rc)</td></tr>
 <tr><td><a href="https://doc.rust-lang.org/std/sync/struct.Mutex.html">Mutex</a></td><td>✅</td><td>Mutual exclusion to shared data. The data is only ever accessed when the mutex is locked and it blocks other thread attempting to access it. Beware of <a href="https://doc.rust-lang.org/std/sync/struct.Mutex.html#poisoning">poisoning</a> that occurs if a thread holding the mutex panics.</td></tr>
 <tr><td><a href="https://doc.rust-lang.org/std/sync/struct.RwLock.html">RwLock</a></td><td>✅</td><td>Reader-Writer lock. Allows at most 1 writer or any number of readers. Beware of <a href="https://doc.rust-lang.org/std/sync/struct.RwLock.html#poisoning">poisoning</a> that occurs if a writer holding the mutex panics.</td></tr>
 </tbody></table>
 <p>Examples: <a href="https://github.com/aurelien-clu/tutorial-rust/blob/main/crates/smart-pointers/src/main.rs">https://github.com/aurelien-clu/tutorial-rust/blob/main/crates/smart-pointers/src/main.rs</a></p>
+<h2 id="box">Box</h2>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#65737e;">// ❌ does not compile
+</span><span style="color:#65737e;">// error[E0072]: recursive type Node has infinite size
+</span><span style="color:#b48ead;">struct </span><span>Node {
+</span><span>    </span><span style="color:#bf616a;">child</span><span>: Option&lt;Node&gt;,
+</span><span>    </span><span style="color:#bf616a;">value</span><span>: </span><span style="color:#b48ead;">usize</span><span>,
+</span><span>}
+</span><span style="color:#b48ead;">let</span><span> node = Node { value: </span><span style="color:#d08770;">0</span><span>, child: Some(Node{value: </span><span style="color:#d08770;">1</span><span>, child: None}) };
+</span><span>
+</span><span style="color:#65737e;">// ✅ compiles
+</span><span style="color:#b48ead;">struct </span><span>Node {
+</span><span>    </span><span style="color:#bf616a;">child</span><span>: Option&lt;Box&lt;Node&gt;&gt;,
+</span><span>    </span><span style="color:#bf616a;">value</span><span>: </span><span style="color:#b48ead;">usize</span><span>,
+</span><span>}
+</span><span style="color:#b48ead;">let</span><span> node = Node {
+</span><span>    value: </span><span style="color:#d08770;">0</span><span>,
+</span><span>    child: Some(Box::new(Node {
+</span><span>        value: </span><span style="color:#d08770;">1</span><span>,
+</span><span>        child: None,
+</span><span>    })),
+</span><span>};
+</span></code></pre>
+<p>Values stored on the stack are required to have their size known at compile time.</p>
+<p><code>Option&lt;Node&gt;</code> size is not known whereas <code>Option&lt;Box&lt;Node&gt;&gt;</code> is known, because <code>Box</code> holds a reference and its size is known.</p>
+<p>The same goes with:</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">trait </span><span>Foo {
+</span><span>    </span><span style="color:#65737e;">// [...]
+</span><span>}
+</span><span>
+</span><span style="color:#65737e;">// ❌ does not compile
+</span><span style="color:#65737e;">// error[E0277]: the size for values of type `(dyn Foo + &#39;static)` cannot be known at compilation time
+</span><span style="color:#b48ead;">struct </span><span>Bar {
+</span><span>    </span><span style="color:#bf616a;">foo</span><span>: dyn Foo,
+</span><span>}
+</span><span>
+</span><span style="color:#65737e;">// ✅ compiles
+</span><span style="color:#b48ead;">struct </span><span>Bar {
+</span><span>    </span><span style="color:#bf616a;">foo</span><span>: Box&lt;dyn Foo&gt;,
+</span><span>}
+</span></code></pre>
+<h2 id="rc-reference-counted">Rc - Reference Counted</h2>
+<p>Let's have multiple ownership over the same value <code>a</code>.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">struct </span><span>Foo {
+</span><span>    </span><span style="color:#bf616a;">value</span><span>: String,
+</span><span>}
+</span><span>
+</span><span style="color:#b48ead;">let</span><span> a = Rc::new(Foo { value: &quot;</span><span style="color:#a3be8c;">a</span><span>&quot;.</span><span style="color:#96b5b4;">to_string</span><span>() });
+</span><span>println!(&quot;</span><span style="color:#a3be8c;">count after creating a = </span><span style="color:#d08770;">{}</span><span>&quot;, Rc::strong_count(&amp;a)); </span><span style="color:#65737e;">// 1
+</span><span>
+</span><span style="color:#65737e;">// adding a first reference
+</span><span style="color:#b48ead;">let</span><span> b = Rc::clone(&amp;a);
+</span><span>println!(&quot;</span><span style="color:#a3be8c;">count after creating b = </span><span style="color:#d08770;">{}</span><span>&quot;, Rc::strong_count(&amp;a)); </span><span style="color:#65737e;">// 2
+</span><span>{
+</span><span>    </span><span style="color:#65737e;">// adding a second reference inside the scope {}
+</span><span>    </span><span style="color:#b48ead;">let</span><span> c = Rc::clone(&amp;a);
+</span><span>    println!(&quot;</span><span style="color:#a3be8c;">count after creating c = </span><span style="color:#d08770;">{}</span><span>&quot;, Rc::strong_count(&amp;a)); </span><span style="color:#65737e;">// 3
+</span><span>    </span><span style="color:#65737e;">// second reference goes out of scope
+</span><span>}
+</span><span>println!(&quot;</span><span style="color:#a3be8c;">count after c goes out of scope = </span><span style="color:#d08770;">{}</span><span>&quot;, Rc::strong_count(&amp;a)); </span><span style="color:#65737e;">// 2
+</span></code></pre>
+<h2 id="refcell">Refcell</h2>
+<p>⚠️ Borrowing rules are enforced at runtime =&gt; we are able to compile unsound code.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#65737e;">// ❌ compiles but... but fails at runtime
+</span><span style="color:#b48ead;">let</span><span> x: RefCell&lt;Vec&lt;</span><span style="color:#b48ead;">usize</span><span>&gt;&gt; = RefCell::new(vec![]);
+</span><span style="color:#b48ead;">let mut</span><span> mut_borrow_1 = x.</span><span style="color:#96b5b4;">borrow_mut</span><span>();
+</span><span style="color:#b48ead;">let mut</span><span> mut_borrow_2 = x.</span><span style="color:#96b5b4;">borrow_mut</span><span>();
+</span><span>mut_borrow_1.</span><span style="color:#96b5b4;">push</span><span>(</span><span style="color:#d08770;">1</span><span>);
+</span><span>mut_borrow_2.</span><span style="color:#96b5b4;">push</span><span>(</span><span style="color:#d08770;">2</span><span>);
+</span></code></pre>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#65737e;">// ✅ compiles and works at runtime
+</span><span style="color:#b48ead;">let</span><span> x: RefCell&lt;Vec&lt;</span><span style="color:#b48ead;">usize</span><span>&gt;&gt; = RefCell::new(vec![]);
+</span><span>{
+</span><span>    </span><span style="color:#b48ead;">let mut</span><span> mut_borrow_1 = x.</span><span style="color:#96b5b4;">borrow_mut</span><span>();
+</span><span>    mut_borrow_1.</span><span style="color:#96b5b4;">push</span><span>(</span><span style="color:#d08770;">1</span><span>);
+</span><span>    </span><span style="color:#65737e;">// dropping mut_borrow_1 =&gt; we can mutably borrow x again
+</span><span>}
+</span><span style="color:#b48ead;">let mut</span><span> mut_borrow_2 = x.</span><span style="color:#96b5b4;">borrow_mut</span><span>();
+</span><span>mut_borrow_2.</span><span style="color:#96b5b4;">push</span><span>(</span><span style="color:#d08770;">2</span><span>);
+</span></code></pre>
+<h2 id="arc-atomically-reference-counted">Arc - Atomically Reference Counted</h2>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#65737e;">// ❌ does not compile
+</span><span style="color:#65737e;">// error[E0382]: use of moved value: `x`
+</span><span style="color:#65737e;">// =&gt; x cannot be shared across threads
+</span><span style="color:#b48ead;">let</span><span> x = Foo{_value: </span><span style="color:#d08770;">0</span><span>};
+</span><span style="color:#b48ead;">for </span><span>_ in </span><span style="color:#d08770;">0</span><span>..</span><span style="color:#d08770;">3 </span><span>{
+</span><span>    thread::spawn(</span><span style="color:#b48ead;">move </span><span>|| {
+</span><span>        println!(&quot;</span><span style="color:#d08770;">{x:?}</span><span>&quot;);
+</span><span>    });
+</span><span>}
+</span><span>
+</span><span style="color:#65737e;">// ✅ compiles
+</span><span style="color:#b48ead;">let</span><span> x = Arc::new(Foo { _value: </span><span style="color:#d08770;">5 </span><span>});
+</span><span style="color:#b48ead;">for</span><span> i in </span><span style="color:#d08770;">0</span><span>..</span><span style="color:#d08770;">3 </span><span>{
+</span><span>    </span><span style="color:#b48ead;">let</span><span> x = Arc::clone(&amp;x);
+</span><span>
+</span><span>    thread::spawn(</span><span style="color:#b48ead;">move </span><span>|| {
+</span><span>        println!(&quot;</span><span style="color:#a3be8c;">thread </span><span style="color:#d08770;">{i}</span><span style="color:#a3be8c;">, </span><span style="color:#d08770;">{x:?}</span><span>&quot;);
+</span><span>    });
+</span><span>}
+</span></code></pre>
+<h2 id="cow-copy-on-write">Cow - Copy on write</h2>
+<p>Let's see when a copy on write occurs with the following examples:</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">abs_all</span><span>(</span><span style="color:#bf616a;">input</span><span>: &amp;</span><span style="color:#b48ead;">mut </span><span>Cow&lt;[</span><span style="color:#b48ead;">i32</span><span>]&gt;) {
+</span><span>    </span><span style="color:#b48ead;">for</span><span> i in </span><span style="color:#d08770;">0</span><span>..input.</span><span style="color:#96b5b4;">len</span><span>() {
+</span><span>        </span><span style="color:#b48ead;">let</span><span> v = input[i];
+</span><span>        </span><span style="color:#b48ead;">if</span><span> v &lt; </span><span style="color:#d08770;">0 </span><span>{
+</span><span>            </span><span style="color:#65737e;">// Clones into a vector if not already owned.
+</span><span>            input.</span><span style="color:#96b5b4;">to_mut</span><span>()[i] = -v;
+</span><span>        }
+</span><span>    }
+</span><span>}
+</span><span>
+</span><span style="color:#65737e;">// No clone occurs because `input` doesn&#39;t need to be mutated.
+</span><span style="color:#b48ead;">let</span><span> input = [</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>];
+</span><span style="color:#b48ead;">let mut</span><span> input_as_cow = Cow::from(&amp;input[..]);
+</span><span style="color:#96b5b4;">abs_all</span><span>(&amp;</span><span style="color:#b48ead;">mut</span><span> input_as_cow);
+</span><span>assert_eq!(input.</span><span style="color:#96b5b4;">as_ptr</span><span>(), input_as_cow.</span><span style="color:#96b5b4;">as_ptr</span><span>()); </span><span style="color:#65737e;">// clone did not occur
+</span><span>
+</span><span style="color:#65737e;">// 📋 Clone occurs because `input` needs to be mutated.
+</span><span style="color:#b48ead;">let</span><span> slice = [-</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">1</span><span>];
+</span><span style="color:#b48ead;">let mut</span><span> input = Cow::from(&amp;slice[..]);
+</span><span style="color:#96b5b4;">abs_all</span><span>(&amp;</span><span style="color:#b48ead;">mut</span><span> input);
+</span><span>assert_ne!(input.</span><span style="color:#96b5b4;">as_ptr</span><span>(), input_as_cow.</span><span style="color:#96b5b4;">as_ptr</span><span>()); </span><span style="color:#65737e;">// clone occurred
+</span><span>
+</span><span style="color:#65737e;">// No clone occurs because `input` is already owned
+</span><span style="color:#b48ead;">let mut</span><span> input = Cow::from(vec![-</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">1</span><span>]);
+</span><span style="color:#b48ead;">let</span><span> initial_address = format!(&quot;</span><span style="color:#d08770;">{:p}</span><span>&quot;, input.</span><span style="color:#96b5b4;">as_ptr</span><span>());
+</span><span style="color:#96b5b4;">abs_all</span><span>(&amp;</span><span style="color:#b48ead;">mut</span><span> input);
+</span><span style="color:#b48ead;">let</span><span> address_afterward = format!(&quot;</span><span style="color:#d08770;">{:p}</span><span>&quot;, input.</span><span style="color:#96b5b4;">as_ptr</span><span>());
+</span><span>assert_eq!(initial_address, address_afterward); </span><span style="color:#65737e;">// clone did not occur
+</span></code></pre>
 
     </div>
 

@@ -3,6 +3,9 @@
 In no particular order:
 
 - [ ] Add a Table of Contents whenever there are many posts
+- [x] Implement "top tags"
+- [ ] improve introduction
+- [ ] add a short description of each post on the index page (before "Read more")
 - [ ] Add post
   - [x] My dev library
   - [ ] My business library
