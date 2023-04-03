@@ -44,7 +44,7 @@
 &lt;p&gt;Notes:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Event storming should be done with domain experts, I am not an expert in aviation, thus this is incomplete but sufficient for this example :)&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;em&gt;OnGround&lt;&#x2F;em&gt; event is not necessarily following &lt;em&gt;PlaneRegistered&lt;&#x2F;em&gt; but happens at the same time. It makes more sense to have an event describing that the plane is on ground without knowing whether the plane has flew before or not.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;em&gt;OnGround&lt;&#x2F;em&gt; event is not necessarily following &lt;em&gt;PlaneRegistered&lt;&#x2F;em&gt; but happens at the same time. It makes more sense to have an event describing that the plane is on ground without knowing whether the plane has flew before or not while registering (an alternative could be to default a plane to be on ground and remove &lt;em&gt;OnGround&lt;&#x2F;em&gt; event).&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;let-s-code-it&quot;&gt;Let&#x27;s code it&lt;&#x2F;h2&gt;
 &lt;p&gt;Below you will find code samples, full code can be found here: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu&#x2F;example-ddd-es&#x2F;tree&#x2F;main&#x2F;rust-cqrs&quot;&gt;github.com&#x2F;aurelien-clu&#x2F;example-ddd-es&#x2F;rust-cqrs&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;

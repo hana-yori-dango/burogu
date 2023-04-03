@@ -44,7 +44,7 @@ We end up with the following:
 Notes:
 
 - Event storming should be done with domain experts, I am not an expert in aviation, thus this is incomplete but sufficient for this example :)
-- *OnGround* event is not necessarily following *PlaneRegistered* but happens at the same time. It makes more sense to have an event describing that the plane is on ground without knowing whether the plane has flew before or not.
+- *OnGround* event is not necessarily following *PlaneRegistered* but happens at the same time. It makes more sense to have an event describing that the plane is on ground without knowing whether the plane has flew before or not while registering (an alternative could be to default a plane to be on ground and remove *OnGround* event).
 
 ## Let's code it
 

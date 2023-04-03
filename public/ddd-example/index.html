@@ -270,7 +270,7 @@
 <p>Notes:</p>
 <ul>
 <li>Event storming should be done with domain experts, I am not an expert in aviation, thus this is incomplete but sufficient for this example :)</li>
-<li><em>OnGround</em> event is not necessarily following <em>PlaneRegistered</em> but happens at the same time. It makes more sense to have an event describing that the plane is on ground without knowing whether the plane has flew before or not.</li>
+<li><em>OnGround</em> event is not necessarily following <em>PlaneRegistered</em> but happens at the same time. It makes more sense to have an event describing that the plane is on ground without knowing whether the plane has flew before or not while registering (an alternative could be to default a plane to be on ground and remove <em>OnGround</em> event).</li>
 </ul>
 <h2 id="let-s-code-it">Let's code it</h2>
 <p>Below you will find code samples, full code can be found here: <a href="https://github.com/aurelien-clu/example-ddd-es/tree/main/rust-cqrs">github.com/aurelien-clu/example-ddd-es/rust-cqrs</a>.</p>
