@@ -1,5 +1,5 @@
 +++
-title = "Example of Domain Driven Design"
+title = "Domain Driven Design example"
 weight = 1
 order = 1
 date = 2023-04-03
