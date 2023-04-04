@@ -7,8 +7,20 @@
         <loc>https://cluzeau.pro/about/</loc>
     </url>
     <url>
+        <loc>https://cluzeau.pro/cqrs/</loc>
+        <lastmod>2023-04-04</lastmod>
+    </url>
+    <url>
         <loc>https://cluzeau.pro/ddd-example/</loc>
         <lastmod>2023-04-03</lastmod>
+    </url>
+    <url>
+        <loc>https://cluzeau.pro/ddd/</loc>
+        <lastmod>2023-04-04</lastmod>
+    </url>
+    <url>
+        <loc>https://cluzeau.pro/event-sourcing/</loc>
+        <lastmod>2023-04-04</lastmod>
     </url>
     <url>
         <loc>https://cluzeau.pro/my-dev-library/</loc>
@@ -40,6 +52,9 @@
     </url>
     <url>
         <loc>https://cluzeau.pro/tags/ddd/</loc>
+    </url>
+    <url>
+        <loc>https://cluzeau.pro/tags/definition/</loc>
     </url>
     <url>
         <loc>https://cluzeau.pro/tags/dev/</loc>

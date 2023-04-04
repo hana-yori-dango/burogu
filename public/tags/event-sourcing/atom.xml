@@ -4,8 +4,41 @@
     <link href="https://cluzeau.pro/tags/event-sourcing/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://cluzeau.pro"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2023-04-03T00:00:00+00:00</updated>
+    <updated>2023-04-04T00:00:00+00:00</updated>
     <id>https://cluzeau.pro/tags/event-sourcing/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Event Sourcing</title>
+        <published>2023-04-04T00:00:00+00:00</published>
+        <updated>2023-04-04T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://cluzeau.pro/event-sourcing/" type="text/html"/>
+        <id>https://cluzeau.pro/event-sourcing/</id>
+        
+        <content type="html">&lt;h2 id=&quot;concise-definition&quot;&gt;Concise definition&lt;&#x2F;h2&gt;
+&lt;p&gt;Event sourcing is an approach to software development where every action that changes the state of a system is captured as an immutable event and stored in an event log. By replaying these events, the system&#x27;s state can be reconstructed at any point in time, providing a complete audit trail of all changes and enabling advanced features.&lt;&#x2F;p&gt;
+&lt;img src=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;event-sourcing-example-e-commerce.jpg&quot; alt= &quot;example of e-commerce events&quot; width=&quot;75%&quot; height=&quot;75%&quot;&#x2F;&gt;
+&lt;p&gt;&lt;em&gt;Example of a series of events for an e-commerce application&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;longer-definition&quot;&gt;Longer definition&lt;&#x2F;h2&gt;
+&lt;p&gt;Event sourcing is an approach to software development where the state of a system is determined by a sequence of events. In event sourcing, every action that changes the state of the system is captured as an event and stored in an event log. These events are immutable, meaning that they cannot be changed once they have been recorded.&lt;&#x2F;p&gt;
+&lt;p&gt;By replaying the events in the event log, it is possible to reconstruct the state of the system at any point in time. This approach allows for a complete audit trail of all changes to the system, as well as the ability to rebuild the state of the system if it becomes corrupted or lost.&lt;&#x2F;p&gt;
+&lt;p&gt;Event sourcing can also be used to enable a number of advanced features, such as temporal queries that allow users to query the state of the system at a specific point in time, and event-driven architectures where different parts of the system can react to events in real time.&lt;&#x2F;p&gt;
+&lt;p&gt;Overall, event sourcing is a powerful approach to software development that provides a complete audit trail of all changes to the system, enables advanced features, and allows for easy recovery from system failures.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Event-driven_architecture&quot;&gt;event sourcing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;martinfowler.com&#x2F;eaaDev&#x2F;EventSourcing.html&quot;&gt;martinfowler.com&#x2F;eaaDev&#x2F;EventSourcing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;acknowledgment&quot;&gt;Acknowledgment&lt;&#x2F;h2&gt;
+&lt;p&gt;Definitions made using &lt;a href=&quot;https:&#x2F;&#x2F;chat.openai.com&#x2F;chat&quot;&gt;chat.openai.com&#x2F;chat&lt;&#x2F;a&gt; with the following prompts:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Summarize Event Sourcing&lt;&#x2F;p&gt;
+&lt;p&gt;more concise&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Domain Driven Design example</title>
         <published>2023-04-03T00:00:00+00:00</published>
@@ -25,7 +58,7 @@
 &lt;li&gt;change its position&lt;&#x2F;li&gt;
 &lt;li&gt;track all past positions for the current or previous journey&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;p&gt;For such simple needs, a &lt;code&gt;CRUD API&lt;&#x2F;code&gt; would suffice but for the sake of learning we will use &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Domain-driven_design&quot;&gt;DDD&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Event-driven_architecture&quot;&gt;event-sourcing&lt;&#x2F;a&gt; &amp;amp; &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Command%E2%80%93query_separation#Command_Query_Responsibility_Segregation&quot;&gt;CQRS&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;For such simple needs, a &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Create,_read,_update_and_delete&quot;&gt;CRUD&lt;&#x2F;a&gt; API would suffice but for the sake of learning we will use &lt;a href=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;ddd&quot;&gt;domain driven design&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;event-sourcing&#x2F;&quot;&gt;event-sourcing&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;cqrs&#x2F;&quot;&gt;cqrs&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;event-storming&quot;&gt;Event storming&lt;&#x2F;h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Event storming is a workshop-based method to quickly find out what is happening in the domain of a software program. Compared to other methods it is extremely lightweight and intentionally requires no support by a computer. The result is expressed in sticky notes on a wide wall.&lt;&#x2F;p&gt;
@@ -525,19 +558,6 @@ We create an &lt;code&gt;enum&lt;&#x2F;code&gt; with all possible errors and def
 &lt;&#x2F;span&gt;&lt;span&gt;Journey
 &lt;&#x2F;span&gt;&lt;span&gt;{&amp;quot;registration_id&amp;quot;:&amp;quot;test-plane-27355&amp;quot;,&amp;quot;status&amp;quot;:&amp;quot;OnGround&amp;quot;,&amp;quot;positions&amp;quot;:[{&amp;quot;latitude&amp;quot;:10.0,&amp;quot;longitude&amp;quot;:20.0,&amp;quot;altitude&amp;quot;:10},{&amp;quot;latitude&amp;quot;:11.0,&amp;quot;longitude&amp;quot;:21.0,&amp;quot;altitude&amp;quot;:20}]}
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;links&quot;&gt;Links&lt;&#x2F;h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Domain-driven_design&quot;&gt;wikipedia.org&#x2F;domain driven design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;martinfowler.com&#x2F;tags&#x2F;domain%20driven%20design.html&quot;&gt;martinfowler.com&#x2F;tags&#x2F;domain driven design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Event-driven_architecture&quot;&gt;event sourcing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Command%E2%80%93query_separation#Command_Query_Responsibility_Segregation&quot;&gt;command query responsibility segregation&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;books
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kalele.io&#x2F;books&#x2F;&quot;&gt;Implementing DDD&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kalele.io&#x2F;books&#x2F;&quot;&gt;DDD Distilled&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
 </content>
         
     </entry>

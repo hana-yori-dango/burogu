@@ -25,7 +25,7 @@
 &lt;li&gt;change its position&lt;&#x2F;li&gt;
 &lt;li&gt;track all past positions for the current or previous journey&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;p&gt;For such simple needs, a &lt;code&gt;CRUD API&lt;&#x2F;code&gt; would suffice but for the sake of learning we will use &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Domain-driven_design&quot;&gt;DDD&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Event-driven_architecture&quot;&gt;event-sourcing&lt;&#x2F;a&gt; &amp;amp; &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Command%E2%80%93query_separation#Command_Query_Responsibility_Segregation&quot;&gt;CQRS&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;For such simple needs, a &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Create,_read,_update_and_delete&quot;&gt;CRUD&lt;&#x2F;a&gt; API would suffice but for the sake of learning we will use &lt;a href=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;ddd&quot;&gt;domain driven design&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;event-sourcing&#x2F;&quot;&gt;event-sourcing&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;cqrs&#x2F;&quot;&gt;cqrs&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;event-storming&quot;&gt;Event storming&lt;&#x2F;h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Event storming is a workshop-based method to quickly find out what is happening in the domain of a software program. Compared to other methods it is extremely lightweight and intentionally requires no support by a computer. The result is expressed in sticky notes on a wide wall.&lt;&#x2F;p&gt;
@@ -525,19 +525,6 @@ We create an &lt;code&gt;enum&lt;&#x2F;code&gt; with all possible errors and def
 &lt;&#x2F;span&gt;&lt;span&gt;Journey
 &lt;&#x2F;span&gt;&lt;span&gt;{&amp;quot;registration_id&amp;quot;:&amp;quot;test-plane-27355&amp;quot;,&amp;quot;status&amp;quot;:&amp;quot;OnGround&amp;quot;,&amp;quot;positions&amp;quot;:[{&amp;quot;latitude&amp;quot;:10.0,&amp;quot;longitude&amp;quot;:20.0,&amp;quot;altitude&amp;quot;:10},{&amp;quot;latitude&amp;quot;:11.0,&amp;quot;longitude&amp;quot;:21.0,&amp;quot;altitude&amp;quot;:20}]}
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;links&quot;&gt;Links&lt;&#x2F;h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Domain-driven_design&quot;&gt;wikipedia.org&#x2F;domain driven design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;martinfowler.com&#x2F;tags&#x2F;domain%20driven%20design.html&quot;&gt;martinfowler.com&#x2F;tags&#x2F;domain driven design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Event-driven_architecture&quot;&gt;event sourcing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Command%E2%80%93query_separation#Command_Query_Responsibility_Segregation&quot;&gt;command query responsibility segregation&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;books
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kalele.io&#x2F;books&#x2F;&quot;&gt;Implementing DDD&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kalele.io&#x2F;books&#x2F;&quot;&gt;DDD Distilled&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
 </content>
         
     </entry>

@@ -4,8 +4,115 @@
     <link href="https://cluzeau.pro/tags/tldr/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://cluzeau.pro"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2023-04-03T00:00:00+00:00</updated>
+    <updated>2023-04-04T00:00:00+00:00</updated>
     <id>https://cluzeau.pro/tags/tldr/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Command Query Responsibility Segregation</title>
+        <published>2023-04-04T00:00:00+00:00</published>
+        <updated>2023-04-04T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://cluzeau.pro/cqrs/" type="text/html"/>
+        <id>https://cluzeau.pro/cqrs/</id>
+        
+        <content type="html">&lt;h2 id=&quot;concise-definition&quot;&gt;Concise definition&lt;&#x2F;h2&gt;
+&lt;p&gt;CQRS is an architectural pattern that separates read and write operations into separate models. By optimizing each model for its specific responsibilities, it can improve the performance and scalability of complex systems.&lt;&#x2F;p&gt;
+&lt;img src=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;cqrs.svg&quot; alt= &quot;CQRS&quot; width=&quot;50%&quot; height=&quot;50%&quot;&#x2F;&gt;
+&lt;p&gt;&lt;em&gt;Reads (queries) and writes (commands) are separated&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;longer-definition&quot;&gt;Longer definition&lt;&#x2F;h2&gt;
+&lt;p&gt;Command Query Responsibility Segregation (CQRS) is an architectural pattern that separates the responsibility of handling read and write operations into separate models. In CQRS, the read model is responsible for handling queries and returning data, while the write model is responsible for handling commands that change the state of the system.&lt;&#x2F;p&gt;
+&lt;p&gt;CQRS is often used in complex systems where read and write operations have different performance and scalability requirements. By separating the read and write models, it is possible to optimize each model for its specific responsibilities, resulting in improved performance and scalability.&lt;&#x2F;p&gt;
+&lt;p&gt;CQRS can also enable the use of different storage mechanisms for the read and write models, allowing for greater flexibility and scalability in the overall system architecture.&lt;&#x2F;p&gt;
+&lt;p&gt;Overall, CQRS is a powerful architectural pattern that can improve the performance and scalability of complex systems by separating the responsibilities of read and write operations.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Command%E2%80%93query_separation#Command_Query_Responsibility_Segregation&quot;&gt;command query responsibility segregation&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;martinfowler.com&#x2F;bliki&#x2F;CQRS.html&quot;&gt;martinfowler.com&#x2F;CQRS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;acknowledgment&quot;&gt;Acknowledgment&lt;&#x2F;h2&gt;
+&lt;p&gt;Definitions made using &lt;a href=&quot;https:&#x2F;&#x2F;chat.openai.com&#x2F;chat&quot;&gt;chat.openai.com&#x2F;chat&lt;&#x2F;a&gt; with the following prompts:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Summarize Command Query Responsibility Segregation&lt;&#x2F;p&gt;
+&lt;p&gt;more concise&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Domain Driven Design</title>
+        <published>2023-04-04T00:00:00+00:00</published>
+        <updated>2023-04-04T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://cluzeau.pro/ddd/" type="text/html"/>
+        <id>https://cluzeau.pro/ddd/</id>
+        
+        <content type="html">&lt;h2 id=&quot;concise-definition&quot;&gt;Concise definition&lt;&#x2F;h2&gt;
+&lt;p&gt;Domain Driven Design (DDD) is an approach to software development that emphasizes understanding and modeling the domain of the problem being solved. It involves collaboration between domain experts, software developers, and stakeholders to build software systems that accurately reflect the needs of the business. DDD uses a common language and shared understanding of the domain to facilitate communication, and design patterns and architectural principles to create a maintainable software system.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;longer-definition&quot;&gt;Longer definition&lt;&#x2F;h2&gt;
+&lt;p&gt;Domain Driven Design (DDD) is an approach to software development that focuses on understanding and modeling the domain of the problem being solved. It involves breaking down complex business problems into smaller, more manageable components and then building software systems that reflect the structure and behavior of those components.&lt;&#x2F;p&gt;
+&lt;p&gt;DDD emphasizes the importance of collaboration between domain experts, software developers, and other stakeholders to ensure that the resulting software system accurately reflects the needs of the business. It also advocates for the use of a common language and shared understanding of the domain to facilitate communication and reduce misunderstandings.&lt;&#x2F;p&gt;
+&lt;p&gt;In DDD, the domain is modeled using a set of concepts, entities, and relationships that reflect the real-world domain being modeled. These models are expressed using a ubiquitous language that is shared by all stakeholders and is used to drive the development of the software system.&lt;&#x2F;p&gt;
+&lt;p&gt;DDD also places a strong emphasis on the use of design patterns and architectural principles to create a well-structured and maintainable software system. It advocates for the use of domain-driven design patterns such as aggregates, repositories, and factories to create software systems that are flexible, scalable, and maintainable over time.&lt;&#x2F;p&gt;
+&lt;p&gt;Overall, DDD is a powerful approach to software development that can help teams build software systems that accurately reflect the needs of the business and are maintainable over the long term.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;&#x2F;h2&gt;
+&lt;p&gt;DDD is often used alongside &lt;a href=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;event-sourcing&#x2F;&quot;&gt;event-sourcing&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;cqrs&#x2F;&quot;&gt;cqrs&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Domain-driven_design&quot;&gt;wikipedia.org&#x2F;domain driven design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Event_storming&quot;&gt;wikipedia.org&#x2F;event storming&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;martinfowler.com&#x2F;tags&#x2F;domain%20driven%20design.html&quot;&gt;martinfowler.com&#x2F;tags&#x2F;domain driven design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;books
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kalele.io&#x2F;books&#x2F;&quot;&gt;Implementing DDD&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kalele.io&#x2F;books&#x2F;&quot;&gt;DDD Distilled&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;acknowledgment&quot;&gt;Acknowledgment&lt;&#x2F;h2&gt;
+&lt;p&gt;Definitions made using &lt;a href=&quot;https:&#x2F;&#x2F;chat.openai.com&#x2F;chat&quot;&gt;chat.openai.com&#x2F;chat&lt;&#x2F;a&gt; with the following prompts:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Summarize Domain Driven Design&lt;&#x2F;p&gt;
+&lt;p&gt;more concise&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Event Sourcing</title>
+        <published>2023-04-04T00:00:00+00:00</published>
+        <updated>2023-04-04T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://cluzeau.pro/event-sourcing/" type="text/html"/>
+        <id>https://cluzeau.pro/event-sourcing/</id>
+        
+        <content type="html">&lt;h2 id=&quot;concise-definition&quot;&gt;Concise definition&lt;&#x2F;h2&gt;
+&lt;p&gt;Event sourcing is an approach to software development where every action that changes the state of a system is captured as an immutable event and stored in an event log. By replaying these events, the system&#x27;s state can be reconstructed at any point in time, providing a complete audit trail of all changes and enabling advanced features.&lt;&#x2F;p&gt;
+&lt;img src=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;event-sourcing-example-e-commerce.jpg&quot; alt= &quot;example of e-commerce events&quot; width=&quot;75%&quot; height=&quot;75%&quot;&#x2F;&gt;
+&lt;p&gt;&lt;em&gt;Example of a series of events for an e-commerce application&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;longer-definition&quot;&gt;Longer definition&lt;&#x2F;h2&gt;
+&lt;p&gt;Event sourcing is an approach to software development where the state of a system is determined by a sequence of events. In event sourcing, every action that changes the state of the system is captured as an event and stored in an event log. These events are immutable, meaning that they cannot be changed once they have been recorded.&lt;&#x2F;p&gt;
+&lt;p&gt;By replaying the events in the event log, it is possible to reconstruct the state of the system at any point in time. This approach allows for a complete audit trail of all changes to the system, as well as the ability to rebuild the state of the system if it becomes corrupted or lost.&lt;&#x2F;p&gt;
+&lt;p&gt;Event sourcing can also be used to enable a number of advanced features, such as temporal queries that allow users to query the state of the system at a specific point in time, and event-driven architectures where different parts of the system can react to events in real time.&lt;&#x2F;p&gt;
+&lt;p&gt;Overall, event sourcing is a powerful approach to software development that provides a complete audit trail of all changes to the system, enables advanced features, and allows for easy recovery from system failures.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Event-driven_architecture&quot;&gt;event sourcing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;martinfowler.com&#x2F;eaaDev&#x2F;EventSourcing.html&quot;&gt;martinfowler.com&#x2F;eaaDev&#x2F;EventSourcing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;acknowledgment&quot;&gt;Acknowledgment&lt;&#x2F;h2&gt;
+&lt;p&gt;Definitions made using &lt;a href=&quot;https:&#x2F;&#x2F;chat.openai.com&#x2F;chat&quot;&gt;chat.openai.com&#x2F;chat&lt;&#x2F;a&gt; with the following prompts:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Summarize Event Sourcing&lt;&#x2F;p&gt;
+&lt;p&gt;more concise&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Rust smart pointers</title>
         <published>2023-04-03T00:00:00+00:00</published>

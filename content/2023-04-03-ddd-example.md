@@ -19,7 +19,7 @@ Let's create an API controlling a `Plane`. We want to be able to:
 - change its position
 - track all past positions for the current or previous journey
 
-For such simple needs, a `CRUD API` would suffice but for the sake of learning we will use [DDD](https://en.wikipedia.org/wiki/Domain-driven_design), [event-sourcing](https://en.wikipedia.org/wiki/Event-driven_architecture) & [CQRS](https://en.wikipedia.org/wiki/Command%E2%80%93query_separation#Command_Query_Responsibility_Segregation).
+For such simple needs, a [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) API would suffice but for the sake of learning we will use [domain driven design](https://cluzeau.pro/ddd), [event-sourcing](https://cluzeau.pro/event-sourcing/) and [cqrs](https://cluzeau.pro/cqrs/).
 
 ## Event storming
 
@@ -630,13 +630,3 @@ Prepare for usual landing!
 Journey
 {"registration_id":"test-plane-27355","status":"OnGround","positions":[{"latitude":10.0,"longitude":20.0,"altitude":10},{"latitude":11.0,"longitude":21.0,"altitude":20}]}
 ```
-
-## Links
-
-- [wikipedia.org/domain driven design](https://en.wikipedia.org/wiki/Domain-driven_design)
-- [martinfowler.com/tags/domain driven design](https://martinfowler.com/tags/domain%20driven%20design.html)
-- [event sourcing](https://en.wikipedia.org/wiki/Event-driven_architecture)
-- [command query responsibility segregation](https://en.wikipedia.org/wiki/Command%E2%80%93query_separation#Command_Query_Responsibility_Segregation)
-- books
-  - [Implementing DDD](https://kalele.io/books/)
-  - [DDD Distilled](https://kalele.io/books/)

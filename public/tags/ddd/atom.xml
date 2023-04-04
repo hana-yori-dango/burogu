@@ -4,8 +4,49 @@
     <link href="https://cluzeau.pro/tags/ddd/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://cluzeau.pro"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2023-04-03T00:00:00+00:00</updated>
+    <updated>2023-04-04T00:00:00+00:00</updated>
     <id>https://cluzeau.pro/tags/ddd/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Domain Driven Design</title>
+        <published>2023-04-04T00:00:00+00:00</published>
+        <updated>2023-04-04T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://cluzeau.pro/ddd/" type="text/html"/>
+        <id>https://cluzeau.pro/ddd/</id>
+        
+        <content type="html">&lt;h2 id=&quot;concise-definition&quot;&gt;Concise definition&lt;&#x2F;h2&gt;
+&lt;p&gt;Domain Driven Design (DDD) is an approach to software development that emphasizes understanding and modeling the domain of the problem being solved. It involves collaboration between domain experts, software developers, and stakeholders to build software systems that accurately reflect the needs of the business. DDD uses a common language and shared understanding of the domain to facilitate communication, and design patterns and architectural principles to create a maintainable software system.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;longer-definition&quot;&gt;Longer definition&lt;&#x2F;h2&gt;
+&lt;p&gt;Domain Driven Design (DDD) is an approach to software development that focuses on understanding and modeling the domain of the problem being solved. It involves breaking down complex business problems into smaller, more manageable components and then building software systems that reflect the structure and behavior of those components.&lt;&#x2F;p&gt;
+&lt;p&gt;DDD emphasizes the importance of collaboration between domain experts, software developers, and other stakeholders to ensure that the resulting software system accurately reflects the needs of the business. It also advocates for the use of a common language and shared understanding of the domain to facilitate communication and reduce misunderstandings.&lt;&#x2F;p&gt;
+&lt;p&gt;In DDD, the domain is modeled using a set of concepts, entities, and relationships that reflect the real-world domain being modeled. These models are expressed using a ubiquitous language that is shared by all stakeholders and is used to drive the development of the software system.&lt;&#x2F;p&gt;
+&lt;p&gt;DDD also places a strong emphasis on the use of design patterns and architectural principles to create a well-structured and maintainable software system. It advocates for the use of domain-driven design patterns such as aggregates, repositories, and factories to create software systems that are flexible, scalable, and maintainable over time.&lt;&#x2F;p&gt;
+&lt;p&gt;Overall, DDD is a powerful approach to software development that can help teams build software systems that accurately reflect the needs of the business and are maintainable over the long term.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;&#x2F;h2&gt;
+&lt;p&gt;DDD is often used alongside &lt;a href=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;event-sourcing&#x2F;&quot;&gt;event-sourcing&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;cqrs&#x2F;&quot;&gt;cqrs&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Domain-driven_design&quot;&gt;wikipedia.org&#x2F;domain driven design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Event_storming&quot;&gt;wikipedia.org&#x2F;event storming&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;martinfowler.com&#x2F;tags&#x2F;domain%20driven%20design.html&quot;&gt;martinfowler.com&#x2F;tags&#x2F;domain driven design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;books
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kalele.io&#x2F;books&#x2F;&quot;&gt;Implementing DDD&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kalele.io&#x2F;books&#x2F;&quot;&gt;DDD Distilled&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;acknowledgment&quot;&gt;Acknowledgment&lt;&#x2F;h2&gt;
+&lt;p&gt;Definitions made using &lt;a href=&quot;https:&#x2F;&#x2F;chat.openai.com&#x2F;chat&quot;&gt;chat.openai.com&#x2F;chat&lt;&#x2F;a&gt; with the following prompts:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Summarize Domain Driven Design&lt;&#x2F;p&gt;
+&lt;p&gt;more concise&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Domain Driven Design example</title>
         <published>2023-04-03T00:00:00+00:00</published>
@@ -25,7 +66,7 @@
 &lt;li&gt;change its position&lt;&#x2F;li&gt;
 &lt;li&gt;track all past positions for the current or previous journey&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;p&gt;For such simple needs, a &lt;code&gt;CRUD API&lt;&#x2F;code&gt; would suffice but for the sake of learning we will use &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Domain-driven_design&quot;&gt;DDD&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Event-driven_architecture&quot;&gt;event-sourcing&lt;&#x2F;a&gt; &amp;amp; &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Command%E2%80%93query_separation#Command_Query_Responsibility_Segregation&quot;&gt;CQRS&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;For such simple needs, a &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Create,_read,_update_and_delete&quot;&gt;CRUD&lt;&#x2F;a&gt; API would suffice but for the sake of learning we will use &lt;a href=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;ddd&quot;&gt;domain driven design&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;event-sourcing&#x2F;&quot;&gt;event-sourcing&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;cqrs&#x2F;&quot;&gt;cqrs&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;event-storming&quot;&gt;Event storming&lt;&#x2F;h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Event storming is a workshop-based method to quickly find out what is happening in the domain of a software program. Compared to other methods it is extremely lightweight and intentionally requires no support by a computer. The result is expressed in sticky notes on a wide wall.&lt;&#x2F;p&gt;
@@ -525,19 +566,6 @@ We create an &lt;code&gt;enum&lt;&#x2F;code&gt; with all possible errors and def
 &lt;&#x2F;span&gt;&lt;span&gt;Journey
 &lt;&#x2F;span&gt;&lt;span&gt;{&amp;quot;registration_id&amp;quot;:&amp;quot;test-plane-27355&amp;quot;,&amp;quot;status&amp;quot;:&amp;quot;OnGround&amp;quot;,&amp;quot;positions&amp;quot;:[{&amp;quot;latitude&amp;quot;:10.0,&amp;quot;longitude&amp;quot;:20.0,&amp;quot;altitude&amp;quot;:10},{&amp;quot;latitude&amp;quot;:11.0,&amp;quot;longitude&amp;quot;:21.0,&amp;quot;altitude&amp;quot;:20}]}
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;links&quot;&gt;Links&lt;&#x2F;h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Domain-driven_design&quot;&gt;wikipedia.org&#x2F;domain driven design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;martinfowler.com&#x2F;tags&#x2F;domain%20driven%20design.html&quot;&gt;martinfowler.com&#x2F;tags&#x2F;domain driven design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Event-driven_architecture&quot;&gt;event sourcing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Command%E2%80%93query_separation#Command_Query_Responsibility_Segregation&quot;&gt;command query responsibility segregation&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;books
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kalele.io&#x2F;books&#x2F;&quot;&gt;Implementing DDD&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kalele.io&#x2F;books&#x2F;&quot;&gt;DDD Distilled&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
 </content>
         
     </entry>

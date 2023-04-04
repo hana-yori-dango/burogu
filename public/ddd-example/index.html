@@ -201,11 +201,6 @@
                     
                 </li>
                 
-                <li>
-                    <a href="https://cluzeau.pro/ddd-example/#links" class="toc-link">Links</a>
-                    
-                </li>
-                
             </ul>
         </nav>
     </div>
@@ -251,7 +246,7 @@
 <li>change its position</li>
 <li>track all past positions for the current or previous journey</li>
 </ul>
-<p>For such simple needs, a <code>CRUD API</code> would suffice but for the sake of learning we will use <a href="https://en.wikipedia.org/wiki/Domain-driven_design">DDD</a>, <a href="https://en.wikipedia.org/wiki/Event-driven_architecture">event-sourcing</a> &amp; <a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation#Command_Query_Responsibility_Segregation">CQRS</a>.</p>
+<p>For such simple needs, a <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> API would suffice but for the sake of learning we will use <a href="https://cluzeau.pro/ddd">domain driven design</a>, <a href="https://cluzeau.pro/event-sourcing/">event-sourcing</a> and <a href="https://cluzeau.pro/cqrs/">cqrs</a>.</p>
 <h2 id="event-storming">Event storming</h2>
 <blockquote>
 <p>Event storming is a workshop-based method to quickly find out what is happening in the domain of a software program. Compared to other methods it is extremely lightweight and intentionally requires no support by a computer. The result is expressed in sticky notes on a wide wall.</p>
@@ -751,19 +746,6 @@ We create an <code>enum</code> with all possible errors and define a message ass
 </span><span>Journey
 </span><span>{&quot;registration_id&quot;:&quot;test-plane-27355&quot;,&quot;status&quot;:&quot;OnGround&quot;,&quot;positions&quot;:[{&quot;latitude&quot;:10.0,&quot;longitude&quot;:20.0,&quot;altitude&quot;:10},{&quot;latitude&quot;:11.0,&quot;longitude&quot;:21.0,&quot;altitude&quot;:20}]}
 </span></code></pre>
-<h2 id="links">Links</h2>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Domain-driven_design">wikipedia.org/domain driven design</a></li>
-<li><a href="https://martinfowler.com/tags/domain%20driven%20design.html">martinfowler.com/tags/domain driven design</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Event-driven_architecture">event sourcing</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation#Command_Query_Responsibility_Segregation">command query responsibility segregation</a></li>
-<li>books
-<ul>
-<li><a href="https://kalele.io/books/">Implementing DDD</a></li>
-<li><a href="https://kalele.io/books/">DDD Distilled</a></li>
-</ul>
-</li>
-</ul>
 
     </div>
 
@@ -787,6 +769,8 @@ We create an <code>enum</code> with all possible errors and define a message ass
              -->
             
                 <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;cluzeau.pro&#x2F;event-sourcing&#x2F;">‹ Event Sourcing</a>
                     
                     
                         <a class="next" href="https:&#x2F;&#x2F;cluzeau.pro&#x2F;rust-pointers&#x2F;">Rust smart pointers ›</a>
