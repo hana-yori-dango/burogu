@@ -28,7 +28,7 @@ Overall, event sourcing is a powerful approach to software development that prov
 
 ## Links
 
-- [event sourcing](https://en.wikipedia.org/wiki/Event-driven_architecture)
+- [wikipedia.org/event sourcing](https://en.wikipedia.org/wiki/Event-driven_architecture)
 - [martinfowler.com/eaaDev/EventSourcing](https://martinfowler.com/eaaDev/EventSourcing.html)
 
 ## Acknowledgment

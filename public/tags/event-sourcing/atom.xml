@@ -27,7 +27,7 @@
 &lt;p&gt;Overall, event sourcing is a powerful approach to software development that provides a complete audit trail of all changes to the system, enables advanced features, and allows for easy recovery from system failures.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;links&quot;&gt;Links&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Event-driven_architecture&quot;&gt;event sourcing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Event-driven_architecture&quot;&gt;wikipedia.org&#x2F;event sourcing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;martinfowler.com&#x2F;eaaDev&#x2F;EventSourcing.html&quot;&gt;martinfowler.com&#x2F;eaaDev&#x2F;EventSourcing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;acknowledgment&quot;&gt;Acknowledgment&lt;&#x2F;h2&gt;
