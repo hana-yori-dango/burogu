@@ -16,30 +16,8 @@
         <link rel="alternate" href="https://cluzeau.pro/my-dev-library/" type="text/html"/>
         <id>https://cluzeau.pro/my-dev-library/</id>
         
-        <content type="html">&lt;p&gt;If some of the topics covered by these books interests you, you probably should look into them. ;)&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;software-engineering&quot;&gt;Software Engineering&lt;&#x2F;h2&gt;
-&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Tags&lt;&#x2F;th&gt;&lt;th&gt;Book&lt;&#x2F;th&gt;&lt;th&gt;Author&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;General&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Code_Complete&quot;&gt;Code Complete&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Mc Connel&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;General&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Robert_C._Martin#Publications&quot;&gt;Clean Agile&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;R. C. Martin&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;General&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Robert_C._Martin#Publications&quot;&gt;Clean Code&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;R. C. Martin&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;General&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Robert_C._Martin#Publications&quot;&gt;Clean Architecture&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;R. C. Martin&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;General&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.crackingthecodinginterview.com&#x2F;&quot;&gt;Cracking the Coding Interview&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;G. L. Mc Dowell&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;DDD&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kalele.io&#x2F;books&#x2F;&quot;&gt;Implementing Domain-Driven Design&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Vaughn Vernon&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;DDD&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kalele.io&#x2F;books&#x2F;&quot;&gt;Domain-Driven Design Distilled&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Vaughn Vernon&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;Rust&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;book&#x2F;&quot;&gt;The Rust Programming Language&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Klabnik and Nichols&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;Rust&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rust-for-rustaceans.com&#x2F;&quot;&gt;Rust for Rustaceans&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Gjengset&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;Golang&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.gopl.io&#x2F;&quot;&gt;The Go Programming Language&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Donovan Kernighan&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;Scala&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.editions-ellipses.fr&#x2F;accueil&#x2F;7023-scala-pas-a-pas-9782340000094.html&quot;&gt;Scala pas à pas&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Gildas Ménier&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;K8s&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nigelpoulton.com&#x2F;books&#x2F;&quot;&gt;The Kubernetes book&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Nigel Poulton&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
-&lt;h2 id=&quot;data-science&quot;&gt;Data Science&lt;&#x2F;h2&gt;
-&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Book&lt;&#x2F;th&gt;&lt;th&gt;Author&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mitpress.mit.edu&#x2F;9780262029445&#x2F;&quot;&gt;Fundamentals of Machine Learning for Predictive Data Analytics&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Kelleher, Mac Namee, D&#x27;Arcy&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.deeplearningbook.org&#x2F;&quot;&gt;Deep Learning&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Goodfellow, Bengio, and Courville&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.incompleteideas.net&#x2F;book&#x2F;the-book.html&quot;&gt;Reinforcement Learning&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Sutton and Barto&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.oreilly.com&#x2F;library&#x2F;view&#x2F;statistics-in-a&#x2F;9781449361129&#x2F;&quot;&gt;Statistics in a Nutshell&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Boslaugh&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
-</content>
+        <summary type="html">&lt;p&gt;The technical books in my library, some are classics that could be helpful to some of you ;).&lt;&#x2F;p&gt;
+</summary>
         
     </entry>
 </feed>

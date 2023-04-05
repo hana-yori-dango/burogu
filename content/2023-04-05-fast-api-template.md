@@ -4,21 +4,20 @@ weight = 1
 order = 1
 date = 2023-04-05
 insert_anchor_links = "right"
+
 [taxonomies]
 tags = ["python", "api", "setup", "tldr"]
 +++
 
-The repository can be found there: [github.com/aurelien-clu/template-python-fast-api](https://github.com/aurelien-clu/template-python-fast-api)
-
-## Target
-
-Implement quickly a Python API with an [hexagonal architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)) with the following already setup:
-
-- [fastapi](https://fastapi.tiangolo.com/)
-- [dependency injection](https://github.com/ets-labs/python-dependency-injector)
-- [pydantic serialization & deserialization](https://docs.pydantic.dev/)
-- [pydantic settings](https://docs.pydantic.dev/usage/settings/)
+Python API template with an [hexagonal architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)) using:
+- [FastAPI](https://fastapi.tiangolo.com/)
+- [Dependency injection](https://github.com/ets-labs/python-dependency-injector)
+- [Pydantic SerDe & Settings](https://docs.pydantic.dev/)
 - [Behavior Driven Development](https://en.wikipedia.org/wiki/Behavior-driven_development) [tests](https://github.com/behave/behave)
+
+<!-- more -->
+
+The repository can be found there: [github.com/aurelien-clu/template-python-fast-api](https://github.com/aurelien-clu/template-python-fast-api)
 
 ## Layout
 

@@ -8,6 +8,10 @@ insert_anchor_links = "right"
 tags = ["books", "dev", "tldr"]
 +++
 
+The technical books in my library, some are classics that could be helpful to some of you ;).
+
+<!-- more -->
+
 If some of the topics covered by these books interests you, you probably should look into them. ;)
 
 ## Software Engineering

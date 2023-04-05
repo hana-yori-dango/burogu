@@ -10,6 +10,8 @@ tags = ["python", "setup", "tldr"]
 
 Here are my go-to tools & libraries for `Python`.
 
+<!-- more -->
+
 ## For all projects
 
 - [pyenv](https://github.com/pyenv/pyenv) - Simple Python Version Management

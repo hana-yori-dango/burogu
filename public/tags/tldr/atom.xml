@@ -16,82 +16,14 @@
         <link rel="alternate" href="https://cluzeau.pro/fast-api-template/" type="text/html"/>
         <id>https://cluzeau.pro/fast-api-template/</id>
         
-        <content type="html">&lt;p&gt;The repository can be found there: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu&#x2F;template-python-fast-api&quot;&gt;github.com&#x2F;aurelien-clu&#x2F;template-python-fast-api&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;target&quot;&gt;Target&lt;&#x2F;h2&gt;
-&lt;p&gt;Implement quickly a Python API with an &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Hexagonal_architecture_(software)&quot;&gt;hexagonal architecture&lt;&#x2F;a&gt; with the following already setup:&lt;&#x2F;p&gt;
+        <summary type="html">&lt;p&gt;Python API template with an &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Hexagonal_architecture_(software)&quot;&gt;hexagonal architecture&lt;&#x2F;a&gt; using:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;fastapi.tiangolo.com&#x2F;&quot;&gt;fastapi&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ets-labs&#x2F;python-dependency-injector&quot;&gt;dependency injection&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.pydantic.dev&#x2F;&quot;&gt;pydantic serialization &amp;amp; deserialization&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.pydantic.dev&#x2F;usage&#x2F;settings&#x2F;&quot;&gt;pydantic settings&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;fastapi.tiangolo.com&#x2F;&quot;&gt;FastAPI&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ets-labs&#x2F;python-dependency-injector&quot;&gt;Dependency injection&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.pydantic.dev&#x2F;&quot;&gt;Pydantic SerDe &amp;amp; Settings&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Behavior-driven_development&quot;&gt;Behavior Driven Development&lt;&#x2F;a&gt; &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;behave&#x2F;behave&quot;&gt;tests&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;layout&quot;&gt;Layout&lt;&#x2F;h2&gt;
-&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;.
-&lt;&#x2F;span&gt;&lt;span&gt;├── Makefile
-&lt;&#x2F;span&gt;&lt;span&gt;├── pyproject.toml
-&lt;&#x2F;span&gt;&lt;span&gt;├── src
-&lt;&#x2F;span&gt;&lt;span&gt;│   ├── api                 &amp;lt;= API routes
-&lt;&#x2F;span&gt;&lt;span&gt;│   │   └── health.py
-&lt;&#x2F;span&gt;&lt;span&gt;│   │
-&lt;&#x2F;span&gt;&lt;span&gt;│   ├── config              &amp;lt;= defaults + values from environment
-&lt;&#x2F;span&gt;&lt;span&gt;│   │   └── server.py
-&lt;&#x2F;span&gt;&lt;span&gt;│   │
-&lt;&#x2F;span&gt;&lt;span&gt;│   ├── infra&#x2F;              &amp;lt;= repositories, caches, etc.
-&lt;&#x2F;span&gt;&lt;span&gt;│   │
-&lt;&#x2F;span&gt;&lt;span&gt;│   ├── svc                 &amp;lt;= logic exposed by API routes
-&lt;&#x2F;span&gt;&lt;span&gt;│   │  └── health.py
-&lt;&#x2F;span&gt;&lt;span&gt;│   │
-&lt;&#x2F;span&gt;&lt;span&gt;│   ├── app.py
-&lt;&#x2F;span&gt;&lt;span&gt;│   ├── container.py        &amp;lt;= &amp;quot;registry&amp;quot; of dependencies to inject
-&lt;&#x2F;span&gt;&lt;span&gt;│   ├── errors.py
-&lt;&#x2F;span&gt;&lt;span&gt;│   └── main.py
-&lt;&#x2F;span&gt;&lt;span&gt;│
-&lt;&#x2F;span&gt;&lt;span&gt;└── tests
-&lt;&#x2F;span&gt;&lt;span&gt;    └── bdd
-&lt;&#x2F;span&gt;&lt;span&gt;        ├── health.feature  &amp;lt;= Gherkin tests
-&lt;&#x2F;span&gt;&lt;span&gt;        └── steps&#x2F;          &amp;lt;= Gherkin steps implementations
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;how-to-reuse&quot;&gt;How to reuse&lt;&#x2F;h2&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;git&lt;&#x2F;span&gt;&lt;span&gt; clone https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu&#x2F;template-python-fast-api &amp;lt;your-project&amp;gt;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;efficient-test-writing&quot;&gt;Efficient test writing&lt;&#x2F;h2&gt;
-&lt;p&gt;Using &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Behavior-driven_development&quot;&gt;Behavior Driven Development&lt;&#x2F;a&gt;, it is easy to reuse parts of tests, alike querying an API endpoint, validating the response, etc.&lt;&#x2F;p&gt;
-&lt;p&gt;Once a set of steps has been written (python code below) you are able to write many tests quickly using &lt;a href=&quot;https:&#x2F;&#x2F;cucumber.io&#x2F;docs&#x2F;gherkin&#x2F;reference&#x2F;&quot;&gt;Gherkin&lt;&#x2F;a&gt; language which ressemble natural language with the formalism of &lt;code&gt;Given&lt;&#x2F;code&gt;, &lt;code&gt;When&lt;&#x2F;code&gt;, &lt;code&gt;Then&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;ini&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-ini &quot;&gt;&lt;code class=&quot;language-ini&quot; data-lang=&quot;ini&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; Gherkin test definition
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;Feature&lt;&#x2F;span&gt;&lt;span&gt;: Health
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;Background&lt;&#x2F;span&gt;&lt;span&gt;:
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;Given &lt;&#x2F;span&gt;&lt;span&gt;an API client
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;Scenario&lt;&#x2F;span&gt;&lt;span&gt;: Health check: GET
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;Given &lt;&#x2F;span&gt;&lt;span&gt;path: &#x2F;
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;When &lt;&#x2F;span&gt;&lt;span&gt;getting
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;Then &lt;&#x2F;span&gt;&lt;span&gt;response code is &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;200
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;And &lt;&#x2F;span&gt;&lt;span&gt;json response is &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;ok&amp;quot;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu&#x2F;template-python-fast-api&#x2F;blob&#x2F;main&#x2F;tests&#x2F;bdd&#x2F;health.feature&quot;&gt;github.com&#x2F;aurelien-clu&#x2F;template-python-fast-api&#x2F;tests&#x2F;bdd&#x2F;health.feature&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;python&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-python &quot;&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# reusable steps across tests (repository hold few more)
-&lt;&#x2F;span&gt;&lt;span&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;step&lt;&#x2F;span&gt;&lt;span&gt;(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;path: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;{path}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;)
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;step_impl&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;context&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;path&lt;&#x2F;span&gt;&lt;span&gt;: str):
-&lt;&#x2F;span&gt;&lt;span&gt;    context.request_path = path
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;step&lt;&#x2F;span&gt;&lt;span&gt;(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;getting&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;)
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;step_impl&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;context&lt;&#x2F;span&gt;&lt;span&gt;):
-&lt;&#x2F;span&gt;&lt;span&gt;    path = context.request_path
-&lt;&#x2F;span&gt;&lt;span&gt;    headers = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;getattr&lt;&#x2F;span&gt;&lt;span&gt;(context, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;request_headers&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;None&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;    context.response = context.client.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;get&lt;&#x2F;span&gt;&lt;span&gt;(path, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;headers&lt;&#x2F;span&gt;&lt;span&gt;=headers)
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;step&lt;&#x2F;span&gt;&lt;span&gt;(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;response code is &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;{code}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;)
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;step_impl&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;context&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;code&lt;&#x2F;span&gt;&lt;span&gt;: str):
-&lt;&#x2F;span&gt;&lt;span&gt;    check = context.response.status_code == &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt;(code)
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;assert &lt;&#x2F;span&gt;&lt;span&gt;check
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;step&lt;&#x2F;span&gt;&lt;span&gt;(&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;json response is &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;{text}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;)
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;step_impl&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;context&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;text&lt;&#x2F;span&gt;&lt;span&gt;: str):
-&lt;&#x2F;span&gt;&lt;span&gt;    check = context.response.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;json&lt;&#x2F;span&gt;&lt;span&gt;() == text
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;assert &lt;&#x2F;span&gt;&lt;span&gt;check
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu&#x2F;template-python-fast-api&#x2F;tree&#x2F;main&#x2F;tests&#x2F;bdd&#x2F;steps&quot;&gt;github.com&#x2F;aurelien-clu&#x2F;template-python-fast-api&#x2F;tests&#x2F;bdd&#x2F;steps&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-</content>
+</summary>
         
     </entry>
     <entry xml:lang="en">
@@ -104,27 +36,8 @@
         <link rel="alternate" href="https://cluzeau.pro/cqrs/" type="text/html"/>
         <id>https://cluzeau.pro/cqrs/</id>
         
-        <content type="html">&lt;h2 id=&quot;concise-definition&quot;&gt;Concise definition&lt;&#x2F;h2&gt;
-&lt;p&gt;CQRS is an architectural pattern that separates read and write operations into separate models. By optimizing each model for its specific responsibilities, it can improve the performance and scalability of complex systems.&lt;&#x2F;p&gt;
-&lt;img src=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;cqrs.svg&quot; alt= &quot;CQRS&quot; width=&quot;50%&quot; height=&quot;50%&quot;&#x2F;&gt;
-&lt;p&gt;&lt;em&gt;Reads (queries) and writes (commands) are separated&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;longer-definition&quot;&gt;Longer definition&lt;&#x2F;h2&gt;
-&lt;p&gt;Command Query Responsibility Segregation (CQRS) is an architectural pattern that separates the responsibility of handling read and write operations into separate models. In CQRS, the read model is responsible for handling queries and returning data, while the write model is responsible for handling commands that change the state of the system.&lt;&#x2F;p&gt;
-&lt;p&gt;CQRS is often used in complex systems where read and write operations have different performance and scalability requirements. By separating the read and write models, it is possible to optimize each model for its specific responsibilities, resulting in improved performance and scalability.&lt;&#x2F;p&gt;
-&lt;p&gt;CQRS can also enable the use of different storage mechanisms for the read and write models, allowing for greater flexibility and scalability in the overall system architecture.&lt;&#x2F;p&gt;
-&lt;p&gt;Overall, CQRS is a powerful architectural pattern that can improve the performance and scalability of complex systems by separating the responsibilities of read and write operations.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;links&quot;&gt;Links&lt;&#x2F;h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Command%E2%80%93query_separation#Command_Query_Responsibility_Segregation&quot;&gt;wikipedia.org&#x2F;CQRS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;martinfowler.com&#x2F;bliki&#x2F;CQRS.html&quot;&gt;martinfowler.com&#x2F;CQRS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;acknowledgment&quot;&gt;Acknowledgment&lt;&#x2F;h2&gt;
-&lt;p&gt;Definitions made using &lt;a href=&quot;https:&#x2F;&#x2F;chat.openai.com&#x2F;chat&quot;&gt;chat.openai.com&#x2F;chat&lt;&#x2F;a&gt; with the following prompts:&lt;&#x2F;p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Summarize Command Query Responsibility Segregation&lt;&#x2F;p&gt;
-&lt;p&gt;more concise&lt;&#x2F;p&gt;
-&lt;&#x2F;blockquote&gt;
-</content>
+        <summary type="html">&lt;p&gt;CQRS is an architectural pattern that separates read and write operations into separate models. By optimizing each model for its specific responsibilities, it can improve the performance and scalability of complex systems.&lt;&#x2F;p&gt;
+</summary>
         
     </entry>
     <entry xml:lang="en">
@@ -137,35 +50,8 @@
         <link rel="alternate" href="https://cluzeau.pro/ddd/" type="text/html"/>
         <id>https://cluzeau.pro/ddd/</id>
         
-        <content type="html">&lt;h2 id=&quot;concise-definition&quot;&gt;Concise definition&lt;&#x2F;h2&gt;
-&lt;p&gt;Domain Driven Design (DDD) is an approach to software development that emphasizes understanding and modeling the domain of the problem being solved. It involves collaboration between domain experts, software developers, and stakeholders to build software systems that accurately reflect the needs of the business. DDD uses a common language and shared understanding of the domain to facilitate communication, and design patterns and architectural principles to create a maintainable software system.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;longer-definition&quot;&gt;Longer definition&lt;&#x2F;h2&gt;
-&lt;p&gt;Domain Driven Design (DDD) is an approach to software development that focuses on understanding and modeling the domain of the problem being solved. It involves breaking down complex business problems into smaller, more manageable components and then building software systems that reflect the structure and behavior of those components.&lt;&#x2F;p&gt;
-&lt;p&gt;DDD emphasizes the importance of collaboration between domain experts, software developers, and other stakeholders to ensure that the resulting software system accurately reflects the needs of the business. It also advocates for the use of a common language and shared understanding of the domain to facilitate communication and reduce misunderstandings.&lt;&#x2F;p&gt;
-&lt;p&gt;In DDD, the domain is modeled using a set of concepts, entities, and relationships that reflect the real-world domain being modeled. These models are expressed using a ubiquitous language that is shared by all stakeholders and is used to drive the development of the software system.&lt;&#x2F;p&gt;
-&lt;p&gt;DDD also places a strong emphasis on the use of design patterns and architectural principles to create a well-structured and maintainable software system. It advocates for the use of domain-driven design patterns such as aggregates, repositories, and factories to create software systems that are flexible, scalable, and maintainable over time.&lt;&#x2F;p&gt;
-&lt;p&gt;Overall, DDD is a powerful approach to software development that can help teams build software systems that accurately reflect the needs of the business and are maintainable over the long term.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;&#x2F;h2&gt;
-&lt;p&gt;DDD is often used alongside &lt;a href=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;event-sourcing&#x2F;&quot;&gt;event-sourcing&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;cqrs&#x2F;&quot;&gt;cqrs&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;links&quot;&gt;Links&lt;&#x2F;h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Domain-driven_design&quot;&gt;wikipedia.org&#x2F;domain driven design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Event_storming&quot;&gt;wikipedia.org&#x2F;event storming&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;martinfowler.com&#x2F;tags&#x2F;domain%20driven%20design.html&quot;&gt;martinfowler.com&#x2F;tags&#x2F;domain driven design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;books
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kalele.io&#x2F;books&#x2F;&quot;&gt;Implementing DDD&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kalele.io&#x2F;books&#x2F;&quot;&gt;DDD Distilled&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;acknowledgment&quot;&gt;Acknowledgment&lt;&#x2F;h2&gt;
-&lt;p&gt;Definitions made using &lt;a href=&quot;https:&#x2F;&#x2F;chat.openai.com&#x2F;chat&quot;&gt;chat.openai.com&#x2F;chat&lt;&#x2F;a&gt; with the following prompts:&lt;&#x2F;p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Summarize Domain Driven Design&lt;&#x2F;p&gt;
-&lt;p&gt;more concise&lt;&#x2F;p&gt;
-&lt;&#x2F;blockquote&gt;
-</content>
+        <summary type="html">&lt;p&gt;Domain Driven Design (DDD) is an approach to software development that emphasizes understanding and modeling the domain of the problem being solved. It involves collaboration between domain experts, software developers, and stakeholders to build software systems that accurately reflect the needs of the business. &lt;&#x2F;p&gt;
+</summary>
         
     </entry>
     <entry xml:lang="en">
@@ -178,27 +64,8 @@
         <link rel="alternate" href="https://cluzeau.pro/event-sourcing/" type="text/html"/>
         <id>https://cluzeau.pro/event-sourcing/</id>
         
-        <content type="html">&lt;h2 id=&quot;concise-definition&quot;&gt;Concise definition&lt;&#x2F;h2&gt;
-&lt;p&gt;Event sourcing is an approach to software development where every action that changes the state of a system is captured as an immutable event and stored in an event log. By replaying these events, the system&#x27;s state can be reconstructed at any point in time, providing a complete audit trail of all changes and enabling advanced features.&lt;&#x2F;p&gt;
-&lt;img src=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;event-sourcing-example-e-commerce.jpg&quot; alt= &quot;example of e-commerce events&quot; width=&quot;75%&quot; height=&quot;75%&quot;&#x2F;&gt;
-&lt;p&gt;&lt;em&gt;Example of a series of events for an e-commerce application&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;longer-definition&quot;&gt;Longer definition&lt;&#x2F;h2&gt;
-&lt;p&gt;Event sourcing is an approach to software development where the state of a system is determined by a sequence of events. In event sourcing, every action that changes the state of the system is captured as an event and stored in an event log. These events are immutable, meaning that they cannot be changed once they have been recorded.&lt;&#x2F;p&gt;
-&lt;p&gt;By replaying the events in the event log, it is possible to reconstruct the state of the system at any point in time. This approach allows for a complete audit trail of all changes to the system, as well as the ability to rebuild the state of the system if it becomes corrupted or lost.&lt;&#x2F;p&gt;
-&lt;p&gt;Event sourcing can also be used to enable a number of advanced features, such as temporal queries that allow users to query the state of the system at a specific point in time, and event-driven architectures where different parts of the system can react to events in real time.&lt;&#x2F;p&gt;
-&lt;p&gt;Overall, event sourcing is a powerful approach to software development that provides a complete audit trail of all changes to the system, enables advanced features, and allows for easy recovery from system failures.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;links&quot;&gt;Links&lt;&#x2F;h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Event-driven_architecture&quot;&gt;wikipedia.org&#x2F;event sourcing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;martinfowler.com&#x2F;eaaDev&#x2F;EventSourcing.html&quot;&gt;martinfowler.com&#x2F;eaaDev&#x2F;EventSourcing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;acknowledgment&quot;&gt;Acknowledgment&lt;&#x2F;h2&gt;
-&lt;p&gt;Definitions made using &lt;a href=&quot;https:&#x2F;&#x2F;chat.openai.com&#x2F;chat&quot;&gt;chat.openai.com&#x2F;chat&lt;&#x2F;a&gt; with the following prompts:&lt;&#x2F;p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Summarize Event Sourcing&lt;&#x2F;p&gt;
-&lt;p&gt;more concise&lt;&#x2F;p&gt;
-&lt;&#x2F;blockquote&gt;
-</content>
+        <summary type="html">&lt;p&gt;Event sourcing is an approach to software development where every action that changes the state of a system is captured as an immutable event and stored in an event log. By replaying these events, the system&#x27;s state can be reconstructed at any point in time, providing a complete audit trail of all changes and enabling advanced features.&lt;&#x2F;p&gt;
+</summary>
         
     </entry>
     <entry xml:lang="en">
@@ -211,149 +78,8 @@
         <link rel="alternate" href="https://cluzeau.pro/rust-pointers/" type="text/html"/>
         <id>https://cluzeau.pro/rust-pointers/</id>
         
-        <content type="html">&lt;h2 id=&quot;common-rust-smart-pointers&quot;&gt;Common Rust smart pointers&lt;&#x2F;h2&gt;
-&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;name&lt;&#x2F;th&gt;&lt;th&gt;thread-safe&lt;&#x2F;th&gt;&lt;th&gt;description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;book&#x2F;ch15-01-box.html&quot;&gt;Box&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;❌&lt;&#x2F;td&gt;&lt;td&gt;Boxes allow you to store data on the heap rather than the stack. Useful for unknown size at compile time (e.g. recursive objects, lists, dynamic types), prevents data copy.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;book&#x2F;ch15-04-rc.html&quot;&gt;Rc&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;❌&lt;&#x2F;td&gt;&lt;td&gt;Reference Counted: enable multiple ownership to the same value.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;book&#x2F;ch15-05-interior-mutability.html&quot;&gt;RefCell&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;❌&lt;&#x2F;td&gt;&lt;td&gt;Allows to mutate data even if there are immutable references to that data. Borrowing rules are enforced at runtime.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;std&#x2F;borrow&#x2F;enum.Cow.html&quot;&gt;Cow&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;❌&lt;&#x2F;td&gt;&lt;td&gt;Clone on write. Provides immutable access to borrowed data, and clone the data lazily when mutation or ownership is required.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;std&#x2F;sync&#x2F;struct.Arc.html&quot;&gt;Arc&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;✅&lt;&#x2F;td&gt;&lt;td&gt;Atomically Reference Counted. Provides read shared ownership of data allocated in the heap. (~thread safe Box + Rc)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;std&#x2F;sync&#x2F;struct.Mutex.html&quot;&gt;Mutex&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;✅&lt;&#x2F;td&gt;&lt;td&gt;Mutual exclusion to shared data. The data is only ever accessed when the mutex is locked and it blocks other thread attempting to access it. Beware of &lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;std&#x2F;sync&#x2F;struct.Mutex.html#poisoning&quot;&gt;poisoning&lt;&#x2F;a&gt; that occurs if a thread holding the mutex panics.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;std&#x2F;sync&#x2F;struct.RwLock.html&quot;&gt;RwLock&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;✅&lt;&#x2F;td&gt;&lt;td&gt;Reader-Writer lock. Allows at most 1 writer or any number of readers. Beware of &lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;std&#x2F;sync&#x2F;struct.RwLock.html#poisoning&quot;&gt;poisoning&lt;&#x2F;a&gt; that occurs if a writer holding the mutex panics.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
-&lt;p&gt;Examples: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu&#x2F;tutorial-rust&#x2F;blob&#x2F;main&#x2F;crates&#x2F;smart-pointers&#x2F;src&#x2F;main.rs&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu&#x2F;tutorial-rust&#x2F;blob&#x2F;main&#x2F;crates&#x2F;smart-pointers&#x2F;src&#x2F;main.rs&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;box&quot;&gt;Box&lt;&#x2F;h2&gt;
-&lt;pre data-lang=&quot;rust&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; ❌ does not compile
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; error[E0072]: recursive type Node has infinite size
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;struct &lt;&#x2F;span&gt;&lt;span&gt;Node {
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;child&lt;&#x2F;span&gt;&lt;span&gt;: Option&amp;lt;Node&amp;gt;,
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;value&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;usize&lt;&#x2F;span&gt;&lt;span&gt;,
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; node = Node { value: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;, child: Some(Node{value: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;, child: None}) };
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; ✅ compiles
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;struct &lt;&#x2F;span&gt;&lt;span&gt;Node {
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;child&lt;&#x2F;span&gt;&lt;span&gt;: Option&amp;lt;Box&amp;lt;Node&amp;gt;&amp;gt;,
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;value&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;usize&lt;&#x2F;span&gt;&lt;span&gt;,
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; node = Node {
-&lt;&#x2F;span&gt;&lt;span&gt;    value: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;,
-&lt;&#x2F;span&gt;&lt;span&gt;    child: Some(Box::new(Node {
-&lt;&#x2F;span&gt;&lt;span&gt;        value: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;,
-&lt;&#x2F;span&gt;&lt;span&gt;        child: None,
-&lt;&#x2F;span&gt;&lt;span&gt;    })),
-&lt;&#x2F;span&gt;&lt;span&gt;};
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Values stored on the stack are required to have their size known at compile time.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;code&gt;Option&amp;lt;Node&amp;gt;&lt;&#x2F;code&gt; size is not known whereas &lt;code&gt;Option&amp;lt;Box&amp;lt;Node&amp;gt;&amp;gt;&lt;&#x2F;code&gt; is known, because &lt;code&gt;Box&lt;&#x2F;code&gt; holds a reference and its size is known.&lt;&#x2F;p&gt;
-&lt;p&gt;The same goes with:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;rust&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;trait &lt;&#x2F;span&gt;&lt;span&gt;Foo {
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; [...]
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; ❌ does not compile
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; error[E0277]: the size for values of type `(dyn Foo + &amp;#39;static)` cannot be known at compilation time
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;struct &lt;&#x2F;span&gt;&lt;span&gt;Bar {
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;foo&lt;&#x2F;span&gt;&lt;span&gt;: dyn Foo,
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; ✅ compiles
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;struct &lt;&#x2F;span&gt;&lt;span&gt;Bar {
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;foo&lt;&#x2F;span&gt;&lt;span&gt;: Box&amp;lt;dyn Foo&amp;gt;,
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;rc-reference-counted&quot;&gt;Rc - Reference Counted&lt;&#x2F;h2&gt;
-&lt;p&gt;Let&#x27;s have multiple ownership over the same value &lt;code&gt;a&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;rust&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;struct &lt;&#x2F;span&gt;&lt;span&gt;Foo {
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;value&lt;&#x2F;span&gt;&lt;span&gt;: String,
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; a = Rc::new(Foo { value: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;a&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;to_string&lt;&#x2F;span&gt;&lt;span&gt;() });
-&lt;&#x2F;span&gt;&lt;span&gt;println!(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;count after creating a = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;{}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;, Rc::strong_count(&amp;amp;a)); &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; 1
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; adding a first reference
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; b = Rc::clone(&amp;amp;a);
-&lt;&#x2F;span&gt;&lt;span&gt;println!(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;count after creating b = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;{}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;, Rc::strong_count(&amp;amp;a)); &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; 2
-&lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; adding a second reference inside the scope {}
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; c = Rc::clone(&amp;amp;a);
-&lt;&#x2F;span&gt;&lt;span&gt;    println!(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;count after creating c = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;{}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;, Rc::strong_count(&amp;amp;a)); &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; 3
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; second reference goes out of scope
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;span&gt;println!(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;count after c goes out of scope = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;{}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;, Rc::strong_count(&amp;amp;a)); &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; 2
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;refcell&quot;&gt;Refcell&lt;&#x2F;h2&gt;
-&lt;p&gt;⚠️ Borrowing rules are enforced at runtime =&amp;gt; we are able to compile unsound code.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;rust&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; ❌ compiles but... but fails at runtime
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; x: RefCell&amp;lt;Vec&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;usize&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&amp;gt; = RefCell::new(vec![]);
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; mut_borrow_1 = x.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;borrow_mut&lt;&#x2F;span&gt;&lt;span&gt;();
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; mut_borrow_2 = x.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;borrow_mut&lt;&#x2F;span&gt;&lt;span&gt;();
-&lt;&#x2F;span&gt;&lt;span&gt;mut_borrow_1.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;push&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;);
-&lt;&#x2F;span&gt;&lt;span&gt;mut_borrow_2.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;push&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;);
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;pre data-lang=&quot;rust&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; ✅ compiles and works at runtime
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; x: RefCell&amp;lt;Vec&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;usize&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&amp;gt; = RefCell::new(vec![]);
-&lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; mut_borrow_1 = x.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;borrow_mut&lt;&#x2F;span&gt;&lt;span&gt;();
-&lt;&#x2F;span&gt;&lt;span&gt;    mut_borrow_1.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;push&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;);
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; dropping mut_borrow_1 =&amp;gt; we can mutably borrow x again
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; mut_borrow_2 = x.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;borrow_mut&lt;&#x2F;span&gt;&lt;span&gt;();
-&lt;&#x2F;span&gt;&lt;span&gt;mut_borrow_2.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;push&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;);
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;arc-atomically-reference-counted&quot;&gt;Arc - Atomically Reference Counted&lt;&#x2F;h2&gt;
-&lt;pre data-lang=&quot;rust&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; ❌ does not compile
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; error[E0382]: use of moved value: `x`
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; =&amp;gt; x cannot be shared across threads
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; x = Foo{_value: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;};
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span&gt;_ in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;..&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;3 &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;    thread::spawn(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;move &lt;&#x2F;span&gt;&lt;span&gt;|| {
-&lt;&#x2F;span&gt;&lt;span&gt;        println!(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;{x:?}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;);
-&lt;&#x2F;span&gt;&lt;span&gt;    });
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; ✅ compiles
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; x = Arc::new(Foo { _value: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;5 &lt;&#x2F;span&gt;&lt;span&gt;});
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;for&lt;&#x2F;span&gt;&lt;span&gt; i in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;..&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;3 &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; x = Arc::clone(&amp;amp;x);
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;    thread::spawn(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;move &lt;&#x2F;span&gt;&lt;span&gt;|| {
-&lt;&#x2F;span&gt;&lt;span&gt;        println!(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;thread &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;{i}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;{x:?}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;);
-&lt;&#x2F;span&gt;&lt;span&gt;    });
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;cow-copy-on-write&quot;&gt;Cow - Copy on write&lt;&#x2F;h2&gt;
-&lt;p&gt;Let&#x27;s see when a copy on write occurs with the following examples:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;rust&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;fn &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;abs_all&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;input&lt;&#x2F;span&gt;&lt;span&gt;: &amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;mut &lt;&#x2F;span&gt;&lt;span&gt;Cow&amp;lt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;i32&lt;&#x2F;span&gt;&lt;span&gt;]&amp;gt;) {
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;for&lt;&#x2F;span&gt;&lt;span&gt; i in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;..input.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;len&lt;&#x2F;span&gt;&lt;span&gt;() {
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; v = input[i];
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span&gt; v &amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; Clones into a vector if not already owned.
-&lt;&#x2F;span&gt;&lt;span&gt;            input.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;to_mut&lt;&#x2F;span&gt;&lt;span&gt;()[i] = -v;
-&lt;&#x2F;span&gt;&lt;span&gt;        }
-&lt;&#x2F;span&gt;&lt;span&gt;    }
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; No clone occurs because `input` doesn&amp;#39;t need to be mutated.
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; input = [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;];
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; input_as_cow = Cow::from(&amp;amp;input[..]);
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;abs_all&lt;&#x2F;span&gt;&lt;span&gt;(&amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;mut&lt;&#x2F;span&gt;&lt;span&gt; input_as_cow);
-&lt;&#x2F;span&gt;&lt;span&gt;assert_eq!(input.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;as_ptr&lt;&#x2F;span&gt;&lt;span&gt;(), input_as_cow.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;as_ptr&lt;&#x2F;span&gt;&lt;span&gt;()); &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; clone did not occur
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; 📋 Clone occurs because `input` needs to be mutated.
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; slice = [-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;];
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; input = Cow::from(&amp;amp;slice[..]);
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;abs_all&lt;&#x2F;span&gt;&lt;span&gt;(&amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;mut&lt;&#x2F;span&gt;&lt;span&gt; input);
-&lt;&#x2F;span&gt;&lt;span&gt;assert_ne!(input.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;as_ptr&lt;&#x2F;span&gt;&lt;span&gt;(), input_as_cow.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;as_ptr&lt;&#x2F;span&gt;&lt;span&gt;()); &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; clone occurred
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; No clone occurs because `input` is already owned
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; input = Cow::from(vec![-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;]);
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; initial_address = format!(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;{:p}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;, input.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;as_ptr&lt;&#x2F;span&gt;&lt;span&gt;());
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;abs_all&lt;&#x2F;span&gt;&lt;span&gt;(&amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;mut&lt;&#x2F;span&gt;&lt;span&gt; input);
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; address_afterward = format!(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;{:p}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;, input.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;as_ptr&lt;&#x2F;span&gt;&lt;span&gt;());
-&lt;&#x2F;span&gt;&lt;span&gt;assert_eq!(initial_address, address_afterward); &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; clone did not occur
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-</content>
+        <summary type="html">&lt;p&gt;Quick overview of Rust smart pointers &lt;code&gt;Box&lt;&#x2F;code&gt;, &lt;code&gt;Rc&lt;&#x2F;code&gt;, &lt;code&gt;RefCell&lt;&#x2F;code&gt;, &lt;code&gt;Cow&lt;&#x2F;code&gt;, &lt;code&gt;Arc&lt;&#x2F;code&gt;, &lt;code&gt;Mutex&lt;&#x2F;code&gt; &amp;amp; &lt;code&gt;RwLock&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+</summary>
         
     </entry>
     <entry xml:lang="en">
@@ -366,140 +92,9 @@
         <link rel="alternate" href="https://cluzeau.pro/rust-template/" type="text/html"/>
         <id>https://cluzeau.pro/rust-template/</id>
         
-        <content type="html">&lt;p&gt;The repository can be found there: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu&#x2F;template-rust&quot;&gt;github.com&#x2F;aurelien-clu&#x2F;template-rust&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;target&quot;&gt;Target&lt;&#x2F;h2&gt;
-&lt;ul&gt;
-&lt;li&gt;have a rust project in which we can have multiple libraries &amp;amp; multiple binaries&lt;&#x2F;li&gt;
-&lt;li&gt;logging should be setup for each crate (library or binary)&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;h3 id=&quot;layout&quot;&gt;Layout&lt;&#x2F;h3&gt;
-&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;.
-&lt;&#x2F;span&gt;&lt;span&gt;├── Cargo.lock
-&lt;&#x2F;span&gt;&lt;span&gt;├── Cargo.toml
-&lt;&#x2F;span&gt;&lt;span&gt;├── README.md
-&lt;&#x2F;span&gt;&lt;span&gt;└── crates
-&lt;&#x2F;span&gt;&lt;span&gt;    ├── bin-client
-&lt;&#x2F;span&gt;&lt;span&gt;    │   ├── Cargo.toml
-&lt;&#x2F;span&gt;&lt;span&gt;    │   └── src
-&lt;&#x2F;span&gt;&lt;span&gt;    │       └── main.rs
-&lt;&#x2F;span&gt;&lt;span&gt;    ├── bin-server
-&lt;&#x2F;span&gt;&lt;span&gt;    │   ├── Cargo.toml
-&lt;&#x2F;span&gt;&lt;span&gt;    │   └── src
-&lt;&#x2F;span&gt;&lt;span&gt;    │       └── main.rs
-&lt;&#x2F;span&gt;&lt;span&gt;    └── domain
-&lt;&#x2F;span&gt;&lt;span&gt;        ├── Cargo.toml
-&lt;&#x2F;span&gt;&lt;span&gt;        └── src
-&lt;&#x2F;span&gt;&lt;span&gt;            └── lib.rs
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;how-to-reuse&quot;&gt;How to reuse&lt;&#x2F;h2&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;git&lt;&#x2F;span&gt;&lt;span&gt; clone https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu&#x2F;template-rust &amp;lt;your-project&amp;gt;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;how-to-reproduce-the-template&quot;&gt;How to reproduce the template&lt;&#x2F;h2&gt;
-&lt;h3 id=&quot;gitignore&quot;&gt;.gitignore&lt;&#x2F;h3&gt;
-&lt;p&gt;Let&#x27;s create the &lt;code&gt;.gitignore&lt;&#x2F;code&gt; file with:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;echo&lt;&#x2F;span&gt;&lt;span&gt; target &amp;gt; .gitignore
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;cargo-toml&quot;&gt;Cargo.toml&lt;&#x2F;h3&gt;
-&lt;p&gt;Let&#x27;s create the &lt;code&gt;Cargo.toml&lt;&#x2F;code&gt; file with:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span&gt;[workspace]
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;members &lt;&#x2F;span&gt;&lt;span&gt;= [&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;crates&#x2F;*&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;]
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;[workspace.package]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;version &lt;&#x2F;span&gt;&lt;span&gt;= &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;0.1.0&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;authors &lt;&#x2F;span&gt;&lt;span&gt;= [&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;Aurélien Clu. &amp;lt;john@doe.johndoe&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;template-rust&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;readme &lt;&#x2F;span&gt;&lt;span&gt;= &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;README.md&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;edition &lt;&#x2F;span&gt;&lt;span&gt;= &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;2021&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;license &lt;&#x2F;span&gt;&lt;span&gt;= &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;UNLICENSE&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;crates&quot;&gt;crates&#x2F;&lt;&#x2F;h3&gt;
-&lt;p&gt;Now we add the crates we want to have:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;cargo&lt;&#x2F;span&gt;&lt;span&gt; new crates&#x2F;bin-client
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;cargo&lt;&#x2F;span&gt;&lt;span&gt; new crates&#x2F;bin-server
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;cargo&lt;&#x2F;span&gt;&lt;span&gt; new crates&#x2F;domain&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt; --lib
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# feel free to add more libraries
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;And update their configuration (Cargo.toml) to have a proper name, inherit fields from the workspace configuration and have some useful default dependencies.&lt;&#x2F;p&gt;
-&lt;h4 id=&quot;crates-bin-client-cargo-toml&quot;&gt;crates&#x2F;bin-client&#x2F;Cargo.toml&lt;&#x2F;h4&gt;
-&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span&gt;[package]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span&gt;= &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;client&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;version&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;workspace &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;true
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;authors&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;workspace &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;true
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;description&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;workspace &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;true
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;readme&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;workspace &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;true
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;edition&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;workspace &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;true
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;license&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;workspace &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;true
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;[dependencies]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;domain &lt;&#x2F;span&gt;&lt;span&gt;= { &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;path &lt;&#x2F;span&gt;&lt;span&gt;= &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;..&#x2F;domain&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; }
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# logging
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;log &lt;&#x2F;span&gt;&lt;span&gt;= &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;^0&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;pretty_env_logger &lt;&#x2F;span&gt;&lt;span&gt;= &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;^0&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h4 id=&quot;crates-bin-server-cargo-toml&quot;&gt;crates&#x2F;bin-server&#x2F;Cargo.toml&lt;&#x2F;h4&gt;
-&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span&gt;[package]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span&gt;= &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;server&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;version&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;workspace &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;true
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;authors&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;workspace &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;true
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;description&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;workspace &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;true
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;readme&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;workspace &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;true
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;edition&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;workspace &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;true
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;license&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;workspace &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;true
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;[dependencies]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;domain &lt;&#x2F;span&gt;&lt;span&gt;= { &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;path &lt;&#x2F;span&gt;&lt;span&gt;= &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;..&#x2F;domain&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; }
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# logging
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;tracing &lt;&#x2F;span&gt;&lt;span&gt;= &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;^0&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;tracing-log &lt;&#x2F;span&gt;&lt;span&gt;= &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;^0&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# to handle logs from log, e.g. from our domain library here
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;tracing-subscriber &lt;&#x2F;span&gt;&lt;span&gt;= &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;^0&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# to output to stdout
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# error handling
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;thiserror &lt;&#x2F;span&gt;&lt;span&gt;= &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;^1&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h4 id=&quot;crates-domain-cargo-toml&quot;&gt;crates&#x2F;domain&#x2F;Cargo.toml&lt;&#x2F;h4&gt;
-&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span&gt;[package]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span&gt;= &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;domain&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;version&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;workspace &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;true
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;authors&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;workspace &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;true
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;description&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;workspace &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;true
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;readme&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;workspace &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;true
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;edition&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;workspace &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;true
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;license&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;workspace &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;true
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;[dependencies]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# logging
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;log &lt;&#x2F;span&gt;&lt;span&gt;= &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;^0&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# error handling
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;thiserror &lt;&#x2F;span&gt;&lt;span&gt;= &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;^1&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;run&quot;&gt;Run&lt;&#x2F;h3&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;cargo&lt;&#x2F;span&gt;&lt;span&gt; test
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;cargo&lt;&#x2F;span&gt;&lt;span&gt; run&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt; --bin&lt;&#x2F;span&gt;&lt;span&gt; server
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;cargo&lt;&#x2F;span&gt;&lt;span&gt; run&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt; --bin&lt;&#x2F;span&gt;&lt;span&gt; client
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# or building and then running
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;cargo&lt;&#x2F;span&gt;&lt;span&gt; build&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt; --release --bin&lt;&#x2F;span&gt;&lt;span&gt; server
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;cargo&lt;&#x2F;span&gt;&lt;span&gt; build&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt; --release --bin&lt;&#x2F;span&gt;&lt;span&gt; client
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;.&#x2F;target&#x2F;release&#x2F;server
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;RUST_LOG&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;TRACE &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;.&#x2F;target&#x2F;release&#x2F;client
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;To print logs, feel free to update your files alike:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu&#x2F;template-rust&#x2F;blob&#x2F;main&#x2F;crates&#x2F;bin-client&#x2F;src&#x2F;main.rs&quot;&gt;crates&#x2F;bin-client&#x2F;src&#x2F;main.rs&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu&#x2F;template-rust&#x2F;blob&#x2F;main&#x2F;crates&#x2F;bin-server&#x2F;src&#x2F;main.rs&quot;&gt;crates&#x2F;bin-server&#x2F;src&#x2F;main.rs&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu&#x2F;template-rust&#x2F;blob&#x2F;main&#x2F;crates&#x2F;domain&#x2F;src&#x2F;lib.rs&quot;&gt;crates&#x2F;domain&#x2F;src&#x2F;lib.rs&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;And running again should give the following:&lt;&#x2F;p&gt;
-&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;aurelien-clu&#x2F;template-rust&#x2F;main&#x2F;docs&#x2F;terminal.png&quot; alt= &quot;terminal&quot; width=&quot;75%&quot; height=&quot;75%&quot;&#x2F;&gt;
-</content>
+        <summary type="html">&lt;p&gt;Rust template with multiple libraries and multiple binaries within a workspace.
+For each crate, opinionated logging is setup.&lt;&#x2F;p&gt;
+</summary>
         
     </entry>
     <entry xml:lang="en">
@@ -512,30 +107,8 @@
         <link rel="alternate" href="https://cluzeau.pro/my-dev-library/" type="text/html"/>
         <id>https://cluzeau.pro/my-dev-library/</id>
         
-        <content type="html">&lt;p&gt;If some of the topics covered by these books interests you, you probably should look into them. ;)&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;software-engineering&quot;&gt;Software Engineering&lt;&#x2F;h2&gt;
-&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Tags&lt;&#x2F;th&gt;&lt;th&gt;Book&lt;&#x2F;th&gt;&lt;th&gt;Author&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;General&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Code_Complete&quot;&gt;Code Complete&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Mc Connel&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;General&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Robert_C._Martin#Publications&quot;&gt;Clean Agile&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;R. C. Martin&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;General&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Robert_C._Martin#Publications&quot;&gt;Clean Code&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;R. C. Martin&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;General&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Robert_C._Martin#Publications&quot;&gt;Clean Architecture&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;R. C. Martin&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;General&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.crackingthecodinginterview.com&#x2F;&quot;&gt;Cracking the Coding Interview&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;G. L. Mc Dowell&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;DDD&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kalele.io&#x2F;books&#x2F;&quot;&gt;Implementing Domain-Driven Design&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Vaughn Vernon&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;DDD&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kalele.io&#x2F;books&#x2F;&quot;&gt;Domain-Driven Design Distilled&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Vaughn Vernon&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;Rust&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;book&#x2F;&quot;&gt;The Rust Programming Language&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Klabnik and Nichols&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;Rust&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rust-for-rustaceans.com&#x2F;&quot;&gt;Rust for Rustaceans&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Gjengset&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;Golang&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.gopl.io&#x2F;&quot;&gt;The Go Programming Language&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Donovan Kernighan&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;Scala&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.editions-ellipses.fr&#x2F;accueil&#x2F;7023-scala-pas-a-pas-9782340000094.html&quot;&gt;Scala pas à pas&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Gildas Ménier&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;K8s&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nigelpoulton.com&#x2F;books&#x2F;&quot;&gt;The Kubernetes book&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Nigel Poulton&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
-&lt;h2 id=&quot;data-science&quot;&gt;Data Science&lt;&#x2F;h2&gt;
-&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Book&lt;&#x2F;th&gt;&lt;th&gt;Author&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mitpress.mit.edu&#x2F;9780262029445&#x2F;&quot;&gt;Fundamentals of Machine Learning for Predictive Data Analytics&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Kelleher, Mac Namee, D&#x27;Arcy&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.deeplearningbook.org&#x2F;&quot;&gt;Deep Learning&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Goodfellow, Bengio, and Courville&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.incompleteideas.net&#x2F;book&#x2F;the-book.html&quot;&gt;Reinforcement Learning&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Sutton and Barto&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.oreilly.com&#x2F;library&#x2F;view&#x2F;statistics-in-a&#x2F;9781449361129&#x2F;&quot;&gt;Statistics in a Nutshell&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;Boslaugh&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
-</content>
+        <summary type="html">&lt;p&gt;The technical books in my library, some are classics that could be helpful to some of you ;).&lt;&#x2F;p&gt;
+</summary>
         
     </entry>
     <entry xml:lang="en">
@@ -548,31 +121,8 @@
         <link rel="alternate" href="https://cluzeau.pro/this-blog/" type="text/html"/>
         <id>https://cluzeau.pro/this-blog/</id>
         
-        <content type="html">&lt;p&gt;Source code can be found at &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;hana-yori-dango&#x2F;burogu&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;hana-yori-dango&#x2F;burogu&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;how-to-reproduce&quot;&gt;How to reproduce&lt;&#x2F;h2&gt;
-&lt;p&gt;In short, to reproduce you will need:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.rust-lang.org&#x2F;tools&#x2F;install&quot;&gt;Rust&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;documentation&#x2F;getting-started&#x2F;installation&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;few minutes&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# install rust &amp;amp; zola with above links if not already installed
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# then
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;git&lt;&#x2F;span&gt;&lt;span&gt; clone https:&#x2F;&#x2F;github.com&#x2F;hana-yori-dango&#x2F;burogu
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;cd&lt;&#x2F;span&gt;&lt;span&gt; burogu
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;zola&lt;&#x2F;span&gt;&lt;span&gt; serve
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# go to http:&#x2F;&#x2F;127.0.0.1:1111 or http:&#x2F;&#x2F;localhost:1111 or similar
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# and voila
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;why-is-it-named-burogu&quot;&gt;Why is it named Burogu?&lt;&#x2F;h2&gt;
-&lt;p&gt;I always want to know why a project is named a certain name.
-Often it is obvious. Sometimes it is not and the information is nowhere to be found.&lt;&#x2F;p&gt;
-&lt;p&gt;I won&#x27;t do that to you.&lt;&#x2F;p&gt;
-
-&lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;cluzeau.pro&amp;#x2F;processed_images&amp;#x2F;generous-god.0ba88e44834b33e2.jpg&quot; &#x2F;&gt;
-&lt;p&gt;In Japanese you can find English words &lt;em&gt;Japanized&lt;&#x2F;em&gt;, e.g. &lt;code&gt;blog&lt;&#x2F;code&gt; -&amp;gt; &lt;code&gt;burogu&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
-&lt;p&gt;Such a reveal &lt;img src=&quot;https:&#x2F;&#x2F;cluzeau.pro&#x2F;parrot-party.gif&quot; alt= &quot;:)&quot; width=&quot;5%&quot; height=&quot;5%&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
-</content>
+        <summary type="html">&lt;p&gt;Learn how this blog is made using &lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt; and the &lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;even&#x2F;&quot;&gt;even&lt;&#x2F;a&gt; theme.&lt;&#x2F;p&gt;
+</summary>
         
     </entry>
     <entry xml:lang="en">
@@ -585,34 +135,8 @@ Often it is obvious. Sometimes it is not and the information is nowhere to be fo
         <link rel="alternate" href="https://cluzeau.pro/python-setup/" type="text/html"/>
         <id>https://cluzeau.pro/python-setup/</id>
         
-        <content type="html">&lt;p&gt;Here are my go-to tools &amp;amp; libraries for &lt;code&gt;Python&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;for-all-projects&quot;&gt;For all projects&lt;&#x2F;h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;pyenv&#x2F;pyenv&quot;&gt;pyenv&lt;&#x2F;a&gt; - Simple Python Version Management&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;python-poetry.org&#x2F;&quot;&gt;poetry&lt;&#x2F;a&gt; - Python packaging and dependency management made easy&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;psf&#x2F;black&quot;&gt;black&lt;&#x2F;a&gt; - The uncompromising Python code formatter&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;PyCQA&#x2F;isort&quot;&gt;isort&lt;&#x2F;a&gt; - A Python utility &#x2F; library to sort imports.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;charliermarsh&#x2F;ruff&quot;&gt;ruff&lt;&#x2F;a&gt; - An extremely fast Python linter, written in Rust.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.pytest.org&quot;&gt;pytest&lt;&#x2F;a&gt; - The pytest framework makes it easy to write small, readable tests, and can scale to support complex functional testing for applications and libraries.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;behave&#x2F;behave&quot;&gt;behave&lt;&#x2F;a&gt; - Behave is behavior-driven development, Python style.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;PyCQA&#x2F;bandit&quot;&gt;bandit&lt;&#x2F;a&gt; - Bandit is a tool designed to find common security issues in Python code.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;pyupio&#x2F;safety&quot;&gt;safety&lt;&#x2F;a&gt; - Safety checks Python dependencies for known security vulnerabilities and suggests the proper remediations for vulnerabilities detected.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;guilatrova&#x2F;tryceratops&quot;&gt;tryceratops&lt;&#x2F;a&gt; - A linter to prevent exception handling antipatterns in Python (limited only for those who like dinosaurs).&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Delgan&#x2F;loguru&quot;&gt;loguru&lt;&#x2F;a&gt; - Python logging made (stupidly) simple&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;extras&quot;&gt;Extras&lt;&#x2F;h2&gt;
-&lt;p&gt;In no particular order:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tiangolo&#x2F;fastapi&quot;&gt;FastAPI&lt;&#x2F;a&gt; - FastAPI framework, high performance, easy to learn, fast to code, ready for production&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;google&#x2F;python-fire&quot;&gt;fire&lt;&#x2F;a&gt; - Python Fire is a library for automatically generating command line interfaces (CLIs) from absolutely any Python object.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Lightning-AI&#x2F;lightning&quot;&gt;lightning&lt;&#x2F;a&gt; (aka &lt;em&gt;Pytorch Lightning&lt;&#x2F;em&gt;) - Deep learning framework to train, deploy, and ship AI products Lightning fast.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;pola-rs&#x2F;polars&quot;&gt;polars&lt;&#x2F;a&gt; - Fast multi-threaded, hybrid-out-of-core DataFrame library in Rust | Python | Node.js&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;scikit-learn.org&#x2F;&quot;&gt;scikit-learn&lt;&#x2F;a&gt; - Machine Learning in Python&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.sqlalchemy.org&#x2F;&quot;&gt;SQLAlchemy&lt;&#x2F;a&gt; - The Python SQL Toolkit and Object Relational Mapper&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;temporal.io&#x2F;&quot;&gt;temporal.io&lt;&#x2F;a&gt; - Temporal is a microservice orchestration platform which enables developers to build scalable applications without sacrificing productivity or reliability.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.ray.io&#x2F;&quot;&gt;ray.io&lt;&#x2F;a&gt; - Ray is a unified framework for scaling AI and Python applications.&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-</content>
+        <summary type="html">&lt;p&gt;Here are my go-to tools &amp;amp; libraries for &lt;code&gt;Python&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+</summary>
         
     </entry>
 </feed>

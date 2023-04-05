@@ -210,7 +210,8 @@
     <div class="horizontal-line"></div>
 
     <div class="post-content">
-      <h2 id="common-rust-smart-pointers">Common Rust smart pointers</h2>
+      <p>Quick overview of Rust smart pointers <code>Box</code>, <code>Rc</code>, <code>RefCell</code>, <code>Cow</code>, <code>Arc</code>, <code>Mutex</code> &amp; <code>RwLock</code>.</p>
+<span id="continue-reading"></span><h2 id="common-rust-smart-pointers">Common Rust smart pointers</h2>
 <table><thead><tr><th>name</th><th>thread-safe</th><th>description</th></tr></thead><tbody>
 <tr><td><a href="https://doc.rust-lang.org/book/ch15-01-box.html">Box</a></td><td>❌</td><td>Boxes allow you to store data on the heap rather than the stack. Useful for unknown size at compile time (e.g. recursive objects, lists, dynamic types), prevents data copy.</td></tr>
 <tr><td><a href="https://doc.rust-lang.org/book/ch15-04-rc.html">Rc</a></td><td>❌</td><td>Reference Counted: enable multiple ownership to the same value.</td></tr>

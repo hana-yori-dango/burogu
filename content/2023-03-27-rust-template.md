@@ -8,12 +8,12 @@ insert_anchor_links = "right"
 tags = ["rust", "setup", "tldr"]
 +++
 
+Rust template with multiple libraries and multiple binaries within a workspace.
+For each crate, opinionated logging is setup.
+
+<!-- more -->
+
 The repository can be found there: [github.com/aurelien-clu/template-rust](https://github.com/aurelien-clu/template-rust)
-
-## Target
-
-- have a rust project in which we can have multiple libraries & multiple binaries
-- logging should be setup for each crate (library or binary)
 
 ### Layout
 

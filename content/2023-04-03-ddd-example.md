@@ -8,18 +8,18 @@ insert_anchor_links = "right"
 tags = ["rust", "api", "CQRS", "DDD", "event-sourcing"]
 +++
 
-Code can be found at: [github.com/aurelien-clu/example-ddd-es/rust-cqrs](https://github.com/aurelien-clu/example-ddd-es/tree/main/rust-cqrs)
+Let's create an API controlling a `Plane` able to:
 
-## Our objectives
-
-Let's create an API controlling a `Plane`. We want to be able to:
-
-- fly it
+- fly a plane
 - land it
 - change its position
 - track all past positions for the current or previous journey
 
+<!-- more -->
+
 For such simple needs, a [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) API would suffice but for the sake of learning we will use [domain driven design](https://cluzeau.pro/ddd), [event-sourcing](https://cluzeau.pro/event-sourcing/) and [cqrs](https://cluzeau.pro/cqrs/).
+
+Code can be found at: [github.com/aurelien-clu/example-ddd-es/rust-cqrs](https://github.com/aurelien-clu/example-ddd-es/tree/main/rust-cqrs)
 
 ## Event storming
 
@@ -43,7 +43,7 @@ We end up with the following:
 
 Notes:
 
-- Event storming should be done with domain experts, I am not an expert in aviation, thus this is incomplete but sufficient for this example :)
+- Event storming should be done with domain experts, I am no expert in aviation, thus this is incomplete but sufficient for this example :)
 - *OnGround* event is not necessarily following *PlaneRegistered* but happens at the same time. It makes more sense to have an event describing that the plane is on ground without knowing whether the plane has flew before or not while registering (an alternative could be to default a plane to be on ground and remove *OnGround* event).
 
 ## Let's code it

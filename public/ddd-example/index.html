@@ -147,11 +147,6 @@
             <ul>
                 
                 <li>
-                    <a href="https://cluzeau.pro/ddd-example/#our-objectives" class="toc-link">Our objectives</a>
-                    
-                </li>
-                
-                <li>
                     <a href="https://cluzeau.pro/ddd-example/#event-storming" class="toc-link">Event storming</a>
                     
                 </li>
@@ -239,16 +234,16 @@
     <div class="horizontal-line"></div>
 
     <div class="post-content">
-      <p>Code can be found at: <a href="https://github.com/aurelien-clu/example-ddd-es/tree/main/rust-cqrs">github.com/aurelien-clu/example-ddd-es/rust-cqrs</a></p>
-<h2 id="our-objectives">Our objectives</h2>
-<p>Let's create an API controlling a <code>Plane</code>. We want to be able to:</p>
+      <p>Let's create an API controlling a <code>Plane</code> able to:</p>
 <ul>
-<li>fly it</li>
+<li>fly a plane</li>
 <li>land it</li>
 <li>change its position</li>
 <li>track all past positions for the current or previous journey</li>
 </ul>
+<span id="continue-reading"></span>
 <p>For such simple needs, a <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> API would suffice but for the sake of learning we will use <a href="https://cluzeau.pro/ddd">domain driven design</a>, <a href="https://cluzeau.pro/event-sourcing/">event-sourcing</a> and <a href="https://cluzeau.pro/cqrs/">cqrs</a>.</p>
+<p>Code can be found at: <a href="https://github.com/aurelien-clu/example-ddd-es/tree/main/rust-cqrs">github.com/aurelien-clu/example-ddd-es/rust-cqrs</a></p>
 <h2 id="event-storming">Event storming</h2>
 <blockquote>
 <p>Event storming is a workshop-based method to quickly find out what is happening in the domain of a software program. Compared to other methods it is extremely lightweight and intentionally requires no support by a computer. The result is expressed in sticky notes on a wide wall.</p>
@@ -266,7 +261,7 @@
 <p><em>Graph made using: <a href="https://miro.com/miroverse/event-storming/">miro.com/miroverse/event-storming/</a></em></p>
 <p>Notes:</p>
 <ul>
-<li>Event storming should be done with domain experts, I am not an expert in aviation, thus this is incomplete but sufficient for this example :)</li>
+<li>Event storming should be done with domain experts, I am no expert in aviation, thus this is incomplete but sufficient for this example :)</li>
 <li><em>OnGround</em> event is not necessarily following <em>PlaneRegistered</em> but happens at the same time. It makes more sense to have an event describing that the plane is on ground without knowing whether the plane has flew before or not while registering (an alternative could be to default a plane to be on ground and remove <em>OnGround</em> event).</li>
 </ul>
 <h2 id="let-s-code-it">Let's code it</h2>

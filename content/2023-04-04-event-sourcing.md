@@ -8,9 +8,9 @@ insert_anchor_links = "right"
 tags = ["event-sourcing", "definition", "tldr"]
 +++
 
-## Concise definition
-
 Event sourcing is an approach to software development where every action that changes the state of a system is captured as an immutable event and stored in an event log. By replaying these events, the system's state can be reconstructed at any point in time, providing a complete audit trail of all changes and enabling advanced features.
+
+<!-- more -->
 
 <img src="https://cluzeau.pro/event-sourcing-example-e-commerce.jpg" alt= "example of e-commerce events" width="75%" height="75%"/>
 
