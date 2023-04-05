@@ -16,7 +16,7 @@
         <link rel="alternate" href="https://cluzeau.pro/ddd-example/" type="text/html"/>
         <id>https://cluzeau.pro/ddd-example/</id>
         
-        <summary type="html">&lt;p&gt;Let&#x27;s create an API controlling a &lt;code&gt;Plane&lt;&#x2F;code&gt; able to:&lt;&#x2F;p&gt;
+        <summary type="html">&lt;p&gt;Let&#x27;s create an API controlling a Plane able to:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;fly a plane&lt;&#x2F;li&gt;
 &lt;li&gt;land it&lt;&#x2F;li&gt;
@@ -36,7 +36,7 @@
         <link rel="alternate" href="https://cluzeau.pro/rust-pointers/" type="text/html"/>
         <id>https://cluzeau.pro/rust-pointers/</id>
         
-        <summary type="html">&lt;p&gt;Quick overview of Rust smart pointers &lt;code&gt;Box&lt;&#x2F;code&gt;, &lt;code&gt;Rc&lt;&#x2F;code&gt;, &lt;code&gt;RefCell&lt;&#x2F;code&gt;, &lt;code&gt;Cow&lt;&#x2F;code&gt;, &lt;code&gt;Arc&lt;&#x2F;code&gt;, &lt;code&gt;Mutex&lt;&#x2F;code&gt; &amp;amp; &lt;code&gt;RwLock&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+        <summary type="html">&lt;p&gt;Quick overview of Rust smart pointers Box, Rc, RefCell, Cow, Arc, Mutex &amp;amp; RwLock.&lt;&#x2F;p&gt;
 </summary>
         
     </entry>

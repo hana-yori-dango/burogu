@@ -8,7 +8,7 @@ insert_anchor_links = "right"
 tags = ["rust", "api", "CQRS", "DDD", "event-sourcing"]
 +++
 
-Let's create an API controlling a `Plane` able to:
+Let's create an API controlling a Plane able to:
 
 - fly a plane
 - land it

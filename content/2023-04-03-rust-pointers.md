@@ -8,7 +8,7 @@ insert_anchor_links = "right"
 tags = ["rust", "pointers", "tldr"]
 +++
 
-Quick overview of Rust smart pointers `Box`, `Rc`, `RefCell`, `Cow`, `Arc`, `Mutex` & `RwLock`.
+Quick overview of Rust smart pointers Box, Rc, RefCell, Cow, Arc, Mutex & RwLock.
 
 <!-- more -->
 

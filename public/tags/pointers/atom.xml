@@ -16,7 +16,7 @@
         <link rel="alternate" href="https://cluzeau.pro/rust-pointers/" type="text/html"/>
         <id>https://cluzeau.pro/rust-pointers/</id>
         
-        <summary type="html">&lt;p&gt;Quick overview of Rust smart pointers &lt;code&gt;Box&lt;&#x2F;code&gt;, &lt;code&gt;Rc&lt;&#x2F;code&gt;, &lt;code&gt;RefCell&lt;&#x2F;code&gt;, &lt;code&gt;Cow&lt;&#x2F;code&gt;, &lt;code&gt;Arc&lt;&#x2F;code&gt;, &lt;code&gt;Mutex&lt;&#x2F;code&gt; &amp;amp; &lt;code&gt;RwLock&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+        <summary type="html">&lt;p&gt;Quick overview of Rust smart pointers Box, Rc, RefCell, Cow, Arc, Mutex &amp;amp; RwLock.&lt;&#x2F;p&gt;
 </summary>
         
     </entry>
