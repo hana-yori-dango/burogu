@@ -4,10 +4,98 @@
     <link href="https://cluzeau.pro/tags/python/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://cluzeau.pro"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2023-03-25T00:00:00+00:00</updated>
+    <updated>2023-04-05T00:00:00+00:00</updated>
     <id>https://cluzeau.pro/tags/python/atom.xml</id>
     <entry xml:lang="en">
-        <title>Opinionated Python tools &amp;  libraries</title>
+        <title>Python FastAPI template</title>
+        <published>2023-04-05T00:00:00+00:00</published>
+        <updated>2023-04-05T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://cluzeau.pro/fast-api-template/" type="text/html"/>
+        <id>https://cluzeau.pro/fast-api-template/</id>
+        
+        <content type="html">&lt;p&gt;The repository can be found there: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu&#x2F;template-python-fast-api&quot;&gt;github.com&#x2F;aurelien-clu&#x2F;template-python-fast-api&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;target&quot;&gt;Target&lt;&#x2F;h2&gt;
+&lt;p&gt;Implement quickly a Python API with an &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Hexagonal_architecture_(software)&quot;&gt;hexagonal architecture&lt;&#x2F;a&gt; with the following already setup:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;fastapi.tiangolo.com&#x2F;&quot;&gt;fastapi&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ets-labs&#x2F;python-dependency-injector&quot;&gt;dependency injection&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.pydantic.dev&#x2F;&quot;&gt;pydantic serialization &amp;amp; deserialization&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.pydantic.dev&#x2F;usage&#x2F;settings&#x2F;&quot;&gt;pydantic settings&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Behavior-driven_development&quot;&gt;Behavior Driven Development&lt;&#x2F;a&gt; &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;behave&#x2F;behave&quot;&gt;tests&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;layout&quot;&gt;Layout&lt;&#x2F;h2&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;.
+&lt;&#x2F;span&gt;&lt;span&gt;├── Makefile
+&lt;&#x2F;span&gt;&lt;span&gt;├── pyproject.toml
+&lt;&#x2F;span&gt;&lt;span&gt;├── src
+&lt;&#x2F;span&gt;&lt;span&gt;│   ├── api                 &amp;lt;= API routes
+&lt;&#x2F;span&gt;&lt;span&gt;│   │   └── health.py
+&lt;&#x2F;span&gt;&lt;span&gt;│   │
+&lt;&#x2F;span&gt;&lt;span&gt;│   ├── config              &amp;lt;= defaults + values from environment
+&lt;&#x2F;span&gt;&lt;span&gt;│   │   └── server.py
+&lt;&#x2F;span&gt;&lt;span&gt;│   │
+&lt;&#x2F;span&gt;&lt;span&gt;│   ├── infra&#x2F;              &amp;lt;= repositories, caches, etc.
+&lt;&#x2F;span&gt;&lt;span&gt;│   │
+&lt;&#x2F;span&gt;&lt;span&gt;│   ├── svc                 &amp;lt;= logic exposed by API routes
+&lt;&#x2F;span&gt;&lt;span&gt;│   │  └── health.py
+&lt;&#x2F;span&gt;&lt;span&gt;│   │
+&lt;&#x2F;span&gt;&lt;span&gt;│   ├── app.py
+&lt;&#x2F;span&gt;&lt;span&gt;│   ├── container.py        &amp;lt;= &amp;quot;registry&amp;quot; of dependencies to inject
+&lt;&#x2F;span&gt;&lt;span&gt;│   ├── errors.py
+&lt;&#x2F;span&gt;&lt;span&gt;│   └── main.py
+&lt;&#x2F;span&gt;&lt;span&gt;│
+&lt;&#x2F;span&gt;&lt;span&gt;└── tests
+&lt;&#x2F;span&gt;&lt;span&gt;    └── bdd
+&lt;&#x2F;span&gt;&lt;span&gt;        ├── health.feature  &amp;lt;= Gherkin tests
+&lt;&#x2F;span&gt;&lt;span&gt;        └── steps&#x2F;          &amp;lt;= Gherkin steps implementations
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;how-to-reuse&quot;&gt;How to reuse&lt;&#x2F;h2&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;git&lt;&#x2F;span&gt;&lt;span&gt; clone https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu&#x2F;template-python-fast-api &amp;lt;your-project&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;efficient-test-writing&quot;&gt;Efficient test writing&lt;&#x2F;h2&gt;
+&lt;p&gt;Using &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Behavior-driven_development&quot;&gt;Behavior Driven Development&lt;&#x2F;a&gt;, it is easy to reuse parts of tests, alike querying an API endpoint, validating the response, etc.&lt;&#x2F;p&gt;
+&lt;p&gt;Once a set of steps has been written (python code below) you are able to write many tests quickly using &lt;a href=&quot;https:&#x2F;&#x2F;cucumber.io&#x2F;docs&#x2F;gherkin&#x2F;reference&#x2F;&quot;&gt;Gherkin&lt;&#x2F;a&gt; language which ressemble natural language with the formalism of &lt;code&gt;Given&lt;&#x2F;code&gt;, &lt;code&gt;When&lt;&#x2F;code&gt;, &lt;code&gt;Then&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ini&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-ini &quot;&gt;&lt;code class=&quot;language-ini&quot; data-lang=&quot;ini&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; Gherkin test definition
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;Feature&lt;&#x2F;span&gt;&lt;span&gt;: Health
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;Background&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;Given &lt;&#x2F;span&gt;&lt;span&gt;an API client
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;Scenario&lt;&#x2F;span&gt;&lt;span&gt;: Health check: GET
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;Given &lt;&#x2F;span&gt;&lt;span&gt;path: &#x2F;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;When &lt;&#x2F;span&gt;&lt;span&gt;getting
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;Then &lt;&#x2F;span&gt;&lt;span&gt;response code is &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;200
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;And &lt;&#x2F;span&gt;&lt;span&gt;json response is &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;ok&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu&#x2F;template-python-fast-api&#x2F;blob&#x2F;main&#x2F;tests&#x2F;bdd&#x2F;health.feature&quot;&gt;github.com&#x2F;aurelien-clu&#x2F;template-python-fast-api&#x2F;tests&#x2F;bdd&#x2F;health.feature&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;python&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-python &quot;&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# reusable steps across tests (repository hold few more)
+&lt;&#x2F;span&gt;&lt;span&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;step&lt;&#x2F;span&gt;&lt;span&gt;(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;path: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;{path}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;step_impl&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;context&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;path&lt;&#x2F;span&gt;&lt;span&gt;: str):
+&lt;&#x2F;span&gt;&lt;span&gt;    context.request_path = path
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;step&lt;&#x2F;span&gt;&lt;span&gt;(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;getting&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;step_impl&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;context&lt;&#x2F;span&gt;&lt;span&gt;):
+&lt;&#x2F;span&gt;&lt;span&gt;    path = context.request_path
+&lt;&#x2F;span&gt;&lt;span&gt;    headers = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;getattr&lt;&#x2F;span&gt;&lt;span&gt;(context, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;request_headers&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;None&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    context.response = context.client.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;get&lt;&#x2F;span&gt;&lt;span&gt;(path, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;headers&lt;&#x2F;span&gt;&lt;span&gt;=headers)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;step&lt;&#x2F;span&gt;&lt;span&gt;(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;response code is &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;{code}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;step_impl&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;context&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;code&lt;&#x2F;span&gt;&lt;span&gt;: str):
+&lt;&#x2F;span&gt;&lt;span&gt;    check = context.response.status_code == &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt;(code)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;assert &lt;&#x2F;span&gt;&lt;span&gt;check
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;step&lt;&#x2F;span&gt;&lt;span&gt;(&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;json response is &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;{text}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;step_impl&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;context&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;text&lt;&#x2F;span&gt;&lt;span&gt;: str):
+&lt;&#x2F;span&gt;&lt;span&gt;    check = context.response.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;json&lt;&#x2F;span&gt;&lt;span&gt;() == text
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;assert &lt;&#x2F;span&gt;&lt;span&gt;check
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu&#x2F;template-python-fast-api&#x2F;tree&#x2F;main&#x2F;tests&#x2F;bdd&#x2F;steps&quot;&gt;github.com&#x2F;aurelien-clu&#x2F;template-python-fast-api&#x2F;tests&#x2F;bdd&#x2F;steps&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Opinionated Python tools &amp; libraries</title>
         <published>2023-03-25T00:00:00+00:00</published>
         <updated>2023-03-25T00:00:00+00:00</updated>
         <author>

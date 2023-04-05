@@ -1,5 +1,5 @@
 +++
-title = "Opinionated Python tools &  libraries"
+title = "Opinionated Python tools & libraries"
 weight = 1
 order = 1
 date = 2023-03-25

@@ -5,7 +5,7 @@ order = 1
 date = 2023-04-03
 insert_anchor_links = "right"
 [taxonomies]
-tags = ["rust", "DDD", "event-sourcing", "cqrs"]
+tags = ["rust", "api", "CQRS", "DDD", "event-sourcing"]
 +++
 
 Code can be found at: [github.com/aurelien-clu/example-ddd-es/rust-cqrs](https://github.com/aurelien-clu/example-ddd-es/tree/main/rust-cqrs)

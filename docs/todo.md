@@ -20,9 +20,10 @@ In no particular order:
     - [ ] My setup: hardware & software
     - [x] Opinionated Python tools & libraries
     - [ ] Development conventions
-    - [ ] Domain Driven Design
-    - [ ] Event sourcing
-    - [ ] CQRS
+    - [ ] Domain Driven Design in practice
+    - [x] Domain Driven Design definition
+    - [x] Event sourcing definition
+    - [x] CQRS definition
     - [ ] State Machine
     - [ ] Workflow & activities
     - [ ] Machine Learning
@@ -36,9 +37,9 @@ In no particular order:
     - [ ] Manabu
     - [ ] Rust DDD cookbook
   - Examples / Tutorials
-    - [ ] FastAPI hexagonal template
+    - [x] FastAPI hexagonal template
     - [ ] Temporal python
-    - [ ] Rust pointers
+    - [x] Rust pointers
     - [x] Rust CQRS
     - [ ] Building a static website using Zola
   - Book reviews / tldr

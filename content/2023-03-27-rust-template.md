@@ -8,7 +8,7 @@ insert_anchor_links = "right"
 tags = ["rust", "setup", "tldr"]
 +++
 
-The repository can be found there: [https://github.com/aurelien-clu/template-rust](https://github.com/aurelien-clu/template-rust)
+The repository can be found there: [github.com/aurelien-clu/template-rust](https://github.com/aurelien-clu/template-rust)
 
 ## Target
 

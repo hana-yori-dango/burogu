@@ -23,6 +23,10 @@
         <lastmod>2023-04-04</lastmod>
     </url>
     <url>
+        <loc>https://cluzeau.pro/fast-api-template/</loc>
+        <lastmod>2023-04-05</lastmod>
+    </url>
+    <url>
         <loc>https://cluzeau.pro/my-dev-library/</loc>
         <lastmod>2023-03-26</lastmod>
     </url>
@@ -43,6 +47,9 @@
     </url>
     <url>
         <loc>https://cluzeau.pro/tags/</loc>
+    </url>
+    <url>
+        <loc>https://cluzeau.pro/tags/api/</loc>
     </url>
     <url>
         <loc>https://cluzeau.pro/tags/books/</loc>
