@@ -82,10 +82,23 @@
         <loc>https://cluzeau.pro/tags/rust/</loc>
     </url>
     <url>
+        <loc>https://cluzeau.pro/tags/scraper/</loc>
+    </url>
+    <url>
         <loc>https://cluzeau.pro/tags/setup/</loc>
     </url>
     <url>
+        <loc>https://cluzeau.pro/tags/temporalio/</loc>
+    </url>
+    <url>
         <loc>https://cluzeau.pro/tags/tldr/</loc>
+    </url>
+    <url>
+        <loc>https://cluzeau.pro/tags/workflow/</loc>
+    </url>
+    <url>
+        <loc>https://cluzeau.pro/temporal-scraper/</loc>
+        <lastmod>2023-04-06</lastmod>
     </url>
     <url>
         <loc>https://cluzeau.pro/this-blog/</loc>

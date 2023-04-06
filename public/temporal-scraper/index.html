@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+      <link rel="icon" type="image/png" sizes="32x32" href="https:&#x2F;&#x2F;cluzeau.pro/laptop.png" meta_source="https://www.flaticon.com">
+
+      <title>Cluzeau - Scraping websites with Temporal</title>
+
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https://cluzeau.pro/site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Cluzeau</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;cluzeau.pro">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;cluzeau.pro&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;resume.cluzeau.pro">
+                            Resume
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu">
+                            Github
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;aurelien-clu&#x2F;">
+                            LinkedIn
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;cluzeau.pro">Cluzeau</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;cluzeau.pro">
+                                    Home
+                                </a>
+                            </li>
+                            
+                        
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;cluzeau.pro&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                            
+                        
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;resume.cluzeau.pro">
+                                    Resume
+                                </a>
+                            </li>
+                            
+                        
+                            
+                            <li>
+                                <div class="social-icon">
+                                    <a href="https:&#x2F;&#x2F;github.com&#x2F;aurelien-clu" class="github" title="Github">
+                                      <svg viewBox="0 0 512 512" height="2rem" width="2rem">
+                                        <path
+                                          d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z">
+                                        </path>
+                                      </svg></a>
+                                  </div>
+                            </li>
+                            
+                        
+                            
+                            <li>
+                                <div class="social-icon">
+                                    <a href="https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;aurelien-clu&#x2F;" class="linkedin" title="Linkedin">
+                                      <svg viewBox="0 0 512 512" height="2rem" width="2rem">
+                                        <path
+                                          d="M186.4 142.4c0 19-15.3 34.5-34.2 34.5 -18.9 0-34.2-15.4-34.2-34.5 0-19 15.3-34.5 34.2-34.5C171.1 107.9 186.4 123.4 186.4 142.4zM181.4 201.3h-57.8V388.1h57.8V201.3zM273.8 201.3h-55.4V388.1h55.4c0 0 0-69.3 0-98 0-26.3 12.1-41.9 35.2-41.9 21.3 0 31.5 15 31.5 41.9 0 26.9 0 98 0 98h57.5c0 0 0-68.2 0-118.3 0-50-28.3-74.2-68-74.2 -39.6 0-56.3 30.9-56.3 30.9v-25.2H273.8z">
+                                        </path>
+                                      </svg></a>
+                                  </div>
+                            </li>
+                            
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://cluzeau.pro/temporal-scraper/#tldr" class="toc-link">TLDR</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/temporal-scraper/#pre-requisites" class="toc-link">Pre-requisites</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/temporal-scraper/#setup" class="toc-link">Setup</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/temporal-scraper/#run" class="toc-link">Run</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://cluzeau.pro/temporal-scraper/#implementation-walkthrough" class="toc-link">Implementation walkthrough</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/temporal-scraper/#workflow" class="toc-link">Workflow</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/temporal-scraper/#model" class="toc-link">Model</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/temporal-scraper/#activities" class="toc-link">Activities</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://cluzeau.pro/temporal-scraper/#run-1" class="toc-link">Run</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://cluzeau.pro/temporal-scraper/#going-further" class="toc-link">Going further</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;cluzeau.pro&#x2F;temporal-scraper&#x2F;">Scraping websites with Temporal</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2023-04-06</span>
+            
+        </div>
+        
+        <div class="post-tags">
+            
+                <a href="https://cluzeau.pro/tags/python/">#python</a>
+            
+                <a href="https://cluzeau.pro/tags/workflow/">#workflow</a>
+            
+                <a href="https://cluzeau.pro/tags/temporalio/">#temporalio</a>
+            
+                <a href="https://cluzeau.pro/tags/scraper/">#scraper</a>
+            
+                <a href="https://cluzeau.pro/tags/tldr/">#tldr</a>
+            
+        </div>
+        
+
+    </header>
+
+
+    <div class="horizontal-line"></div>
+
+    <div class="post-content">
+      <p>A simple website scraper using <a href="https://www.temporal.io">temporal.io</a> and where to go from there.</p>
+<span id="continue-reading"></span>
+<p>The repository can be found at: <a href="https://github.com/aurelien-clu/temporal-scraper">github.com/aurelien-clu/temporal-scraper</a></p>
+<h2 id="tldr">TLDR</h2>
+<p>The project fetches a web page, extracts the title and links and finally saves it on disk in a JSON file.</p>
+<h3 id="pre-requisites">Pre-requisites</h3>
+<ul>
+<li>Install <code>python 3.9</code> or <a href="https://github.com/pyenv/pyenv-installer">pyenv</a></li>
+<li>Install <a href="https://python-poetry.org/docs/">poetry</a></li>
+<li>Install <a href="https://docs.temporal.io/application-development/foundations#run-a-dev-cluster">temporal CLI</a></li>
+</ul>
+<h3 id="setup">Setup</h3>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> clone https://github.com/aurelien-clu/temporal-scraper &lt;your-project&gt;
+</span><span style="color:#96b5b4;">cd </span><span>&lt;your-project&gt;
+</span><span>
+</span><span style="color:#65737e;"># skip if python 3.9 is already installed with or without pyenv
+</span><span style="color:#bf616a;">pyenv</span><span> install 3.9.10
+</span><span>
+</span><span style="color:#65737e;"># update path to your own python 3.9 installation
+</span><span style="color:#bf616a;">poetry</span><span> env use </span><span style="color:#bf616a;">~</span><span>/.pyenv/versions/3.9.10/bin/python3.9
+</span><span>
+</span><span style="color:#65737e;"># install packages
+</span><span style="color:#bf616a;">poetry</span><span> install
+</span></code></pre>
+<h3 id="run">Run</h3>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;"># terminal 1
+</span><span style="color:#bf616a;">temporal</span><span> server start-dev
+</span><span>
+</span><span style="color:#65737e;"># terminal 2, within your python environment
+</span><span style="color:#bf616a;">python</span><span> src/run_worker.py
+</span><span style="color:#65737e;"># you could start more workers with more terminals, here it won&#39;t be necessary
+</span><span>
+</span><span style="color:#65737e;"># terminal 3, within your python environment
+</span><span style="color:#bf616a;">mkdir -p</span><span> data
+</span><span style="color:#bf616a;">python</span><span> src/run_workflow.py</span><span style="color:#bf616a;"> --url</span><span>=https://news.yahoo.com</span><span style="color:#bf616a;"> --output-dir</span><span>=data
+</span></code></pre>
+<p>And then in <code>data/</code> you should find:</p>
+<pre data-lang="json" style="background-color:#2b303b;color:#c0c5ce;" class="language-json "><code class="language-json" data-lang="json"><span>{
+</span><span>    &quot;</span><span style="color:#a3be8c;">url</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">https://news.yahoo.com/</span><span>&quot;,
+</span><span>    &quot;</span><span style="color:#a3be8c;">title</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">Yahoo News - Latest News &amp; Headlines</span><span>&quot;,
+</span><span>    &quot;</span><span style="color:#a3be8c;">links</span><span>&quot;: [
+</span><span>        &quot;</span><span style="color:#a3be8c;">https://www.yahoo.com/</span><span>&quot;,
+</span><span>        &quot;</span><span style="color:#a3be8c;">https://mail.yahoo.com/</span><span>&quot;,
+</span><span>        &quot;</span><span style="color:#a3be8c;">https://news.yahoo.com/</span><span>&quot;,
+</span><span>        &quot;</span><span style="color:#a3be8c;">https://finance.yahoo.com/</span><span>&quot;,
+</span><span>        &quot;</span><span style="color:#a3be8c;">https://sports.yahoo.com/</span><span>&quot;,
+</span><span>        &quot;</span><span style="color:#a3be8c;">[...]</span><span>&quot;
+</span><span>    ]
+</span><span>}
+</span></code></pre>
+<p><a href="https://github.com/aurelien-clu/temporal-scraper/blob/main/data/384dba2ad7334a68a0e389267dbb06db.json">data/b049.json</a></p>
+<p>Go to <a href="http://127.0.0.1:8233/namespaces/default/workflows">127.0.0.1:8233/namespaces/default/workflows</a> to see the temporal web UI.</p>
+<p>You can see your recent workflow executions:</p>
+<p><img src="https://cluzeau.pro/images/2023-04-06-temporal/0-workflows.png" alt="recent workflows" /></p>
+<p>When selected, you have a top summary:</p>
+<p><img src="https://cluzeau.pro/images/2023-04-06-temporal/1-workflow.png" alt="workflow summary" /></p>
+<p>And finally you can see <a href="https://docs.temporal.io/references/events">all events</a> related to the workflow execution:</p>
+<p><img src="https://cluzeau.pro/images/2023-04-06-temporal/2-workflow-history.png" alt="workflow event history" /></p>
+<p>this includes <code>inputs</code>, <code>outputs</code>, <code>retries</code>, <code>exceptions</code>, etc.</p>
+<h2 id="implementation-walkthrough">Implementation walkthrough</h2>
+<h3 id="workflow">Workflow</h3>
+<p>Our workflow goes like this:</p>
+<ol>
+<li>fetch the web page at the input URL</li>
+<li>parse de page and extract the information we are interested in: the title &amp; links</li>
+<li>save on disk</li>
+<li>return a result containing the title, links and the path to the saved file</li>
+</ol>
+<p>To make it a <code>temporalio</code> workflow, we simply need to decorate the class: <code>@workflow.defn</code> and the run method: <code>@workflow.run</code>.</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>@workflow.</span><span style="color:#bf616a;">defn
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">CrawlWebsite</span><span style="color:#eff1f5;">:
+</span><span>    @workflow.</span><span style="color:#bf616a;">run
+</span><span>    </span><span style="color:#b48ead;">async def </span><span style="color:#8fa1b3;">run</span><span>(</span><span style="color:#bf616a;">self</span><span>, </span><span style="color:#bf616a;">cmd</span><span>: CrawlUrl) -&gt; Output:
+</span><span>        </span><span style="color:#65737e;"># STEP 1: fetch
+</span><span>        page: FetchedPage = </span><span style="color:#b48ead;">await </span><span>workflow.</span><span style="color:#bf616a;">execute_activity</span><span>(
+</span><span>            fetch_page,
+</span><span>            cmd.url,
+</span><span>            </span><span style="color:#bf616a;">schedule_to_close_timeout</span><span>=</span><span style="color:#bf616a;">timedelta</span><span>(</span><span style="color:#bf616a;">seconds</span><span>=</span><span style="color:#d08770;">5</span><span>),
+</span><span>        )
+</span><span>
+</span><span>        </span><span style="color:#65737e;"># STEP 2: parse
+</span><span>        parsed: ParsedPage = </span><span style="color:#b48ead;">await </span><span>workflow.</span><span style="color:#bf616a;">execute_activity</span><span>(
+</span><span>            parse_page,
+</span><span>            page,
+</span><span>            </span><span style="color:#bf616a;">schedule_to_close_timeout</span><span>=</span><span style="color:#bf616a;">timedelta</span><span>(</span><span style="color:#bf616a;">seconds</span><span>=</span><span style="color:#d08770;">5</span><span>),
+</span><span>        )
+</span><span>
+</span><span>        </span><span style="color:#65737e;"># STEP 3: save
+</span><span>        path = cmd.output_dir + cmd.sep + </span><span style="color:#b48ead;">f</span><span>&quot;{cmd.id}</span><span style="color:#a3be8c;">.json</span><span>&quot;
+</span><span>        to_save = </span><span style="color:#bf616a;">SavePage</span><span>(</span><span style="color:#bf616a;">path</span><span>=path, </span><span style="color:#bf616a;">page</span><span>=parsed)
+</span><span>        </span><span style="color:#b48ead;">await </span><span>workflow.</span><span style="color:#bf616a;">execute_activity</span><span>(
+</span><span>            save_page,
+</span><span>            to_save,
+</span><span>            </span><span style="color:#bf616a;">schedule_to_close_timeout</span><span>=</span><span style="color:#bf616a;">timedelta</span><span>(</span><span style="color:#bf616a;">seconds</span><span>=</span><span style="color:#d08770;">5</span><span>),
+</span><span>        )
+</span><span>
+</span><span>        </span><span style="color:#65737e;"># STEP 4: return
+</span><span>        </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">Output</span><span>(
+</span><span>            </span><span style="color:#bf616a;">url</span><span>=cmd.url,
+</span><span>            </span><span style="color:#bf616a;">title</span><span>=parsed.title,
+</span><span>            </span><span style="color:#bf616a;">nb_links</span><span>=</span><span style="color:#96b5b4;">len</span><span>(parsed.links),
+</span><span>            </span><span style="color:#bf616a;">path</span><span>=to_save.path,
+</span><span>        )
+</span></code></pre>
+<p><a href="https://github.com/aurelien-clu/temporal-scraper/blob/main/src/workflows.py">src/workflows.py</a></p>
+<p>For our workflow to work, we need to:</p>
+<ul>
+<li>define the model, i.e. 
+<ul>
+<li>input: <code>CrawlUrl</code></li>
+<li>intermediary results: <code>ParsedPage</code>, <code>SavePage</code></li>
+<li>final result: <code>Output</code></li>
+</ul>
+</li>
+<li>implement <code>activities</code> i.e. each workflow steps
+<ul>
+<li><code>fetch_page</code></li>
+<li><code>parse_page</code></li>
+<li><code>save_page</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="model">Model</h3>
+<p>The model is pure python <code>dataclass</code> which facilitates a lot the implementation.</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>@</span><span style="color:#bf616a;">dataclass
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">CrawlUrl</span><span style="color:#eff1f5;">:
+</span><span>    </span><span style="color:#96b5b4;">id</span><span>: str
+</span><span>    url: str
+</span><span>    </span><span style="color:#65737e;"># temporal.io forces workflow to be as deterministic as possible (and it is a good thing)
+</span><span>    </span><span style="color:#65737e;"># =&gt; os is not available during the workflow =&gt; necessary to provide it as an input
+</span><span>    </span><span style="color:#65737e;"># as I did not want to call it during an activity, though it could have been done this way
+</span><span>    sep: str
+</span><span>    output_dir: str
+</span><span>
+</span><span>@</span><span style="color:#bf616a;">dataclass
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">FetchedPage</span><span style="color:#eff1f5;">:
+</span><span>    url: str
+</span><span>    html_body: str
+</span><span>
+</span><span>@</span><span style="color:#bf616a;">dataclass
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">ParsedPage</span><span style="color:#eff1f5;">:
+</span><span>    url: str
+</span><span>    title: str
+</span><span>    links: t.List[str]
+</span><span>
+</span><span>@</span><span style="color:#bf616a;">dataclass
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">SavePage</span><span style="color:#eff1f5;">:
+</span><span>    path: str
+</span><span>    </span><span style="color:#65737e;"># you could also want to save the raw html body
+</span><span>    page: ParsedPage
+</span><span>
+</span><span>@</span><span style="color:#bf616a;">dataclass
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">Output</span><span style="color:#eff1f5;">:
+</span><span>    url: str
+</span><span>    title: str
+</span><span>    nb_links: int
+</span><span>    path: str
+</span></code></pre>
+<p><a href="https://github.com/aurelien-clu/temporal-scraper/blob/main/src/model.py">src/model.py</a></p>
+<h3 id="activities">Activities</h3>
+<p>Now that we have the workflow and the model, we need to implement each step.</p>
+<p>Each step is an <code>async</code> function with the appropriate decoration <code>@activity.defn</code>.</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>@activity.</span><span style="color:#bf616a;">defn
+</span><span style="color:#b48ead;">async def </span><span style="color:#8fa1b3;">fetch_page</span><span>(</span><span style="color:#bf616a;">url</span><span>: str) -&gt; FetchedPage:
+</span><span>    </span><span style="color:#65737e;"># using httpx because it is a nice http library 
+</span><span>    </span><span style="color:#65737e;"># with sync &amp; async methods
+</span><span>    </span><span style="color:#b48ead;">async with </span><span>httpx.</span><span style="color:#bf616a;">AsyncClient</span><span>() </span><span style="color:#b48ead;">as </span><span>client:
+</span><span>        response = </span><span style="color:#b48ead;">await </span><span>client.</span><span style="color:#bf616a;">get</span><span>(url)
+</span><span>        response.</span><span style="color:#bf616a;">raise_for_status</span><span>()
+</span><span>        content_str = response.text
+</span><span>    </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">FetchedPage</span><span>(</span><span style="color:#bf616a;">url</span><span>=url, </span><span style="color:#bf616a;">html_body</span><span>=content_str)
+</span><span>
+</span><span>
+</span><span>@activity.</span><span style="color:#bf616a;">defn
+</span><span style="color:#b48ead;">async def </span><span style="color:#8fa1b3;">parse_page</span><span>(</span><span style="color:#bf616a;">page</span><span>: FetchedPage) -&gt; ParsedPage:
+</span><span>
+</span><span>    </span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">extract_title</span><span>(</span><span style="color:#bf616a;">soup</span><span>):
+</span><span>        </span><span style="color:#b48ead;">for </span><span>title </span><span style="color:#b48ead;">in </span><span>soup.</span><span style="color:#bf616a;">find_all</span><span>(&quot;</span><span style="color:#a3be8c;">title</span><span>&quot;):
+</span><span>            </span><span style="color:#b48ead;">return </span><span>title.</span><span style="color:#bf616a;">get_text</span><span>()
+</span><span>        </span><span style="color:#b48ead;">return </span><span>&quot;&quot;
+</span><span>
+</span><span>    </span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">extract_links</span><span>(</span><span style="color:#bf616a;">soup</span><span>, </span><span style="color:#bf616a;">url_parsed</span><span>):
+</span><span>        </span><span style="color:#b48ead;">for </span><span>node </span><span style="color:#b48ead;">in </span><span>soup.</span><span style="color:#bf616a;">find_all</span><span>(&quot;</span><span style="color:#a3be8c;">a</span><span>&quot;):
+</span><span>            link = node.</span><span style="color:#bf616a;">get</span><span>(&quot;</span><span style="color:#a3be8c;">href</span><span>&quot;)
+</span><span>            
+</span><span>            </span><span style="color:#65737e;"># prefix relative links with the input url domain
+</span><span>            </span><span style="color:#b48ead;">if </span><span>link.</span><span style="color:#bf616a;">startswith</span><span>(&quot;</span><span style="color:#a3be8c;">/</span><span>&quot;):
+</span><span>                link = url_parsed.netloc + link
+</span><span>            </span><span style="color:#b48ead;">yield </span><span>link
+</span><span>
+</span><span>    url_parsed = </span><span style="color:#bf616a;">urlparse</span><span>(page.url)
+</span><span>    soup = bs4.</span><span style="color:#bf616a;">BeautifulSoup</span><span>(page.html_body, </span><span style="color:#bf616a;">features</span><span>=&quot;</span><span style="color:#a3be8c;">html.parser</span><span>&quot;) </span><span style="color:#65737e;"># parses the HTML
+</span><span>    title = </span><span style="color:#bf616a;">extract_title</span><span>(soup)
+</span><span>    links = </span><span style="color:#bf616a;">list</span><span>(</span><span style="color:#bf616a;">extract_links</span><span>(soup, url_parsed))
+</span><span>    </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">ParsedPage</span><span>(</span><span style="color:#bf616a;">url</span><span>=page.url, </span><span style="color:#bf616a;">title</span><span>=title, </span><span style="color:#bf616a;">links</span><span>=links)
+</span><span>
+</span><span>
+</span><span>@activity.</span><span style="color:#bf616a;">defn
+</span><span style="color:#b48ead;">async def </span><span style="color:#8fa1b3;">save_page</span><span>(</span><span style="color:#bf616a;">to_save</span><span>: SavePage):
+</span><span>    </span><span style="color:#b48ead;">with </span><span style="color:#96b5b4;">open</span><span>(to_save.path, &quot;</span><span style="color:#a3be8c;">w</span><span>&quot;) </span><span style="color:#b48ead;">as </span><span>f:
+</span><span>        </span><span style="color:#65737e;"># in Python, objects are underneath simple dict, 
+</span><span>        </span><span style="color:#65737e;"># accessible at .__dict__
+</span><span>        </span><span style="color:#65737e;"># for our simple example this works well, 
+</span><span>        </span><span style="color:#65737e;"># beware for more complex classes
+</span><span>        json.</span><span style="color:#bf616a;">dump</span><span>(to_save.page.__dict__, f, </span><span style="color:#bf616a;">indent</span><span>=</span><span style="color:#d08770;">4</span><span>)
+</span></code></pre>
+<p><a href="https://github.com/aurelien-clu/temporal-scraper/blob/main/src/activities.py">src/activities.py</a></p>
+<h3 id="run-1">Run</h3>
+<p>Now that we have our workflow with its steps, we need to be able to start it.</p>
+<p>For that we need:</p>
+<ul>
+<li>a worker to be able to execute the workflow and the activities</li>
+<li>a way to tell at <code>temporalio</code>, &quot;start my workflow&quot;</li>
+</ul>
+<p>Note:</p>
+<p>You could have specialized workers, some running workflows, other certain activities and other running other activities. (e.g. you could have activities needing specialized hardware such as GPUs to run AI models)</p>
+<p>The following assigns the <strong>worker</strong>, <code>workflows</code> and <code>activities</code> it can execute.</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#65737e;"># [...]
+</span><span style="color:#b48ead;">from </span><span>activities </span><span style="color:#b48ead;">import </span><span style="color:#d08770;">*
+</span><span style="color:#b48ead;">from </span><span>workflows </span><span style="color:#b48ead;">import </span><span style="color:#d08770;">*
+</span><span>
+</span><span style="color:#b48ead;">async def </span><span style="color:#8fa1b3;">async_start_worker</span><span>(</span><span style="color:#bf616a;">temporal_server</span><span>: str, </span><span style="color:#bf616a;">task_queue</span><span>: str):
+</span><span>    client = </span><span style="color:#b48ead;">await </span><span>Client.</span><span style="color:#bf616a;">connect</span><span>(temporal_server)
+</span><span>
+</span><span>    worker = </span><span style="color:#bf616a;">Worker</span><span>(
+</span><span>        client,
+</span><span>        </span><span style="color:#bf616a;">task_queue</span><span>=task_queue,
+</span><span>        </span><span style="color:#bf616a;">workflows</span><span>=[CrawlWebsite],
+</span><span>        </span><span style="color:#bf616a;">activities</span><span>=[fetch_page, parse_page, save_page],
+</span><span>    )
+</span><span>    </span><span style="color:#b48ead;">await </span><span>worker.</span><span style="color:#bf616a;">run</span><span>()
+</span><span>
+</span><span>
+</span><span style="color:#65737e;"># this wraps our async function to execute outside of an async context
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">start_worker</span><span>(
+</span><span>    </span><span style="color:#bf616a;">temporal_server</span><span>: str = &quot;</span><span style="color:#a3be8c;">localhost:7233</span><span>&quot;,
+</span><span>    </span><span style="color:#bf616a;">task_queue</span><span>=&quot;</span><span style="color:#a3be8c;">scraper</span><span>&quot;,
+</span><span>):
+</span><span>    future = </span><span style="color:#bf616a;">async_start_worker</span><span>(
+</span><span>        </span><span style="color:#bf616a;">temporal_server</span><span>=temporal_server,
+</span><span>        </span><span style="color:#bf616a;">task_queue</span><span>=task_queue,
+</span><span>    )
+</span><span>    </span><span style="color:#b48ead;">return </span><span>asyncio.</span><span style="color:#bf616a;">run</span><span>(future)
+</span><span>
+</span><span style="color:#65737e;"># https://github.com/google/python-fire to create python CLI with no efforts
+</span><span style="color:#b48ead;">if </span><span>__name__ == &quot;</span><span style="color:#a3be8c;">__main__</span><span>&quot;:
+</span><span>    fire.</span><span style="color:#bf616a;">Fire</span><span>(start_worker)
+</span></code></pre>
+<p><a href="https://github.com/aurelien-clu/temporal-scraper/blob/main/src/run_worker.py">src/run_worker.py</a></p>
+<p>this starts a <strong>workflow</strong> with its required <code>CrawlUrl</code> input.</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#65737e;"># [...]
+</span><span style="color:#b48ead;">from </span><span>model </span><span style="color:#b48ead;">import </span><span>CrawlUrl
+</span><span style="color:#b48ead;">from </span><span>workflows </span><span style="color:#b48ead;">import </span><span>CrawlWebsite
+</span><span>
+</span><span style="color:#b48ead;">async def </span><span style="color:#8fa1b3;">async_crawl</span><span>(
+</span><span>    </span><span style="color:#bf616a;">url</span><span>: str,
+</span><span>    </span><span style="color:#bf616a;">output_dir</span><span>: str,
+</span><span>    </span><span style="color:#bf616a;">temporal_server</span><span>: str,
+</span><span>    </span><span style="color:#bf616a;">task_queue</span><span>: str,
+</span><span>):
+</span><span>    crawl_cmd = </span><span style="color:#bf616a;">CrawlUrl</span><span>(
+</span><span>        </span><span style="color:#bf616a;">id</span><span>=uuid.</span><span style="color:#bf616a;">uuid4</span><span>().hex,
+</span><span>        </span><span style="color:#bf616a;">url</span><span>=url,
+</span><span>        </span><span style="color:#bf616a;">sep</span><span>=os.sep,
+</span><span>        </span><span style="color:#bf616a;">output_dir</span><span>=output_dir,
+</span><span>    )
+</span><span>    client = </span><span style="color:#b48ead;">await </span><span>Client.</span><span style="color:#bf616a;">connect</span><span>(temporal_server)
+</span><span>
+</span><span>    logger.</span><span style="color:#bf616a;">info</span><span>(</span><span style="color:#b48ead;">f</span><span>&quot;</span><span style="color:#a3be8c;">starting: </span><span>{crawl_cmd}</span><span style="color:#a3be8c;">...</span><span>&quot;)
+</span><span>    result = </span><span style="color:#b48ead;">await </span><span>client.</span><span style="color:#bf616a;">execute_workflow</span><span>(
+</span><span>        CrawlWebsite.run,
+</span><span>        crawl_cmd,
+</span><span>        </span><span style="color:#bf616a;">id</span><span>=crawl_cmd.id,
+</span><span>        </span><span style="color:#bf616a;">task_queue</span><span>=task_queue,
+</span><span>    )
+</span><span>    logger.</span><span style="color:#bf616a;">success</span><span>(</span><span style="color:#b48ead;">f</span><span>&quot;{result}&quot;)
+</span><span>
+</span><span style="color:#65737e;"># and then we wrap the async function just like in the `src/run_worker.py`
+</span><span style="color:#65737e;"># and generate the CLI with python-fire
+</span><span style="color:#65737e;"># [...]
+</span></code></pre>
+<p><a href="https://github.com/aurelien-clu/temporal-scraper/blob/main/src/run_workflow.py">src/run_workflow.py</a></p>
+<h2 id="going-further">Going further</h2>
+<p>This example is pretty simple whereas <code>temporalio</code> can be quite complex.</p>
+<p>We could improve it with:</p>
+<ul>
+<li>start <a href="https://docs.temporal.io/application-development/features?lang=python#child-workflows">children workflows</a> for each link found within the domain (or for all links)</li>
+<li>verify the domain <a href="https://en.wikipedia.org/wiki/Robots.txt">robots.txt</a> to cancel scraping if forbidden</li>
+<li>don't start or cancel children workflows on already scraped links</li>
+<li>parse additional content in web page</li>
+<li>store raw html body as well</li>
+<li>control workflow execution with <a href="https://docs.temporal.io/application-development/features?lang=python#signals">signals</a> to pause, resume or stop</li>
+<li>ensure scraping fairness per domain (not flooding but scraping at a certain pace to prevent any impact - limiting the number of workers may at first be sufficient)</li>
+<li>[...]</li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            <!-- 
+                <div class="post-tags">
+                    
+                        <a href="https://cluzeau.pro/tags/python/">#python</a>
+                    
+                        <a href="https://cluzeau.pro/tags/workflow/">#workflow</a>
+                    
+                        <a href="https://cluzeau.pro/tags/temporalio/">#temporalio</a>
+                    
+                        <a href="https://cluzeau.pro/tags/scraper/">#scraper</a>
+                    
+                        <a href="https://cluzeau.pro/tags/tldr/">#tldr</a>
+                    
+                </div>
+             -->
+            
+                <div class="post-nav">
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;cluzeau.pro&#x2F;fast-api-template&#x2F;">Python FastAPI template ›</a>
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https://cluzeau.pro/even.js" ></script>
+      
+    </body>
+
+</html>
