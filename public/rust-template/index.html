@@ -220,7 +220,7 @@ For each crate, opinionated logging is setup.</p>
 <span id="continue-reading"></span>
 <p>The repository can be found there: <a href="https://github.com/aurelien-clu/template-rust">github.com/aurelien-clu/template-rust</a></p>
 <h3 id="layout">Layout</h3>
-<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>.
+<pre style="background-color:#282c34;color:#abb2bf;"><code><span>.
 </span><span>├── Cargo.lock
 </span><span>├── Cargo.toml
 </span><span>├── README.md
@@ -239,104 +239,104 @@ For each crate, opinionated logging is setup.</p>
 </span><span>            └── lib.rs
 </span></code></pre>
 <h2 id="how-to-reuse">How to reuse</h2>
-<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> clone https://github.com/aurelien-clu/template-rust &lt;your-project&gt;
+<pre data-lang="bash" style="background-color:#282c34;color:#abb2bf;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#e06c75;">git</span><span> clone https://github.com/aurelien-clu/template-rust </span><span style="color:#56b6c2;">&lt;</span><span>your-project</span><span style="color:#56b6c2;">&gt;
 </span></code></pre>
 <h2 id="how-to-reproduce-the-template">How to reproduce the template</h2>
 <h3 id="gitignore">.gitignore</h3>
 <p>Let's create the <code>.gitignore</code> file with:</p>
-<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#96b5b4;">echo</span><span> target &gt; .gitignore
+<pre data-lang="bash" style="background-color:#282c34;color:#abb2bf;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#56b6c2;">echo</span><span> target </span><span style="color:#56b6c2;">&gt;</span><span> .gitignore
 </span></code></pre>
 <h3 id="cargo-toml">Cargo.toml</h3>
 <p>Let's create the <code>Cargo.toml</code> file with:</p>
-<pre data-lang="toml" style="background-color:#2b303b;color:#c0c5ce;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[workspace]
+<pre data-lang="toml" style="background-color:#282c34;color:#abb2bf;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[workspace]
 </span><span>
-</span><span style="color:#bf616a;">members </span><span>= [&quot;</span><span style="color:#a3be8c;">crates/*</span><span>&quot;]
+</span><span style="color:#e06c75;">members </span><span>= [</span><span style="color:#98c379;">&quot;crates/*&quot;</span><span>]
 </span><span>
 </span><span>[workspace.package]
-</span><span style="color:#bf616a;">version </span><span>= &quot;</span><span style="color:#a3be8c;">0.1.0</span><span>&quot;
-</span><span style="color:#bf616a;">authors </span><span>= [&quot;</span><span style="color:#a3be8c;">Aurélien Clu. &lt;john@doe.johndoe&gt;</span><span>&quot;]
-</span><span style="color:#bf616a;">description </span><span>= &quot;</span><span style="color:#a3be8c;">template-rust</span><span>&quot;
-</span><span style="color:#bf616a;">readme </span><span>= &quot;</span><span style="color:#a3be8c;">README.md</span><span>&quot;
-</span><span style="color:#bf616a;">edition </span><span>= &quot;</span><span style="color:#a3be8c;">2021</span><span>&quot;
-</span><span style="color:#bf616a;">license </span><span>= &quot;</span><span style="color:#a3be8c;">UNLICENSE</span><span>&quot;
+</span><span style="color:#e06c75;">version </span><span>= </span><span style="color:#98c379;">&quot;0.1.0&quot;
+</span><span style="color:#e06c75;">authors </span><span>= [</span><span style="color:#98c379;">&quot;Aurélien Clu. &lt;john@doe.johndoe&gt;&quot;</span><span>]
+</span><span style="color:#e06c75;">description </span><span>= </span><span style="color:#98c379;">&quot;template-rust&quot;
+</span><span style="color:#e06c75;">readme </span><span>= </span><span style="color:#98c379;">&quot;README.md&quot;
+</span><span style="color:#e06c75;">edition </span><span>= </span><span style="color:#98c379;">&quot;2021&quot;
+</span><span style="color:#e06c75;">license </span><span>= </span><span style="color:#98c379;">&quot;UNLICENSE&quot;
 </span></code></pre>
 <h3 id="crates">crates/</h3>
 <p>Now we add the crates we want to have:</p>
-<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">cargo</span><span> new crates/bin-client
-</span><span style="color:#bf616a;">cargo</span><span> new crates/bin-server
-</span><span style="color:#bf616a;">cargo</span><span> new crates/domain</span><span style="color:#bf616a;"> --lib
-</span><span style="color:#65737e;"># feel free to add more libraries
+<pre data-lang="bash" style="background-color:#282c34;color:#abb2bf;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#e06c75;">cargo</span><span> new crates/bin-client
+</span><span style="color:#e06c75;">cargo</span><span> new crates/bin-server
+</span><span style="color:#e06c75;">cargo</span><span> new crates/domain</span><span style="font-style:italic;color:#e06c75;"> --lib
+</span><span style="color:#7f848e;"># feel free to add more libraries
 </span></code></pre>
 <p>And update their configuration (Cargo.toml) to have a proper name, inherit fields from the workspace configuration and have some useful default dependencies.</p>
 <h4 id="crates-bin-client-cargo-toml">crates/bin-client/Cargo.toml</h4>
-<pre data-lang="toml" style="background-color:#2b303b;color:#c0c5ce;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[package]
-</span><span style="color:#bf616a;">name </span><span>= &quot;</span><span style="color:#a3be8c;">client</span><span>&quot;
+<pre data-lang="toml" style="background-color:#282c34;color:#abb2bf;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[package]
+</span><span style="color:#e06c75;">name </span><span>= </span><span style="color:#98c379;">&quot;client&quot;
 </span><span>
-</span><span style="color:#bf616a;">version</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
-</span><span style="color:#bf616a;">authors</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
-</span><span style="color:#bf616a;">description</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
-</span><span style="color:#bf616a;">readme</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
-</span><span style="color:#bf616a;">edition</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
-</span><span style="color:#bf616a;">license</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span style="color:#e06c75;">version</span><span>.</span><span style="color:#e06c75;">workspace </span><span>= </span><span style="color:#d19a66;">true
+</span><span style="color:#e06c75;">authors</span><span>.</span><span style="color:#e06c75;">workspace </span><span>= </span><span style="color:#d19a66;">true
+</span><span style="color:#e06c75;">description</span><span>.</span><span style="color:#e06c75;">workspace </span><span>= </span><span style="color:#d19a66;">true
+</span><span style="color:#e06c75;">readme</span><span>.</span><span style="color:#e06c75;">workspace </span><span>= </span><span style="color:#d19a66;">true
+</span><span style="color:#e06c75;">edition</span><span>.</span><span style="color:#e06c75;">workspace </span><span>= </span><span style="color:#d19a66;">true
+</span><span style="color:#e06c75;">license</span><span>.</span><span style="color:#e06c75;">workspace </span><span>= </span><span style="color:#d19a66;">true
 </span><span>
 </span><span>[dependencies]
-</span><span style="color:#bf616a;">domain </span><span>= { </span><span style="color:#bf616a;">path </span><span>= &quot;</span><span style="color:#a3be8c;">../domain</span><span>&quot; }
+</span><span style="color:#e06c75;">domain </span><span>= { </span><span style="color:#e06c75;">path </span><span>= </span><span style="color:#98c379;">&quot;../domain&quot; </span><span>}
 </span><span>
-</span><span style="color:#65737e;"># logging
-</span><span style="color:#bf616a;">log </span><span>= &quot;</span><span style="color:#a3be8c;">^0</span><span>&quot;
-</span><span style="color:#bf616a;">pretty_env_logger </span><span>= &quot;</span><span style="color:#a3be8c;">^0</span><span>&quot;
+</span><span style="color:#7f848e;"># logging
+</span><span style="color:#e06c75;">log </span><span>= </span><span style="color:#98c379;">&quot;^0&quot;
+</span><span style="color:#e06c75;">pretty_env_logger </span><span>= </span><span style="color:#98c379;">&quot;^0&quot;
 </span></code></pre>
 <h4 id="crates-bin-server-cargo-toml">crates/bin-server/Cargo.toml</h4>
-<pre data-lang="toml" style="background-color:#2b303b;color:#c0c5ce;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[package]
-</span><span style="color:#bf616a;">name </span><span>= &quot;</span><span style="color:#a3be8c;">server</span><span>&quot;
+<pre data-lang="toml" style="background-color:#282c34;color:#abb2bf;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[package]
+</span><span style="color:#e06c75;">name </span><span>= </span><span style="color:#98c379;">&quot;server&quot;
 </span><span>
-</span><span style="color:#bf616a;">version</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
-</span><span style="color:#bf616a;">authors</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
-</span><span style="color:#bf616a;">description</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
-</span><span style="color:#bf616a;">readme</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
-</span><span style="color:#bf616a;">edition</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
-</span><span style="color:#bf616a;">license</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span style="color:#e06c75;">version</span><span>.</span><span style="color:#e06c75;">workspace </span><span>= </span><span style="color:#d19a66;">true
+</span><span style="color:#e06c75;">authors</span><span>.</span><span style="color:#e06c75;">workspace </span><span>= </span><span style="color:#d19a66;">true
+</span><span style="color:#e06c75;">description</span><span>.</span><span style="color:#e06c75;">workspace </span><span>= </span><span style="color:#d19a66;">true
+</span><span style="color:#e06c75;">readme</span><span>.</span><span style="color:#e06c75;">workspace </span><span>= </span><span style="color:#d19a66;">true
+</span><span style="color:#e06c75;">edition</span><span>.</span><span style="color:#e06c75;">workspace </span><span>= </span><span style="color:#d19a66;">true
+</span><span style="color:#e06c75;">license</span><span>.</span><span style="color:#e06c75;">workspace </span><span>= </span><span style="color:#d19a66;">true
 </span><span>
 </span><span>[dependencies]
-</span><span style="color:#bf616a;">domain </span><span>= { </span><span style="color:#bf616a;">path </span><span>= &quot;</span><span style="color:#a3be8c;">../domain</span><span>&quot; }
+</span><span style="color:#e06c75;">domain </span><span>= { </span><span style="color:#e06c75;">path </span><span>= </span><span style="color:#98c379;">&quot;../domain&quot; </span><span>}
 </span><span>
-</span><span style="color:#65737e;"># logging
-</span><span style="color:#bf616a;">tracing </span><span>= &quot;</span><span style="color:#a3be8c;">^0</span><span>&quot;
-</span><span style="color:#bf616a;">tracing-log </span><span>= &quot;</span><span style="color:#a3be8c;">^0</span><span>&quot;  </span><span style="color:#65737e;"># to handle logs from log, e.g. from our domain library here
-</span><span style="color:#bf616a;">tracing-subscriber </span><span>= &quot;</span><span style="color:#a3be8c;">^0</span><span>&quot;  </span><span style="color:#65737e;"># to output to stdout
+</span><span style="color:#7f848e;"># logging
+</span><span style="color:#e06c75;">tracing </span><span>= </span><span style="color:#98c379;">&quot;^0&quot;
+</span><span style="color:#e06c75;">tracing-log </span><span>= </span><span style="color:#98c379;">&quot;^0&quot;  </span><span style="color:#7f848e;"># to handle logs from log, e.g. from our domain library here
+</span><span style="color:#e06c75;">tracing-subscriber </span><span>= </span><span style="color:#98c379;">&quot;^0&quot;  </span><span style="color:#7f848e;"># to output to stdout
 </span><span>
-</span><span style="color:#65737e;"># error handling
-</span><span style="color:#bf616a;">thiserror </span><span>= &quot;</span><span style="color:#a3be8c;">^1</span><span>&quot;
+</span><span style="color:#7f848e;"># error handling
+</span><span style="color:#e06c75;">thiserror </span><span>= </span><span style="color:#98c379;">&quot;^1&quot;
 </span></code></pre>
 <h4 id="crates-domain-cargo-toml">crates/domain/Cargo.toml</h4>
-<pre data-lang="toml" style="background-color:#2b303b;color:#c0c5ce;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[package]
-</span><span style="color:#bf616a;">name </span><span>= &quot;</span><span style="color:#a3be8c;">domain</span><span>&quot;
+<pre data-lang="toml" style="background-color:#282c34;color:#abb2bf;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[package]
+</span><span style="color:#e06c75;">name </span><span>= </span><span style="color:#98c379;">&quot;domain&quot;
 </span><span>
-</span><span style="color:#bf616a;">version</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
-</span><span style="color:#bf616a;">authors</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
-</span><span style="color:#bf616a;">description</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
-</span><span style="color:#bf616a;">readme</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
-</span><span style="color:#bf616a;">edition</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
-</span><span style="color:#bf616a;">license</span><span>.</span><span style="color:#bf616a;">workspace </span><span>= </span><span style="color:#d08770;">true
+</span><span style="color:#e06c75;">version</span><span>.</span><span style="color:#e06c75;">workspace </span><span>= </span><span style="color:#d19a66;">true
+</span><span style="color:#e06c75;">authors</span><span>.</span><span style="color:#e06c75;">workspace </span><span>= </span><span style="color:#d19a66;">true
+</span><span style="color:#e06c75;">description</span><span>.</span><span style="color:#e06c75;">workspace </span><span>= </span><span style="color:#d19a66;">true
+</span><span style="color:#e06c75;">readme</span><span>.</span><span style="color:#e06c75;">workspace </span><span>= </span><span style="color:#d19a66;">true
+</span><span style="color:#e06c75;">edition</span><span>.</span><span style="color:#e06c75;">workspace </span><span>= </span><span style="color:#d19a66;">true
+</span><span style="color:#e06c75;">license</span><span>.</span><span style="color:#e06c75;">workspace </span><span>= </span><span style="color:#d19a66;">true
 </span><span>
 </span><span>[dependencies]
-</span><span style="color:#65737e;"># logging
-</span><span style="color:#bf616a;">log </span><span>= &quot;</span><span style="color:#a3be8c;">^0</span><span>&quot;
+</span><span style="color:#7f848e;"># logging
+</span><span style="color:#e06c75;">log </span><span>= </span><span style="color:#98c379;">&quot;^0&quot;
 </span><span>
-</span><span style="color:#65737e;"># error handling
-</span><span style="color:#bf616a;">thiserror </span><span>= &quot;</span><span style="color:#a3be8c;">^1</span><span>&quot;
+</span><span style="color:#7f848e;"># error handling
+</span><span style="color:#e06c75;">thiserror </span><span>= </span><span style="color:#98c379;">&quot;^1&quot;
 </span></code></pre>
 <h3 id="run">Run</h3>
-<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">cargo</span><span> test
+<pre data-lang="bash" style="background-color:#282c34;color:#abb2bf;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#e06c75;">cargo</span><span> test
 </span><span>
-</span><span style="color:#bf616a;">cargo</span><span> run</span><span style="color:#bf616a;"> --bin</span><span> server
-</span><span style="color:#bf616a;">cargo</span><span> run</span><span style="color:#bf616a;"> --bin</span><span> client
+</span><span style="color:#e06c75;">cargo</span><span> run</span><span style="font-style:italic;color:#e06c75;"> --bin</span><span> server
+</span><span style="color:#e06c75;">cargo</span><span> run</span><span style="font-style:italic;color:#e06c75;"> --bin</span><span> client
 </span><span>
-</span><span style="color:#65737e;"># or building and then running
-</span><span style="color:#bf616a;">cargo</span><span> build</span><span style="color:#bf616a;"> --release --bin</span><span> server
-</span><span style="color:#bf616a;">cargo</span><span> build</span><span style="color:#bf616a;"> --release --bin</span><span> client
-</span><span style="color:#bf616a;">./target/release/server
-</span><span style="color:#bf616a;">RUST_LOG</span><span>=</span><span style="color:#a3be8c;">TRACE </span><span style="color:#bf616a;">./target/release/client
+</span><span style="color:#7f848e;"># or building and then running
+</span><span style="color:#e06c75;">cargo</span><span> build</span><span style="font-style:italic;color:#e06c75;"> --release --bin</span><span> server
+</span><span style="color:#e06c75;">cargo</span><span> build</span><span style="font-style:italic;color:#e06c75;"> --release --bin</span><span> client
+</span><span style="color:#e06c75;">./target/release/server
+</span><span style="color:#e06c75;">RUST_LOG</span><span style="color:#56b6c2;">=</span><span style="color:#98c379;">TRACE </span><span style="color:#e06c75;">./target/release/client
 </span></code></pre>
 <p>To print logs, feel free to update your files alike:</p>
 <ul>

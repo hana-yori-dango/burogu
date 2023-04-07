@@ -247,41 +247,41 @@
 <li>Install <a href="https://docs.temporal.io/application-development/foundations#run-a-dev-cluster">temporal CLI</a></li>
 </ul>
 <h3 id="setup">Setup</h3>
-<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> clone https://github.com/aurelien-clu/temporal-scraper &lt;your-project&gt;
-</span><span style="color:#96b5b4;">cd </span><span>&lt;your-project&gt;
+<pre data-lang="bash" style="background-color:#282c34;color:#abb2bf;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#e06c75;">git</span><span> clone https://github.com/aurelien-clu/temporal-scraper </span><span style="color:#56b6c2;">&lt;</span><span>your-project</span><span style="color:#56b6c2;">&gt;
+</span><span style="color:#56b6c2;">cd &lt;</span><span>your-project</span><span style="color:#56b6c2;">&gt;
 </span><span>
-</span><span style="color:#65737e;"># skip if python 3.9 is already installed with or without pyenv
-</span><span style="color:#bf616a;">pyenv</span><span> install 3.9.10
+</span><span style="color:#7f848e;"># skip if python 3.9 is already installed with or without pyenv
+</span><span style="color:#e06c75;">pyenv</span><span> install 3.9.10
 </span><span>
-</span><span style="color:#65737e;"># update path to your own python 3.9 installation
-</span><span style="color:#bf616a;">poetry</span><span> env use </span><span style="color:#bf616a;">~</span><span>/.pyenv/versions/3.9.10/bin/python3.9
+</span><span style="color:#7f848e;"># update path to your own python 3.9 installation
+</span><span style="color:#e06c75;">poetry</span><span> env use </span><span style="color:#e5c07b;">~</span><span>/.pyenv/versions/3.9.10/bin/python3.9
 </span><span>
-</span><span style="color:#65737e;"># install packages
-</span><span style="color:#bf616a;">poetry</span><span> install
+</span><span style="color:#7f848e;"># install packages
+</span><span style="color:#e06c75;">poetry</span><span> install
 </span></code></pre>
 <h3 id="run">Run</h3>
-<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;"># terminal 1
-</span><span style="color:#bf616a;">temporal</span><span> server start-dev
+<pre data-lang="bash" style="background-color:#282c34;color:#abb2bf;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#7f848e;"># terminal 1
+</span><span style="color:#e06c75;">temporal</span><span> server start-dev
 </span><span>
-</span><span style="color:#65737e;"># terminal 2, within your python environment
-</span><span style="color:#bf616a;">python</span><span> src/run_worker.py
-</span><span style="color:#65737e;"># you could start more workers with more terminals, here it won&#39;t be necessary
+</span><span style="color:#7f848e;"># terminal 2, within your python environment
+</span><span style="color:#e06c75;">python</span><span> src/run_worker.py
+</span><span style="color:#7f848e;"># you could start more workers with more terminals, here it won&#39;t be necessary
 </span><span>
-</span><span style="color:#65737e;"># terminal 3, within your python environment
-</span><span style="color:#bf616a;">mkdir -p</span><span> data
-</span><span style="color:#bf616a;">python</span><span> src/run_workflow.py</span><span style="color:#bf616a;"> --url</span><span>=https://news.yahoo.com</span><span style="color:#bf616a;"> --output-dir</span><span>=data
+</span><span style="color:#7f848e;"># terminal 3, within your python environment
+</span><span style="color:#e06c75;">mkdir</span><span style="font-style:italic;color:#e06c75;"> -p</span><span> data
+</span><span style="color:#e06c75;">python</span><span> src/run_workflow.py</span><span style="font-style:italic;color:#e06c75;"> --url</span><span style="color:#56b6c2;">=</span><span>https://news.yahoo.com</span><span style="font-style:italic;color:#e06c75;"> --output-dir</span><span style="color:#56b6c2;">=</span><span>data
 </span></code></pre>
 <p>And then in <code>data/</code> you should find:</p>
-<pre data-lang="json" style="background-color:#2b303b;color:#c0c5ce;" class="language-json "><code class="language-json" data-lang="json"><span>{
-</span><span>    &quot;</span><span style="color:#a3be8c;">url</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">https://news.yahoo.com/</span><span>&quot;,
-</span><span>    &quot;</span><span style="color:#a3be8c;">title</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">Yahoo News - Latest News &amp; Headlines</span><span>&quot;,
-</span><span>    &quot;</span><span style="color:#a3be8c;">links</span><span>&quot;: [
-</span><span>        &quot;</span><span style="color:#a3be8c;">https://www.yahoo.com/</span><span>&quot;,
-</span><span>        &quot;</span><span style="color:#a3be8c;">https://mail.yahoo.com/</span><span>&quot;,
-</span><span>        &quot;</span><span style="color:#a3be8c;">https://news.yahoo.com/</span><span>&quot;,
-</span><span>        &quot;</span><span style="color:#a3be8c;">https://finance.yahoo.com/</span><span>&quot;,
-</span><span>        &quot;</span><span style="color:#a3be8c;">https://sports.yahoo.com/</span><span>&quot;,
-</span><span>        &quot;</span><span style="color:#a3be8c;">[...]</span><span>&quot;
+<pre data-lang="json" style="background-color:#282c34;color:#abb2bf;" class="language-json "><code class="language-json" data-lang="json"><span>{
+</span><span>    </span><span style="color:#98c379;">&quot;url&quot;</span><span>: </span><span style="color:#98c379;">&quot;https://news.yahoo.com/&quot;</span><span>,
+</span><span>    </span><span style="color:#98c379;">&quot;title&quot;</span><span>: </span><span style="color:#98c379;">&quot;Yahoo News - Latest News &amp; Headlines&quot;</span><span>,
+</span><span>    </span><span style="color:#98c379;">&quot;links&quot;</span><span>: [
+</span><span>        </span><span style="color:#98c379;">&quot;https://www.yahoo.com/&quot;</span><span>,
+</span><span>        </span><span style="color:#98c379;">&quot;https://mail.yahoo.com/&quot;</span><span>,
+</span><span>        </span><span style="color:#98c379;">&quot;https://news.yahoo.com/&quot;</span><span>,
+</span><span>        </span><span style="color:#98c379;">&quot;https://finance.yahoo.com/&quot;</span><span>,
+</span><span>        </span><span style="color:#98c379;">&quot;https://sports.yahoo.com/&quot;</span><span>,
+</span><span>        </span><span style="color:#98c379;">&quot;[...]&quot;
 </span><span>    ]
 </span><span>}
 </span></code></pre>
@@ -304,39 +304,39 @@
 <li>return a result containing the title, links and the path to the saved file</li>
 </ol>
 <p>To make it a <code>temporalio</code> workflow, we simply need to decorate the class: <code>@workflow.defn</code> and the run method: <code>@workflow.run</code>.</p>
-<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>@workflow.</span><span style="color:#bf616a;">defn
-</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">CrawlWebsite</span><span style="color:#eff1f5;">:
-</span><span>    @workflow.</span><span style="color:#bf616a;">run
-</span><span>    </span><span style="color:#b48ead;">async def </span><span style="color:#8fa1b3;">run</span><span>(</span><span style="color:#bf616a;">self</span><span>, </span><span style="color:#bf616a;">cmd</span><span>: CrawlUrl) -&gt; Output:
-</span><span>        </span><span style="color:#65737e;"># STEP 1: fetch
-</span><span>        page: FetchedPage = </span><span style="color:#b48ead;">await </span><span>workflow.</span><span style="color:#bf616a;">execute_activity</span><span>(
+<pre data-lang="python" style="background-color:#282c34;color:#abb2bf;" class="language-python "><code class="language-python" data-lang="python"><span>@workflow.</span><span style="color:#e06c75;">defn
+</span><span style="color:#c678dd;">class </span><span>CrawlWebsite:
+</span><span>    @workflow.</span><span style="color:#e06c75;">run
+</span><span>    </span><span style="color:#c678dd;">async def </span><span style="color:#61afef;">run</span><span>(</span><span style="font-style:italic;color:#e06c75;">self</span><span>, </span><span style="font-style:italic;color:#e06c75;">cmd</span><span>: CrawlUrl) -&gt; Output:
+</span><span>        </span><span style="color:#7f848e;"># STEP 1: fetch
+</span><span>        page: FetchedPage </span><span style="color:#56b6c2;">= </span><span style="color:#c678dd;">await </span><span>workflow.</span><span style="color:#e06c75;">execute_activity</span><span>(
 </span><span>            fetch_page,
 </span><span>            cmd.url,
-</span><span>            </span><span style="color:#bf616a;">schedule_to_close_timeout</span><span>=</span><span style="color:#bf616a;">timedelta</span><span>(</span><span style="color:#bf616a;">seconds</span><span>=</span><span style="color:#d08770;">5</span><span>),
+</span><span>            </span><span style="font-style:italic;color:#e06c75;">schedule_to_close_timeout</span><span style="color:#56b6c2;">=</span><span style="color:#e06c75;">timedelta</span><span>(</span><span style="font-style:italic;color:#e06c75;">seconds</span><span style="color:#56b6c2;">=</span><span style="color:#d19a66;">5</span><span>),
 </span><span>        )
 </span><span>
-</span><span>        </span><span style="color:#65737e;"># STEP 2: parse
-</span><span>        parsed: ParsedPage = </span><span style="color:#b48ead;">await </span><span>workflow.</span><span style="color:#bf616a;">execute_activity</span><span>(
+</span><span>        </span><span style="color:#7f848e;"># STEP 2: parse
+</span><span>        parsed: ParsedPage </span><span style="color:#56b6c2;">= </span><span style="color:#c678dd;">await </span><span>workflow.</span><span style="color:#e06c75;">execute_activity</span><span>(
 </span><span>            parse_page,
 </span><span>            page,
-</span><span>            </span><span style="color:#bf616a;">schedule_to_close_timeout</span><span>=</span><span style="color:#bf616a;">timedelta</span><span>(</span><span style="color:#bf616a;">seconds</span><span>=</span><span style="color:#d08770;">5</span><span>),
+</span><span>            </span><span style="font-style:italic;color:#e06c75;">schedule_to_close_timeout</span><span style="color:#56b6c2;">=</span><span style="color:#e06c75;">timedelta</span><span>(</span><span style="font-style:italic;color:#e06c75;">seconds</span><span style="color:#56b6c2;">=</span><span style="color:#d19a66;">5</span><span>),
 </span><span>        )
 </span><span>
-</span><span>        </span><span style="color:#65737e;"># STEP 3: save
-</span><span>        path = cmd.output_dir + cmd.sep + </span><span style="color:#b48ead;">f</span><span>&quot;{cmd.id}</span><span style="color:#a3be8c;">.json</span><span>&quot;
-</span><span>        to_save = </span><span style="color:#bf616a;">SavePage</span><span>(</span><span style="color:#bf616a;">path</span><span>=path, </span><span style="color:#bf616a;">page</span><span>=parsed)
-</span><span>        </span><span style="color:#b48ead;">await </span><span>workflow.</span><span style="color:#bf616a;">execute_activity</span><span>(
+</span><span>        </span><span style="color:#7f848e;"># STEP 3: save
+</span><span>        path </span><span style="color:#56b6c2;">= </span><span>cmd.output_dir </span><span style="color:#56b6c2;">+ </span><span>cmd.sep </span><span style="color:#56b6c2;">+ </span><span style="color:#c678dd;">f</span><span style="color:#98c379;">&quot;</span><span>{cmd.id}</span><span style="color:#98c379;">.json&quot;
+</span><span>        to_save </span><span style="color:#56b6c2;">= </span><span style="color:#e06c75;">SavePage</span><span>(</span><span style="font-style:italic;color:#e06c75;">path</span><span style="color:#56b6c2;">=</span><span>path, </span><span style="font-style:italic;color:#e06c75;">page</span><span style="color:#56b6c2;">=</span><span>parsed)
+</span><span>        </span><span style="color:#c678dd;">await </span><span>workflow.</span><span style="color:#e06c75;">execute_activity</span><span>(
 </span><span>            save_page,
 </span><span>            to_save,
-</span><span>            </span><span style="color:#bf616a;">schedule_to_close_timeout</span><span>=</span><span style="color:#bf616a;">timedelta</span><span>(</span><span style="color:#bf616a;">seconds</span><span>=</span><span style="color:#d08770;">5</span><span>),
+</span><span>            </span><span style="font-style:italic;color:#e06c75;">schedule_to_close_timeout</span><span style="color:#56b6c2;">=</span><span style="color:#e06c75;">timedelta</span><span>(</span><span style="font-style:italic;color:#e06c75;">seconds</span><span style="color:#56b6c2;">=</span><span style="color:#d19a66;">5</span><span>),
 </span><span>        )
 </span><span>
-</span><span>        </span><span style="color:#65737e;"># STEP 4: return
-</span><span>        </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">Output</span><span>(
-</span><span>            </span><span style="color:#bf616a;">url</span><span>=cmd.url,
-</span><span>            </span><span style="color:#bf616a;">title</span><span>=parsed.title,
-</span><span>            </span><span style="color:#bf616a;">nb_links</span><span>=</span><span style="color:#96b5b4;">len</span><span>(parsed.links),
-</span><span>            </span><span style="color:#bf616a;">path</span><span>=to_save.path,
+</span><span>        </span><span style="color:#7f848e;"># STEP 4: return
+</span><span>        </span><span style="color:#c678dd;">return </span><span style="color:#e06c75;">Output</span><span>(
+</span><span>            </span><span style="font-style:italic;color:#e06c75;">url</span><span style="color:#56b6c2;">=</span><span>cmd.url,
+</span><span>            </span><span style="font-style:italic;color:#e06c75;">title</span><span style="color:#56b6c2;">=</span><span>parsed.title,
+</span><span>            </span><span style="font-style:italic;color:#e06c75;">nb_links</span><span style="color:#56b6c2;">=len</span><span>(parsed.links),
+</span><span>            </span><span style="font-style:italic;color:#e06c75;">path</span><span style="color:#56b6c2;">=</span><span>to_save.path,
 </span><span>        )
 </span></code></pre>
 <p><a href="https://github.com/aurelien-clu/temporal-scraper/blob/main/src/workflows.py">src/workflows.py</a></p>
@@ -359,87 +359,87 @@
 </ul>
 <h3 id="model">Model</h3>
 <p>The model is pure python <code>dataclass</code> which facilitates a lot the implementation.</p>
-<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>@</span><span style="color:#bf616a;">dataclass
-</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">CrawlUrl</span><span style="color:#eff1f5;">:
-</span><span>    </span><span style="color:#96b5b4;">id</span><span>: str
-</span><span>    url: str
-</span><span>    </span><span style="color:#65737e;"># temporal.io forces workflow to be as deterministic as possible (and it is a good thing)
-</span><span>    </span><span style="color:#65737e;"># =&gt; os is not available during the workflow =&gt; necessary to provide it as an input
-</span><span>    </span><span style="color:#65737e;"># as I did not want to call it during an activity, though it could have been done this way
-</span><span>    sep: str
-</span><span>    output_dir: str
+<pre data-lang="python" style="background-color:#282c34;color:#abb2bf;" class="language-python "><code class="language-python" data-lang="python"><span>@</span><span style="color:#e06c75;">dataclass
+</span><span style="color:#c678dd;">class </span><span>CrawlUrl:
+</span><span>    </span><span style="color:#56b6c2;">id</span><span>: </span><span style="color:#56b6c2;">str
+</span><span>    url: </span><span style="color:#56b6c2;">str
+</span><span>    </span><span style="color:#7f848e;"># temporal.io forces workflow to be as deterministic as possible (and it is a good thing)
+</span><span>    </span><span style="color:#7f848e;"># =&gt; os is not available during the workflow =&gt; necessary to provide it as an input
+</span><span>    </span><span style="color:#7f848e;"># as I did not want to call it during an activity, though it could have been done this way
+</span><span>    sep: </span><span style="color:#56b6c2;">str
+</span><span>    output_dir: </span><span style="color:#56b6c2;">str
 </span><span>
-</span><span>@</span><span style="color:#bf616a;">dataclass
-</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">FetchedPage</span><span style="color:#eff1f5;">:
-</span><span>    url: str
-</span><span>    html_body: str
+</span><span>@</span><span style="color:#e06c75;">dataclass
+</span><span style="color:#c678dd;">class </span><span>FetchedPage:
+</span><span>    url: </span><span style="color:#56b6c2;">str
+</span><span>    html_body: </span><span style="color:#56b6c2;">str
 </span><span>
-</span><span>@</span><span style="color:#bf616a;">dataclass
-</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">ParsedPage</span><span style="color:#eff1f5;">:
-</span><span>    url: str
-</span><span>    title: str
-</span><span>    links: t.List[str]
+</span><span>@</span><span style="color:#e06c75;">dataclass
+</span><span style="color:#c678dd;">class </span><span>ParsedPage:
+</span><span>    url: </span><span style="color:#56b6c2;">str
+</span><span>    title: </span><span style="color:#56b6c2;">str
+</span><span>    links: t.List[</span><span style="color:#56b6c2;">str</span><span>]
 </span><span>
-</span><span>@</span><span style="color:#bf616a;">dataclass
-</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">SavePage</span><span style="color:#eff1f5;">:
-</span><span>    path: str
-</span><span>    </span><span style="color:#65737e;"># you could also want to save the raw html body
+</span><span>@</span><span style="color:#e06c75;">dataclass
+</span><span style="color:#c678dd;">class </span><span>SavePage:
+</span><span>    path: </span><span style="color:#56b6c2;">str
+</span><span>    </span><span style="color:#7f848e;"># you could also want to save the raw html body
 </span><span>    page: ParsedPage
 </span><span>
-</span><span>@</span><span style="color:#bf616a;">dataclass
-</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">Output</span><span style="color:#eff1f5;">:
-</span><span>    url: str
-</span><span>    title: str
-</span><span>    nb_links: int
-</span><span>    path: str
+</span><span>@</span><span style="color:#e06c75;">dataclass
+</span><span style="color:#c678dd;">class </span><span>Output:
+</span><span>    url: </span><span style="color:#56b6c2;">str
+</span><span>    title: </span><span style="color:#56b6c2;">str
+</span><span>    nb_links: </span><span style="color:#56b6c2;">int
+</span><span>    path: </span><span style="color:#56b6c2;">str
 </span></code></pre>
 <p><a href="https://github.com/aurelien-clu/temporal-scraper/blob/main/src/model.py">src/model.py</a></p>
 <h3 id="activities">Activities</h3>
 <p>Now that we have the workflow and the model, we need to implement each step.</p>
 <p>Each step is an <code>async</code> function with the appropriate decoration <code>@activity.defn</code>.</p>
-<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>@activity.</span><span style="color:#bf616a;">defn
-</span><span style="color:#b48ead;">async def </span><span style="color:#8fa1b3;">fetch_page</span><span>(</span><span style="color:#bf616a;">url</span><span>: str) -&gt; FetchedPage:
-</span><span>    </span><span style="color:#65737e;"># using httpx because it is a nice http library 
-</span><span>    </span><span style="color:#65737e;"># with sync &amp; async methods
-</span><span>    </span><span style="color:#b48ead;">async with </span><span>httpx.</span><span style="color:#bf616a;">AsyncClient</span><span>() </span><span style="color:#b48ead;">as </span><span>client:
-</span><span>        response = </span><span style="color:#b48ead;">await </span><span>client.</span><span style="color:#bf616a;">get</span><span>(url)
-</span><span>        response.</span><span style="color:#bf616a;">raise_for_status</span><span>()
-</span><span>        content_str = response.text
-</span><span>    </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">FetchedPage</span><span>(</span><span style="color:#bf616a;">url</span><span>=url, </span><span style="color:#bf616a;">html_body</span><span>=content_str)
+<pre data-lang="python" style="background-color:#282c34;color:#abb2bf;" class="language-python "><code class="language-python" data-lang="python"><span>@activity.</span><span style="color:#e06c75;">defn
+</span><span style="color:#c678dd;">async def </span><span style="color:#61afef;">fetch_page</span><span>(</span><span style="font-style:italic;color:#e06c75;">url</span><span>: </span><span style="color:#56b6c2;">str</span><span>) -&gt; FetchedPage:
+</span><span>    </span><span style="color:#7f848e;"># using httpx because it is a nice http library 
+</span><span>    </span><span style="color:#7f848e;"># with sync &amp; async methods
+</span><span>    </span><span style="color:#c678dd;">async with </span><span>httpx.</span><span style="color:#e06c75;">AsyncClient</span><span>() </span><span style="color:#c678dd;">as </span><span>client:
+</span><span>        response </span><span style="color:#56b6c2;">= </span><span style="color:#c678dd;">await </span><span>client.</span><span style="color:#e06c75;">get</span><span>(url)
+</span><span>        response.</span><span style="color:#e06c75;">raise_for_status</span><span>()
+</span><span>        content_str </span><span style="color:#56b6c2;">= </span><span>response.text
+</span><span>    </span><span style="color:#c678dd;">return </span><span style="color:#e06c75;">FetchedPage</span><span>(</span><span style="font-style:italic;color:#e06c75;">url</span><span style="color:#56b6c2;">=</span><span>url, </span><span style="font-style:italic;color:#e06c75;">html_body</span><span style="color:#56b6c2;">=</span><span>content_str)
 </span><span>
 </span><span>
-</span><span>@activity.</span><span style="color:#bf616a;">defn
-</span><span style="color:#b48ead;">async def </span><span style="color:#8fa1b3;">parse_page</span><span>(</span><span style="color:#bf616a;">page</span><span>: FetchedPage) -&gt; ParsedPage:
+</span><span>@activity.</span><span style="color:#e06c75;">defn
+</span><span style="color:#c678dd;">async def </span><span style="color:#61afef;">parse_page</span><span>(</span><span style="font-style:italic;color:#e06c75;">page</span><span>: FetchedPage) -&gt; ParsedPage:
 </span><span>
-</span><span>    </span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">extract_title</span><span>(</span><span style="color:#bf616a;">soup</span><span>):
-</span><span>        </span><span style="color:#b48ead;">for </span><span>title </span><span style="color:#b48ead;">in </span><span>soup.</span><span style="color:#bf616a;">find_all</span><span>(&quot;</span><span style="color:#a3be8c;">title</span><span>&quot;):
-</span><span>            </span><span style="color:#b48ead;">return </span><span>title.</span><span style="color:#bf616a;">get_text</span><span>()
-</span><span>        </span><span style="color:#b48ead;">return </span><span>&quot;&quot;
+</span><span>    </span><span style="color:#c678dd;">def </span><span style="color:#61afef;">extract_title</span><span>(</span><span style="font-style:italic;color:#e06c75;">soup</span><span>):
+</span><span>        </span><span style="color:#c678dd;">for </span><span>title </span><span style="color:#c678dd;">in </span><span>soup.</span><span style="color:#e06c75;">find_all</span><span>(</span><span style="color:#98c379;">&quot;title&quot;</span><span>):
+</span><span>            </span><span style="color:#c678dd;">return </span><span>title.</span><span style="color:#e06c75;">get_text</span><span>()
+</span><span>        </span><span style="color:#c678dd;">return </span><span style="color:#98c379;">&quot;&quot;
 </span><span>
-</span><span>    </span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">extract_links</span><span>(</span><span style="color:#bf616a;">soup</span><span>, </span><span style="color:#bf616a;">url_parsed</span><span>):
-</span><span>        </span><span style="color:#b48ead;">for </span><span>node </span><span style="color:#b48ead;">in </span><span>soup.</span><span style="color:#bf616a;">find_all</span><span>(&quot;</span><span style="color:#a3be8c;">a</span><span>&quot;):
-</span><span>            link = node.</span><span style="color:#bf616a;">get</span><span>(&quot;</span><span style="color:#a3be8c;">href</span><span>&quot;)
+</span><span>    </span><span style="color:#c678dd;">def </span><span style="color:#61afef;">extract_links</span><span>(</span><span style="font-style:italic;color:#e06c75;">soup</span><span>, </span><span style="font-style:italic;color:#e06c75;">url_parsed</span><span>):
+</span><span>        </span><span style="color:#c678dd;">for </span><span>node </span><span style="color:#c678dd;">in </span><span>soup.</span><span style="color:#e06c75;">find_all</span><span>(</span><span style="color:#98c379;">&quot;a&quot;</span><span>):
+</span><span>            link </span><span style="color:#56b6c2;">= </span><span>node.</span><span style="color:#e06c75;">get</span><span>(</span><span style="color:#98c379;">&quot;href&quot;</span><span>)
 </span><span>            
-</span><span>            </span><span style="color:#65737e;"># prefix relative links with the input url domain
-</span><span>            </span><span style="color:#b48ead;">if </span><span>link.</span><span style="color:#bf616a;">startswith</span><span>(&quot;</span><span style="color:#a3be8c;">/</span><span>&quot;):
-</span><span>                link = url_parsed.netloc + link
-</span><span>            </span><span style="color:#b48ead;">yield </span><span>link
+</span><span>            </span><span style="color:#7f848e;"># prefix relative links with the input url domain
+</span><span>            </span><span style="color:#c678dd;">if </span><span>link.</span><span style="color:#e06c75;">startswith</span><span>(</span><span style="color:#98c379;">&quot;/&quot;</span><span>):
+</span><span>                link </span><span style="color:#56b6c2;">= </span><span>url_parsed.netloc </span><span style="color:#56b6c2;">+ </span><span>link
+</span><span>            </span><span style="color:#c678dd;">yield </span><span>link
 </span><span>
-</span><span>    url_parsed = </span><span style="color:#bf616a;">urlparse</span><span>(page.url)
-</span><span>    soup = bs4.</span><span style="color:#bf616a;">BeautifulSoup</span><span>(page.html_body, </span><span style="color:#bf616a;">features</span><span>=&quot;</span><span style="color:#a3be8c;">html.parser</span><span>&quot;) </span><span style="color:#65737e;"># parses the HTML
-</span><span>    title = </span><span style="color:#bf616a;">extract_title</span><span>(soup)
-</span><span>    links = </span><span style="color:#bf616a;">list</span><span>(</span><span style="color:#bf616a;">extract_links</span><span>(soup, url_parsed))
-</span><span>    </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">ParsedPage</span><span>(</span><span style="color:#bf616a;">url</span><span>=page.url, </span><span style="color:#bf616a;">title</span><span>=title, </span><span style="color:#bf616a;">links</span><span>=links)
+</span><span>    url_parsed </span><span style="color:#56b6c2;">= </span><span style="color:#e06c75;">urlparse</span><span>(page.url)
+</span><span>    soup </span><span style="color:#56b6c2;">= </span><span>bs4.</span><span style="color:#e06c75;">BeautifulSoup</span><span>(page.html_body, </span><span style="font-style:italic;color:#e06c75;">features</span><span style="color:#56b6c2;">=</span><span style="color:#98c379;">&quot;html.parser&quot;</span><span>) </span><span style="color:#7f848e;"># parses the HTML
+</span><span>    title </span><span style="color:#56b6c2;">= </span><span style="color:#e06c75;">extract_title</span><span>(soup)
+</span><span>    links </span><span style="color:#56b6c2;">= list</span><span>(</span><span style="color:#e06c75;">extract_links</span><span>(soup, url_parsed))
+</span><span>    </span><span style="color:#c678dd;">return </span><span style="color:#e06c75;">ParsedPage</span><span>(</span><span style="font-style:italic;color:#e06c75;">url</span><span style="color:#56b6c2;">=</span><span>page.url, </span><span style="font-style:italic;color:#e06c75;">title</span><span style="color:#56b6c2;">=</span><span>title, </span><span style="font-style:italic;color:#e06c75;">links</span><span style="color:#56b6c2;">=</span><span>links)
 </span><span>
 </span><span>
-</span><span>@activity.</span><span style="color:#bf616a;">defn
-</span><span style="color:#b48ead;">async def </span><span style="color:#8fa1b3;">save_page</span><span>(</span><span style="color:#bf616a;">to_save</span><span>: SavePage):
-</span><span>    </span><span style="color:#b48ead;">with </span><span style="color:#96b5b4;">open</span><span>(to_save.path, &quot;</span><span style="color:#a3be8c;">w</span><span>&quot;) </span><span style="color:#b48ead;">as </span><span>f:
-</span><span>        </span><span style="color:#65737e;"># in Python, objects are underneath simple dict, 
-</span><span>        </span><span style="color:#65737e;"># accessible at .__dict__
-</span><span>        </span><span style="color:#65737e;"># for our simple example this works well, 
-</span><span>        </span><span style="color:#65737e;"># beware for more complex classes
-</span><span>        json.</span><span style="color:#bf616a;">dump</span><span>(to_save.page.__dict__, f, </span><span style="color:#bf616a;">indent</span><span>=</span><span style="color:#d08770;">4</span><span>)
+</span><span>@activity.</span><span style="color:#e06c75;">defn
+</span><span style="color:#c678dd;">async def </span><span style="color:#61afef;">save_page</span><span>(</span><span style="font-style:italic;color:#e06c75;">to_save</span><span>: SavePage):
+</span><span>    </span><span style="color:#c678dd;">with </span><span style="color:#56b6c2;">open</span><span>(to_save.path, </span><span style="color:#98c379;">&quot;w&quot;</span><span>) </span><span style="color:#c678dd;">as </span><span>f:
+</span><span>        </span><span style="color:#7f848e;"># in Python, objects are underneath simple dict, 
+</span><span>        </span><span style="color:#7f848e;"># accessible at .__dict__
+</span><span>        </span><span style="color:#7f848e;"># for our simple example this works well, 
+</span><span>        </span><span style="color:#7f848e;"># beware for more complex classes
+</span><span>        json.</span><span style="color:#e06c75;">dump</span><span>(to_save.page.</span><span style="color:#e06c75;">__dict__</span><span>, f, </span><span style="font-style:italic;color:#e06c75;">indent</span><span style="color:#56b6c2;">=</span><span style="color:#d19a66;">4</span><span>)
 </span></code></pre>
 <p><a href="https://github.com/aurelien-clu/temporal-scraper/blob/main/src/activities.py">src/activities.py</a></p>
 <h3 id="run-1">Run</h3>
@@ -452,69 +452,69 @@
 <p>Note:</p>
 <p>You could have specialized workers, some running workflows, other certain activities and other running other activities. (e.g. you could have activities needing specialized hardware such as GPUs to run AI models)</p>
 <p>The following assigns the <strong>worker</strong>, <code>workflows</code> and <code>activities</code> it can execute.</p>
-<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#65737e;"># [...]
-</span><span style="color:#b48ead;">from </span><span>activities </span><span style="color:#b48ead;">import </span><span style="color:#d08770;">*
-</span><span style="color:#b48ead;">from </span><span>workflows </span><span style="color:#b48ead;">import </span><span style="color:#d08770;">*
+<pre data-lang="python" style="background-color:#282c34;color:#abb2bf;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#7f848e;"># [...]
+</span><span style="color:#c678dd;">from </span><span>activities </span><span style="font-style:italic;color:#c678dd;">import </span><span style="color:#d19a66;">*
+</span><span style="color:#c678dd;">from </span><span>workflows </span><span style="font-style:italic;color:#c678dd;">import </span><span style="color:#d19a66;">*
 </span><span>
-</span><span style="color:#b48ead;">async def </span><span style="color:#8fa1b3;">async_start_worker</span><span>(</span><span style="color:#bf616a;">temporal_server</span><span>: str, </span><span style="color:#bf616a;">task_queue</span><span>: str):
-</span><span>    client = </span><span style="color:#b48ead;">await </span><span>Client.</span><span style="color:#bf616a;">connect</span><span>(temporal_server)
+</span><span style="color:#c678dd;">async def </span><span style="color:#61afef;">async_start_worker</span><span>(</span><span style="font-style:italic;color:#e06c75;">temporal_server</span><span>: </span><span style="color:#56b6c2;">str</span><span>, </span><span style="font-style:italic;color:#e06c75;">task_queue</span><span>: </span><span style="color:#56b6c2;">str</span><span>):
+</span><span>    client </span><span style="color:#56b6c2;">= </span><span style="color:#c678dd;">await </span><span>Client.</span><span style="color:#e06c75;">connect</span><span>(temporal_server)
 </span><span>
-</span><span>    worker = </span><span style="color:#bf616a;">Worker</span><span>(
+</span><span>    worker </span><span style="color:#56b6c2;">= </span><span style="color:#e06c75;">Worker</span><span>(
 </span><span>        client,
-</span><span>        </span><span style="color:#bf616a;">task_queue</span><span>=task_queue,
-</span><span>        </span><span style="color:#bf616a;">workflows</span><span>=[CrawlWebsite],
-</span><span>        </span><span style="color:#bf616a;">activities</span><span>=[fetch_page, parse_page, save_page],
+</span><span>        </span><span style="font-style:italic;color:#e06c75;">task_queue</span><span style="color:#56b6c2;">=</span><span>task_queue,
+</span><span>        </span><span style="font-style:italic;color:#e06c75;">workflows</span><span style="color:#56b6c2;">=</span><span>[CrawlWebsite],
+</span><span>        </span><span style="font-style:italic;color:#e06c75;">activities</span><span style="color:#56b6c2;">=</span><span>[fetch_page, parse_page, save_page],
 </span><span>    )
-</span><span>    </span><span style="color:#b48ead;">await </span><span>worker.</span><span style="color:#bf616a;">run</span><span>()
+</span><span>    </span><span style="color:#c678dd;">await </span><span>worker.</span><span style="color:#e06c75;">run</span><span>()
 </span><span>
 </span><span>
-</span><span style="color:#65737e;"># this wraps our async function to execute outside of an async context
-</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">start_worker</span><span>(
-</span><span>    </span><span style="color:#bf616a;">temporal_server</span><span>: str = &quot;</span><span style="color:#a3be8c;">localhost:7233</span><span>&quot;,
-</span><span>    </span><span style="color:#bf616a;">task_queue</span><span>=&quot;</span><span style="color:#a3be8c;">scraper</span><span>&quot;,
+</span><span style="color:#7f848e;"># this wraps our async function to execute outside of an async context
+</span><span style="color:#c678dd;">def </span><span style="color:#61afef;">start_worker</span><span>(
+</span><span>    </span><span style="font-style:italic;color:#e06c75;">temporal_server</span><span>: </span><span style="color:#56b6c2;">str = </span><span style="color:#98c379;">&quot;localhost:7233&quot;</span><span>,
+</span><span>    </span><span style="font-style:italic;color:#e06c75;">task_queue</span><span style="color:#56b6c2;">=</span><span style="color:#98c379;">&quot;scraper&quot;</span><span>,
 </span><span>):
-</span><span>    future = </span><span style="color:#bf616a;">async_start_worker</span><span>(
-</span><span>        </span><span style="color:#bf616a;">temporal_server</span><span>=temporal_server,
-</span><span>        </span><span style="color:#bf616a;">task_queue</span><span>=task_queue,
+</span><span>    future </span><span style="color:#56b6c2;">= </span><span style="color:#e06c75;">async_start_worker</span><span>(
+</span><span>        </span><span style="font-style:italic;color:#e06c75;">temporal_server</span><span style="color:#56b6c2;">=</span><span>temporal_server,
+</span><span>        </span><span style="font-style:italic;color:#e06c75;">task_queue</span><span style="color:#56b6c2;">=</span><span>task_queue,
 </span><span>    )
-</span><span>    </span><span style="color:#b48ead;">return </span><span>asyncio.</span><span style="color:#bf616a;">run</span><span>(future)
+</span><span>    </span><span style="color:#c678dd;">return </span><span>asyncio.</span><span style="color:#e06c75;">run</span><span>(future)
 </span><span>
-</span><span style="color:#65737e;"># https://github.com/google/python-fire to create python CLI with no efforts
-</span><span style="color:#b48ead;">if </span><span>__name__ == &quot;</span><span style="color:#a3be8c;">__main__</span><span>&quot;:
-</span><span>    fire.</span><span style="color:#bf616a;">Fire</span><span>(start_worker)
+</span><span style="color:#7f848e;"># https://github.com/google/python-fire to create python CLI with no efforts
+</span><span style="color:#c678dd;">if </span><span style="color:#e06c75;">__name__ </span><span style="color:#56b6c2;">== </span><span style="color:#98c379;">&quot;__main__&quot;</span><span>:
+</span><span>    fire.</span><span style="color:#e06c75;">Fire</span><span>(start_worker)
 </span></code></pre>
 <p><a href="https://github.com/aurelien-clu/temporal-scraper/blob/main/src/run_worker.py">src/run_worker.py</a></p>
 <p>this starts a <strong>workflow</strong> with its required <code>CrawlUrl</code> input.</p>
-<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#65737e;"># [...]
-</span><span style="color:#b48ead;">from </span><span>model </span><span style="color:#b48ead;">import </span><span>CrawlUrl
-</span><span style="color:#b48ead;">from </span><span>workflows </span><span style="color:#b48ead;">import </span><span>CrawlWebsite
+<pre data-lang="python" style="background-color:#282c34;color:#abb2bf;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#7f848e;"># [...]
+</span><span style="color:#c678dd;">from </span><span>model </span><span style="font-style:italic;color:#c678dd;">import </span><span>CrawlUrl
+</span><span style="color:#c678dd;">from </span><span>workflows </span><span style="font-style:italic;color:#c678dd;">import </span><span>CrawlWebsite
 </span><span>
-</span><span style="color:#b48ead;">async def </span><span style="color:#8fa1b3;">async_crawl</span><span>(
-</span><span>    </span><span style="color:#bf616a;">url</span><span>: str,
-</span><span>    </span><span style="color:#bf616a;">output_dir</span><span>: str,
-</span><span>    </span><span style="color:#bf616a;">temporal_server</span><span>: str,
-</span><span>    </span><span style="color:#bf616a;">task_queue</span><span>: str,
+</span><span style="color:#c678dd;">async def </span><span style="color:#61afef;">async_crawl</span><span>(
+</span><span>    </span><span style="font-style:italic;color:#e06c75;">url</span><span>: </span><span style="color:#56b6c2;">str</span><span>,
+</span><span>    </span><span style="font-style:italic;color:#e06c75;">output_dir</span><span>: </span><span style="color:#56b6c2;">str</span><span>,
+</span><span>    </span><span style="font-style:italic;color:#e06c75;">temporal_server</span><span>: </span><span style="color:#56b6c2;">str</span><span>,
+</span><span>    </span><span style="font-style:italic;color:#e06c75;">task_queue</span><span>: </span><span style="color:#56b6c2;">str</span><span>,
 </span><span>):
-</span><span>    crawl_cmd = </span><span style="color:#bf616a;">CrawlUrl</span><span>(
-</span><span>        </span><span style="color:#bf616a;">id</span><span>=uuid.</span><span style="color:#bf616a;">uuid4</span><span>().hex,
-</span><span>        </span><span style="color:#bf616a;">url</span><span>=url,
-</span><span>        </span><span style="color:#bf616a;">sep</span><span>=os.sep,
-</span><span>        </span><span style="color:#bf616a;">output_dir</span><span>=output_dir,
+</span><span>    crawl_cmd </span><span style="color:#56b6c2;">= </span><span style="color:#e06c75;">CrawlUrl</span><span>(
+</span><span>        </span><span style="font-style:italic;color:#e06c75;">id</span><span style="color:#56b6c2;">=</span><span>uuid.</span><span style="color:#e06c75;">uuid4</span><span>().hex,
+</span><span>        </span><span style="font-style:italic;color:#e06c75;">url</span><span style="color:#56b6c2;">=</span><span>url,
+</span><span>        </span><span style="font-style:italic;color:#e06c75;">sep</span><span style="color:#56b6c2;">=</span><span>os.sep,
+</span><span>        </span><span style="font-style:italic;color:#e06c75;">output_dir</span><span style="color:#56b6c2;">=</span><span>output_dir,
 </span><span>    )
-</span><span>    client = </span><span style="color:#b48ead;">await </span><span>Client.</span><span style="color:#bf616a;">connect</span><span>(temporal_server)
+</span><span>    client </span><span style="color:#56b6c2;">= </span><span style="color:#c678dd;">await </span><span>Client.</span><span style="color:#e06c75;">connect</span><span>(temporal_server)
 </span><span>
-</span><span>    logger.</span><span style="color:#bf616a;">info</span><span>(</span><span style="color:#b48ead;">f</span><span>&quot;</span><span style="color:#a3be8c;">starting: </span><span>{crawl_cmd}</span><span style="color:#a3be8c;">...</span><span>&quot;)
-</span><span>    result = </span><span style="color:#b48ead;">await </span><span>client.</span><span style="color:#bf616a;">execute_workflow</span><span>(
+</span><span>    logger.</span><span style="color:#e06c75;">info</span><span>(</span><span style="color:#c678dd;">f</span><span style="color:#98c379;">&quot;starting: </span><span>{crawl_cmd}</span><span style="color:#98c379;">...&quot;</span><span>)
+</span><span>    result </span><span style="color:#56b6c2;">= </span><span style="color:#c678dd;">await </span><span>client.</span><span style="color:#e06c75;">execute_workflow</span><span>(
 </span><span>        CrawlWebsite.run,
 </span><span>        crawl_cmd,
-</span><span>        </span><span style="color:#bf616a;">id</span><span>=crawl_cmd.id,
-</span><span>        </span><span style="color:#bf616a;">task_queue</span><span>=task_queue,
+</span><span>        </span><span style="font-style:italic;color:#e06c75;">id</span><span style="color:#56b6c2;">=</span><span>crawl_cmd.id,
+</span><span>        </span><span style="font-style:italic;color:#e06c75;">task_queue</span><span style="color:#56b6c2;">=</span><span>task_queue,
 </span><span>    )
-</span><span>    logger.</span><span style="color:#bf616a;">success</span><span>(</span><span style="color:#b48ead;">f</span><span>&quot;{result}&quot;)
+</span><span>    logger.</span><span style="color:#e06c75;">success</span><span>(</span><span style="color:#c678dd;">f</span><span style="color:#98c379;">&quot;</span><span>{result}</span><span style="color:#98c379;">&quot;</span><span>)
 </span><span>
-</span><span style="color:#65737e;"># and then we wrap the async function just like in the `src/run_worker.py`
-</span><span style="color:#65737e;"># and generate the CLI with python-fire
-</span><span style="color:#65737e;"># [...]
+</span><span style="color:#7f848e;"># and then we wrap the async function just like in the `src/run_worker.py`
+</span><span style="color:#7f848e;"># and generate the CLI with python-fire
+</span><span style="color:#7f848e;"># [...]
 </span></code></pre>
 <p><a href="https://github.com/aurelien-clu/temporal-scraper/blob/main/src/run_workflow.py">src/run_workflow.py</a></p>
 <h2 id="going-further">Going further</h2>

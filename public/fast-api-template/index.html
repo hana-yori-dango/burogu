@@ -207,7 +207,7 @@
 <span id="continue-reading"></span>
 <p>The repository can be found there: <a href="https://github.com/aurelien-clu/template-python-fast-api">github.com/aurelien-clu/template-python-fast-api</a></p>
 <h2 id="layout">Layout</h2>
-<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>.
+<pre style="background-color:#282c34;color:#abb2bf;"><code><span>.
 </span><span>├── Makefile
 </span><span>├── pyproject.toml
 </span><span>├── src
@@ -233,42 +233,42 @@
 </span><span>        └── steps/          &lt;= Gherkin steps implementations
 </span></code></pre>
 <h2 id="how-to-reuse">How to reuse</h2>
-<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> clone https://github.com/aurelien-clu/template-python-fast-api &lt;your-project&gt;
+<pre data-lang="bash" style="background-color:#282c34;color:#abb2bf;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#e06c75;">git</span><span> clone https://github.com/aurelien-clu/template-python-fast-api </span><span style="color:#56b6c2;">&lt;</span><span>your-project</span><span style="color:#56b6c2;">&gt;
 </span></code></pre>
 <h2 id="efficient-test-writing">Efficient test writing</h2>
 <p>Using <a href="https://en.wikipedia.org/wiki/Behavior-driven_development">Behavior Driven Development</a>, it is easy to reuse parts of tests, alike querying an API endpoint, validating the response, etc.</p>
 <p>Once a set of steps has been written (python code below) you are able to write many tests quickly using <a href="https://cucumber.io/docs/gherkin/reference/">Gherkin</a> language which ressemble natural language with the formalism of <code>Given</code>, <code>When</code>, <code>Then</code>.</p>
-<pre data-lang="ini" style="background-color:#2b303b;color:#c0c5ce;" class="language-ini "><code class="language-ini" data-lang="ini"><span style="color:#65737e;">// Gherkin test definition
-</span><span style="color:#bf616a;">Feature</span><span>: Health
-</span><span>  </span><span style="color:#bf616a;">Background</span><span>:
-</span><span>    </span><span style="color:#bf616a;">Given </span><span>an API client
-</span><span>  </span><span style="color:#bf616a;">Scenario</span><span>: Health check: GET
-</span><span>    </span><span style="color:#bf616a;">Given </span><span>path: /
-</span><span>    </span><span style="color:#bf616a;">When </span><span>getting
-</span><span>    </span><span style="color:#bf616a;">Then </span><span>response code is </span><span style="color:#d08770;">200
-</span><span>    </span><span style="color:#bf616a;">And </span><span>json response is </span><span style="color:#a3be8c;">&quot;ok&quot;
+<pre data-lang="ini" style="background-color:#282c34;color:#abb2bf;" class="language-ini "><code class="language-ini" data-lang="ini"><span style="font-style:italic;color:#7f848e;">// Gherkin test definition
+</span><span style="font-style:italic;color:#e06c75;">Feature</span><span style="color:#56b6c2;">:</span><span> Health
+</span><span>  </span><span style="font-style:italic;color:#e06c75;">Background</span><span style="color:#56b6c2;">:
+</span><span>    </span><span style="font-style:italic;color:#e06c75;">Given </span><span>an API client
+</span><span>  </span><span style="font-style:italic;color:#e06c75;">Scenario</span><span style="color:#56b6c2;">:</span><span> Health check</span><span style="color:#56b6c2;">: </span><span>GET
+</span><span>    </span><span style="font-style:italic;color:#e06c75;">Given </span><span>path</span><span style="color:#56b6c2;">: /
+</span><span>    </span><span style="font-style:italic;color:#e06c75;">When </span><span>getting
+</span><span>    </span><span style="font-style:italic;color:#e06c75;">Then </span><span>response code is </span><span style="color:#d19a66;">200
+</span><span>    </span><span style="font-style:italic;color:#e06c75;">And </span><span>json response is </span><span style="color:#98c379;">&quot;ok&quot;
 </span></code></pre>
 <p><a href="https://github.com/aurelien-clu/template-python-fast-api/blob/main/tests/bdd/health.feature">github.com/aurelien-clu/template-python-fast-api/tests/bdd/health.feature</a></p>
-<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#65737e;"># reusable steps across tests (repository hold few more)
-</span><span>@</span><span style="color:#bf616a;">step</span><span>(&quot;</span><span style="color:#a3be8c;">path: </span><span style="color:#d08770;">{path}</span><span>&quot;)
-</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">step_impl</span><span>(</span><span style="color:#bf616a;">context</span><span>, </span><span style="color:#bf616a;">path</span><span>: str):
-</span><span>    context.request_path = path
+<pre data-lang="python" style="background-color:#282c34;color:#abb2bf;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#7f848e;"># reusable steps across tests (repository hold few more)
+</span><span>@</span><span style="color:#e06c75;">step</span><span>(</span><span style="color:#98c379;">&quot;path: </span><span style="color:#d19a66;">{path}</span><span style="color:#98c379;">&quot;</span><span>)
+</span><span style="color:#c678dd;">def </span><span style="color:#61afef;">step_impl</span><span>(</span><span style="font-style:italic;color:#e06c75;">context</span><span>, </span><span style="font-style:italic;color:#e06c75;">path</span><span>: </span><span style="color:#56b6c2;">str</span><span>):
+</span><span>    context.request_path </span><span style="color:#56b6c2;">= </span><span>path
 </span><span>
-</span><span>@</span><span style="color:#bf616a;">step</span><span>(&quot;</span><span style="color:#a3be8c;">getting</span><span>&quot;)
-</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">step_impl</span><span>(</span><span style="color:#bf616a;">context</span><span>):
-</span><span>    path = context.request_path
-</span><span>    headers = </span><span style="color:#96b5b4;">getattr</span><span>(context, &quot;</span><span style="color:#a3be8c;">request_headers</span><span>&quot;, </span><span style="color:#d08770;">None</span><span>)
-</span><span>    context.response = context.client.</span><span style="color:#bf616a;">get</span><span>(path, </span><span style="color:#bf616a;">headers</span><span>=headers)
+</span><span>@</span><span style="color:#e06c75;">step</span><span>(</span><span style="color:#98c379;">&quot;getting&quot;</span><span>)
+</span><span style="color:#c678dd;">def </span><span style="color:#61afef;">step_impl</span><span>(</span><span style="font-style:italic;color:#e06c75;">context</span><span>):
+</span><span>    path </span><span style="color:#56b6c2;">= </span><span>context.request_path
+</span><span>    headers </span><span style="color:#56b6c2;">= getattr</span><span>(context, </span><span style="color:#98c379;">&quot;request_headers&quot;</span><span>, </span><span style="color:#d19a66;">None</span><span>)
+</span><span>    context.response </span><span style="color:#56b6c2;">= </span><span>context.client.</span><span style="color:#e06c75;">get</span><span>(path, </span><span style="font-style:italic;color:#e06c75;">headers</span><span style="color:#56b6c2;">=</span><span>headers)
 </span><span>
-</span><span>@</span><span style="color:#bf616a;">step</span><span>(&quot;</span><span style="color:#a3be8c;">response code is </span><span style="color:#d08770;">{code}</span><span>&quot;)
-</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">step_impl</span><span>(</span><span style="color:#bf616a;">context</span><span>, </span><span style="color:#bf616a;">code</span><span>: str):
-</span><span>    check = context.response.status_code == </span><span style="color:#bf616a;">int</span><span>(code)
-</span><span>    </span><span style="color:#b48ead;">assert </span><span>check
+</span><span>@</span><span style="color:#e06c75;">step</span><span>(</span><span style="color:#98c379;">&quot;response code is </span><span style="color:#d19a66;">{code}</span><span style="color:#98c379;">&quot;</span><span>)
+</span><span style="color:#c678dd;">def </span><span style="color:#61afef;">step_impl</span><span>(</span><span style="font-style:italic;color:#e06c75;">context</span><span>, </span><span style="font-style:italic;color:#e06c75;">code</span><span>: </span><span style="color:#56b6c2;">str</span><span>):
+</span><span>    check </span><span style="color:#56b6c2;">= </span><span>context.response.status_code </span><span style="color:#56b6c2;">== int</span><span>(code)
+</span><span>    </span><span style="color:#c678dd;">assert </span><span>check
 </span><span>
-</span><span>@</span><span style="color:#bf616a;">step</span><span>(&#39;</span><span style="color:#a3be8c;">json response is &quot;</span><span style="color:#d08770;">{text}</span><span style="color:#a3be8c;">&quot;</span><span>&#39;)
-</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">step_impl</span><span>(</span><span style="color:#bf616a;">context</span><span>, </span><span style="color:#bf616a;">text</span><span>: str):
-</span><span>    check = context.response.</span><span style="color:#bf616a;">json</span><span>() == text
-</span><span>    </span><span style="color:#b48ead;">assert </span><span>check
+</span><span>@</span><span style="color:#e06c75;">step</span><span>(</span><span style="color:#98c379;">&#39;json response is &quot;</span><span style="color:#d19a66;">{text}</span><span style="color:#98c379;">&quot;&#39;</span><span>)
+</span><span style="color:#c678dd;">def </span><span style="color:#61afef;">step_impl</span><span>(</span><span style="font-style:italic;color:#e06c75;">context</span><span>, </span><span style="font-style:italic;color:#e06c75;">text</span><span>: </span><span style="color:#56b6c2;">str</span><span>):
+</span><span>    check </span><span style="color:#56b6c2;">= </span><span>context.response.</span><span style="color:#e06c75;">json</span><span>() </span><span style="color:#56b6c2;">== </span><span>text
+</span><span>    </span><span style="color:#c678dd;">assert </span><span>check
 </span></code></pre>
 <p><a href="https://github.com/aurelien-clu/template-python-fast-api/tree/main/tests/bdd/steps">github.com/aurelien-clu/template-python-fast-api/tests/bdd/steps</a></p>
 

@@ -280,92 +280,92 @@
 <li>not <code>wasm</code> if you have reasons to need this, then go with <a href="https://github.com/thalo-rs/thalo">github.com/thalo-rs/thalo</a></li>
 </ul>
 <h3 id="setup">Setup</h3>
-<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#96b5b4;">.
-</span><span style="color:#bf616a;">├──</span><span> Cargo.toml
-</span><span style="color:#bf616a;">├──</span><span> crates
-</span><span style="color:#bf616a;">│</span><span>   ├── domain-plane
-</span><span style="color:#bf616a;">│</span><span>   └── server
-</span><span style="color:#bf616a;">├──</span><span> db
-</span><span style="color:#bf616a;">│</span><span>   └── init.sql
-</span><span style="color:#bf616a;">├──</span><span> docker-compose.yml
-</span><span style="color:#bf616a;">└──</span><span> test
-</span><span>    </span><span style="color:#bf616a;">└──</span><span> test_api_plane.sh
+<pre data-lang="bash" style="background-color:#282c34;color:#abb2bf;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#56b6c2;">.
+</span><span style="color:#e06c75;">├──</span><span> Cargo.toml
+</span><span style="color:#e06c75;">├──</span><span> crates
+</span><span style="color:#e06c75;">│</span><span>   ├── domain-plane
+</span><span style="color:#e06c75;">│</span><span>   └── server
+</span><span style="color:#e06c75;">├──</span><span> db
+</span><span style="color:#e06c75;">│</span><span>   └── init.sql
+</span><span style="color:#e06c75;">├──</span><span> docker-compose.yml
+</span><span style="color:#e06c75;">└──</span><span> test
+</span><span>    </span><span style="color:#e06c75;">└──</span><span> test_api_plane.sh
 </span></code></pre>
 <p>We need to have a crate for our <code>plane domain</code> and another for our <code>server</code>.
 By separating <code>domain</code> from <code>server</code> (and other <code>infrastructure</code> concerns we adhere to <a href="https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)">wikipedia.org/Hexagonal architecture</a>)</p>
 <h4 id="cargo-toml"><strong>Cargo.toml</strong></h4>
-<pre data-lang="toml" style="background-color:#2b303b;color:#c0c5ce;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[workspace]
-</span><span style="color:#bf616a;">members </span><span>= [&quot;</span><span style="color:#a3be8c;">crates/*</span><span>&quot;]
+<pre data-lang="toml" style="background-color:#282c34;color:#abb2bf;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[workspace]
+</span><span style="color:#e06c75;">members </span><span>= [</span><span style="color:#98c379;">&quot;crates/*&quot;</span><span>]
 </span></code></pre>
 <h4 id="crates"><strong>crates/</strong></h4>
-<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">cargo</span><span> new crates/domain-plane</span><span style="color:#bf616a;"> --lib
-</span><span style="color:#bf616a;">cargo</span><span> new crates/server
+<pre data-lang="bash" style="background-color:#282c34;color:#abb2bf;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#e06c75;">cargo</span><span> new crates/domain-plane</span><span style="font-style:italic;color:#e06c75;"> --lib
+</span><span style="color:#e06c75;">cargo</span><span> new crates/server
 </span></code></pre>
 <h4 id="docker-compose-yml"><strong>docker-compose.yml</strong></h4>
 <p>To store our events and our <code>queries</code> (views on our aggregate) we will need a database, <a href="https://github.com/serverlesstechnology/cqrs">github.com/serverlesstechnology/cqrs</a> works with <code>PostgreSQL</code> &amp; few other <code>databases</code>. <code>PostgreSQL</code> being my go to database, we will use it. (it is also the one in the demo project, let's keep it simple)</p>
-<pre data-lang="yaml" style="background-color:#2b303b;color:#c0c5ce;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span style="color:#bf616a;">version</span><span>: &#39;</span><span style="color:#a3be8c;">3.1</span><span>&#39;
+<pre data-lang="yaml" style="background-color:#282c34;color:#abb2bf;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span style="color:#e06c75;">version</span><span>: </span><span style="color:#98c379;">&#39;3.1&#39;
 </span><span>
-</span><span style="color:#bf616a;">services</span><span>:
-</span><span>  </span><span style="color:#bf616a;">cqrs-postgres-db</span><span>:
-</span><span>    </span><span style="color:#bf616a;">image</span><span>: </span><span style="color:#a3be8c;">postgres
-</span><span>    </span><span style="color:#bf616a;">restart</span><span>: </span><span style="color:#a3be8c;">always
-</span><span>    </span><span style="color:#bf616a;">ports</span><span>:
-</span><span>      - </span><span style="color:#a3be8c;">5432:5432
-</span><span>    </span><span style="color:#bf616a;">environment</span><span>:
-</span><span>      </span><span style="color:#bf616a;">POSTGRES_DB</span><span>: </span><span style="color:#a3be8c;">demo
-</span><span>      </span><span style="color:#bf616a;">POSTGRES_USER</span><span>: </span><span style="color:#a3be8c;">demo_user
-</span><span>      </span><span style="color:#bf616a;">POSTGRES_PASSWORD</span><span>: </span><span style="color:#a3be8c;">demo_pass
-</span><span>    </span><span style="color:#bf616a;">volumes</span><span>:
-</span><span>      - &#39;</span><span style="color:#a3be8c;">./db:/docker-entrypoint-initdb.d</span><span>&#39;
+</span><span style="color:#e06c75;">services</span><span>:
+</span><span>  </span><span style="color:#e06c75;">cqrs-postgres-db</span><span>:
+</span><span>    </span><span style="color:#e06c75;">image</span><span>: </span><span style="color:#98c379;">postgres
+</span><span>    </span><span style="color:#e06c75;">restart</span><span>: </span><span style="color:#98c379;">always
+</span><span>    </span><span style="color:#e06c75;">ports</span><span>:
+</span><span>      - </span><span style="color:#98c379;">5432:5432
+</span><span>    </span><span style="color:#e06c75;">environment</span><span>:
+</span><span>      </span><span style="color:#e06c75;">POSTGRES_DB</span><span>: </span><span style="color:#98c379;">demo
+</span><span>      </span><span style="color:#e06c75;">POSTGRES_USER</span><span>: </span><span style="color:#98c379;">demo_user
+</span><span>      </span><span style="color:#e06c75;">POSTGRES_PASSWORD</span><span>: </span><span style="color:#98c379;">demo_pass
+</span><span>    </span><span style="color:#e06c75;">volumes</span><span>:
+</span><span>      - </span><span style="color:#98c379;">&#39;./db:/docker-entrypoint-initdb.d&#39;
 </span></code></pre>
 <h4 id="db-init-sql"><strong>db/init.sql</strong></h4>
 <p>We need to store our events and create a database user:</p>
-<pre data-lang="sql" style="background-color:#2b303b;color:#c0c5ce;" class="language-sql "><code class="language-sql" data-lang="sql"><span style="color:#b48ead;">CREATE TABLE </span><span style="color:#8fa1b3;">events
+<pre data-lang="sql" style="background-color:#282c34;color:#abb2bf;" class="language-sql "><code class="language-sql" data-lang="sql"><span style="color:#c678dd;">CREATE TABLE </span><span style="color:#61afef;">events
 </span><span>(
-</span><span>    aggregate_type </span><span style="color:#b48ead;">text                         </span><span>NOT </span><span style="color:#d08770;">NULL</span><span>,
-</span><span>    aggregate_id   </span><span style="color:#b48ead;">text                         </span><span>NOT </span><span style="color:#d08770;">NULL</span><span>,
-</span><span>    sequence       </span><span style="color:#b48ead;">bigint CHECK</span><span> (sequence &gt;= </span><span style="color:#d08770;">0</span><span>) NOT </span><span style="color:#d08770;">NULL</span><span>,
-</span><span>    event_type     </span><span style="color:#b48ead;">text                         </span><span>NOT </span><span style="color:#d08770;">NULL</span><span>,
-</span><span>    event_version  </span><span style="color:#b48ead;">text                         </span><span>NOT </span><span style="color:#d08770;">NULL</span><span>,
-</span><span>    payload        json                         NOT </span><span style="color:#d08770;">NULL</span><span>,
-</span><span>    metadata       json                         NOT </span><span style="color:#d08770;">NULL</span><span>,
-</span><span>    </span><span style="color:#b48ead;">PRIMARY KEY</span><span> (aggregate_type, aggregate_id, sequence)
+</span><span>    aggregate_type </span><span style="color:#c678dd;">text                         </span><span style="color:#56b6c2;">NOT </span><span style="color:#d19a66;">NULL</span><span>,
+</span><span>    aggregate_id   </span><span style="color:#c678dd;">text                         </span><span style="color:#56b6c2;">NOT </span><span style="color:#d19a66;">NULL</span><span>,
+</span><span>    sequence       </span><span style="color:#c678dd;">bigint CHECK</span><span> (sequence </span><span style="color:#56b6c2;">&gt;= </span><span style="color:#d19a66;">0</span><span>) </span><span style="color:#56b6c2;">NOT </span><span style="color:#d19a66;">NULL</span><span>,
+</span><span>    event_type     </span><span style="color:#c678dd;">text                         </span><span style="color:#56b6c2;">NOT </span><span style="color:#d19a66;">NULL</span><span>,
+</span><span>    event_version  </span><span style="color:#c678dd;">text                         </span><span style="color:#56b6c2;">NOT </span><span style="color:#d19a66;">NULL</span><span>,
+</span><span>    payload        json                         </span><span style="color:#56b6c2;">NOT </span><span style="color:#d19a66;">NULL</span><span>,
+</span><span>    metadata       json                         </span><span style="color:#56b6c2;">NOT </span><span style="color:#d19a66;">NULL</span><span>,
+</span><span>    </span><span style="color:#c678dd;">PRIMARY KEY</span><span> (aggregate_type, aggregate_id, sequence)
 </span><span>);
 </span><span>
-</span><span style="color:#b48ead;">CREATE USER </span><span>demo_user WITH ENCRYPTED PASSWORD &#39;</span><span style="color:#8fa1b3;">demo_pass</span><span>&#39;;
-</span><span style="color:#b48ead;">GRANT</span><span> ALL PRIVILEGES ON DATABASE postgres TO demo_user;
+</span><span style="color:#c678dd;">CREATE USER </span><span>demo_user WITH ENCRYPTED PASSWORD &#39;</span><span style="color:#61afef;">demo_pass</span><span>&#39;;
+</span><span style="color:#c678dd;">GRANT</span><span> ALL PRIVILEGES ON DATABASE postgres TO demo_user;
 </span></code></pre>
 <h3 id="events">Events</h3>
 <p>From our <code>event storming</code> session, we need to have the following events:</p>
-<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">use </span><span>serde::{Deserialize, Serialize};
+<pre data-lang="rust" style="background-color:#282c34;color:#abb2bf;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#c678dd;">use </span><span>serde::{Deserialize, Serialize};
 </span><span>
-</span><span>#[</span><span style="color:#bf616a;">derive</span><span>(Debug, Clone, Serialize, Deserialize, PartialEq)]
-</span><span style="color:#b48ead;">pub enum </span><span>Event {
+</span><span>#[</span><span style="color:#e06c75;">derive</span><span>(Debug, Clone, Serialize, Deserialize, PartialEq)]
+</span><span style="color:#c678dd;">pub enum </span><span>Event {
 </span><span>    Registered { registration_id: String },
 </span><span>    OnGround,
 </span><span>    TookOff,
 </span><span>    Landed,
 </span><span>    PositionedAt {
-</span><span>        latitude: </span><span style="color:#b48ead;">f64</span><span>,
-</span><span>        longitude: </span><span style="color:#b48ead;">f64</span><span>,
-</span><span>        altitude: </span><span style="color:#b48ead;">usize</span><span>,
+</span><span>        latitude: </span><span style="color:#c678dd;">f64</span><span>,
+</span><span>        longitude: </span><span style="color:#c678dd;">f64</span><span>,
+</span><span>        altitude: </span><span style="color:#c678dd;">usize</span><span>,
 </span><span>    },
 </span><span>}
 </span></code></pre>
 <p>they will be serialized as <code>json</code> in the database (column <code>payload</code>) thus we need to make them serializable.</p>
 <h3 id="commands">Commands</h3>
 <p>And also the following commands:</p>
-<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">use </span><span>serde::Deserialize;
+<pre data-lang="rust" style="background-color:#282c34;color:#abb2bf;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#c678dd;">use </span><span>serde::Deserialize;
 </span><span>
-</span><span>#[</span><span style="color:#bf616a;">derive</span><span>(Debug, Deserialize)]
-</span><span style="color:#b48ead;">pub enum </span><span>Command {
+</span><span>#[</span><span style="color:#e06c75;">derive</span><span>(Debug, Deserialize)]
+</span><span style="color:#c678dd;">pub enum </span><span>Command {
 </span><span>    Register {
 </span><span>        registration_id: String,
 </span><span>    },
 </span><span>    UpdatePosition {
-</span><span>        latitude: </span><span style="color:#b48ead;">f64</span><span>,
-</span><span>        longitude: </span><span style="color:#b48ead;">f64</span><span>,
-</span><span>        altitude: </span><span style="color:#b48ead;">usize</span><span>,
+</span><span>        latitude: </span><span style="color:#c678dd;">f64</span><span>,
+</span><span>        longitude: </span><span style="color:#c678dd;">f64</span><span>,
+</span><span>        altitude: </span><span style="color:#c678dd;">usize</span><span>,
 </span><span>    },
 </span><span>    TakeOff,
 </span><span>    Land,
@@ -376,13 +376,13 @@ By separating <code>domain</code> from <code>server</code> (and other <code>infr
 <p>Commands may not always return successfully, and some errors can be expected and returned.
 We create an <code>enum</code> with all possible errors and define a message associated to each (<code>#[error(&quot;&lt;MSG&gt;&quot;)]</code>).</p>
 <p>Usually this will be updated while implementing the aggregate. To fasten the reading, here are all of our error cases.</p>
-<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#bf616a;">derive</span><span>(thiserror::Error, Clone, Debug, PartialEq)]
-</span><span style="color:#b48ead;">pub enum </span><span>Error {
-</span><span>    #[</span><span style="color:#bf616a;">error</span><span>(&quot;</span><span style="color:#a3be8c;">Unable to take off in curent state</span><span>&quot;)]
+<pre data-lang="rust" style="background-color:#282c34;color:#abb2bf;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#e06c75;">derive</span><span>(thiserror::Error, Clone, Debug, PartialEq)]
+</span><span style="color:#c678dd;">pub enum </span><span>Error {
+</span><span>    #[</span><span style="color:#e06c75;">error</span><span>(</span><span style="color:#98c379;">&quot;Unable to take off in curent state&quot;</span><span>)]
 </span><span>    CannotTakeOff,
-</span><span>    #[</span><span style="color:#bf616a;">error</span><span>(&quot;</span><span style="color:#a3be8c;">Unable to land in current state</span><span>&quot;)]
+</span><span>    #[</span><span style="color:#e06c75;">error</span><span>(</span><span style="color:#98c379;">&quot;Unable to land in current state&quot;</span><span>)]
 </span><span>    CannotLand,
-</span><span>    #[</span><span style="color:#bf616a;">error</span><span>(&quot;</span><span style="color:#a3be8c;">Cannot register again, identification is immutable</span><span>&quot;)]
+</span><span>    #[</span><span style="color:#e06c75;">error</span><span>(</span><span style="color:#98c379;">&quot;Cannot register again, identification is immutable&quot;</span><span>)]
 </span><span>    AlreadyRegistered,
 </span><span>}
 </span></code></pre>
@@ -395,31 +395,31 @@ We create an <code>enum</code> with all possible errors and define a message ass
 <li>a last known position</li>
 <li>a flying status</li>
 </ul>
-<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#bf616a;">derive</span><span>(Serialize, Deserialize, Debug, Clone, PartialEq)]
-</span><span style="color:#b48ead;">pub struct </span><span>Position {
-</span><span>    </span><span style="color:#b48ead;">pub </span><span style="color:#bf616a;">latitude</span><span>: </span><span style="color:#b48ead;">f64</span><span>,
-</span><span>    </span><span style="color:#b48ead;">pub </span><span style="color:#bf616a;">longitude</span><span>: </span><span style="color:#b48ead;">f64</span><span>,
-</span><span>    </span><span style="color:#b48ead;">pub </span><span style="color:#bf616a;">altitude</span><span>: </span><span style="color:#b48ead;">usize</span><span>,
+<pre data-lang="rust" style="background-color:#282c34;color:#abb2bf;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#e06c75;">derive</span><span>(Serialize, Deserialize, Debug, Clone, PartialEq)]
+</span><span style="color:#c678dd;">pub struct </span><span>Position {
+</span><span>    </span><span style="color:#c678dd;">pub </span><span style="color:#e06c75;">latitude</span><span>: </span><span style="color:#c678dd;">f64</span><span>,
+</span><span>    </span><span style="color:#c678dd;">pub </span><span style="color:#e06c75;">longitude</span><span>: </span><span style="color:#c678dd;">f64</span><span>,
+</span><span>    </span><span style="color:#c678dd;">pub </span><span style="color:#e06c75;">altitude</span><span>: </span><span style="color:#c678dd;">usize</span><span>,
 </span><span>}
 </span><span>
-</span><span>#[</span><span style="color:#bf616a;">derive</span><span>(Serialize, Deserialize, Default, Debug, Clone, PartialEq)]
-</span><span style="color:#b48ead;">pub enum </span><span>Status {
-</span><span>    #[</span><span style="color:#bf616a;">default</span><span>]
+</span><span>#[</span><span style="color:#e06c75;">derive</span><span>(Serialize, Deserialize, Default, Debug, Clone, PartialEq)]
+</span><span style="color:#c678dd;">pub enum </span><span>Status {
+</span><span>    #[</span><span style="color:#e06c75;">default</span><span>]
 </span><span>    OnGround,
 </span><span>    InAir,
 </span><span>}
 </span><span>
-</span><span>#[</span><span style="color:#bf616a;">derive</span><span>(Serialize, Deserialize)]
-</span><span style="color:#b48ead;">pub struct </span><span>Plane {
-</span><span>    </span><span style="color:#bf616a;">registration_id</span><span>: String,
-</span><span>    </span><span style="color:#bf616a;">last_position</span><span>: Option&lt;Position&gt;,
-</span><span>    </span><span style="color:#bf616a;">status</span><span>: Status,
+</span><span>#[</span><span style="color:#e06c75;">derive</span><span>(Serialize, Deserialize)]
+</span><span style="color:#c678dd;">pub struct </span><span>Plane {
+</span><span>    </span><span style="color:#e06c75;">registration_id</span><span>: String,
+</span><span>    </span><span style="color:#e06c75;">last_position</span><span>: Option&lt;Position&gt;,
+</span><span>    </span><span style="color:#e06c75;">status</span><span>: Status,
 </span><span>}
 </span><span>
-</span><span style="color:#b48ead;">impl </span><span>Default </span><span style="color:#b48ead;">for </span><span>Plane {
-</span><span>    </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">default</span><span>() -&gt; </span><span style="color:#b48ead;">Self </span><span>{
-</span><span>        </span><span style="color:#b48ead;">Self </span><span>{
-</span><span>            registration_id: &quot;&quot;.</span><span style="color:#96b5b4;">to_string</span><span>(),
+</span><span style="color:#c678dd;">impl </span><span>Default </span><span style="color:#c678dd;">for </span><span>Plane {
+</span><span>    </span><span style="color:#c678dd;">fn </span><span style="color:#61afef;">default</span><span>() -&gt; </span><span style="color:#c678dd;">Self </span><span>{
+</span><span>        </span><span style="color:#c678dd;">Self </span><span>{
+</span><span>            registration_id: </span><span style="color:#98c379;">&quot;&quot;</span><span>.</span><span style="color:#56b6c2;">to_string</span><span>(),
 </span><span>            last_position: None,
 </span><span>            status: OnGround,
 </span><span>        }
@@ -427,39 +427,39 @@ We create an <code>enum</code> with all possible errors and define a message ass
 </span><span>}
 </span></code></pre>
 <p>We then need to be able to build a <code>Plane</code> state based on past events:</p>
-<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">apply</span><span>(&amp;</span><span style="color:#b48ead;">mut </span><span style="color:#bf616a;">self</span><span>, </span><span style="color:#bf616a;">event</span><span>: </span><span style="color:#b48ead;">Self::</span><span>Event) {
-</span><span>    </span><span style="color:#b48ead;">match</span><span> event {
-</span><span>        Event::Registered { registration_id } =&gt; </span><span style="color:#bf616a;">self</span><span>.registration_id = registration_id,
+<pre data-lang="rust" style="background-color:#282c34;color:#abb2bf;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#c678dd;">fn </span><span style="color:#61afef;">apply</span><span>(</span><span style="color:#56b6c2;">&amp;</span><span style="color:#c678dd;">mut </span><span style="font-style:italic;color:#e06c75;">self</span><span>, </span><span style="font-style:italic;color:#e06c75;">event</span><span>: </span><span style="color:#c678dd;">Self::</span><span>Event) {
+</span><span>    </span><span style="color:#c678dd;">match</span><span> event {
+</span><span>        Event::Registered { registration_id } </span><span style="color:#56b6c2;">=&gt; </span><span style="color:#e06c75;">self</span><span>.registration_id </span><span style="color:#56b6c2;">=</span><span> registration_id,
 </span><span>        Event::PositionedAt {
 </span><span>            latitude,
 </span><span>            longitude,
 </span><span>            altitude,
-</span><span>        } =&gt; {
-</span><span>            </span><span style="color:#b48ead;">let</span><span> p = Position {
+</span><span>        } </span><span style="color:#56b6c2;">=&gt; </span><span>{
+</span><span>            </span><span style="color:#c678dd;">let</span><span> p </span><span style="color:#56b6c2;">=</span><span> Position {
 </span><span>                latitude,
 </span><span>                longitude,
 </span><span>                altitude,
 </span><span>            };
-</span><span>            </span><span style="color:#bf616a;">self</span><span>.last_position = Some(p);
+</span><span>            </span><span style="color:#e06c75;">self</span><span>.last_position </span><span style="color:#56b6c2;">= </span><span>Some(p);
 </span><span>        }
-</span><span>        Event::TookOff =&gt; </span><span style="color:#bf616a;">self</span><span>.status = Status::InAir,
-</span><span>        Event::Landed =&gt; </span><span style="color:#bf616a;">self</span><span>.status = Status::OnGround,
-</span><span>        Event::OnGround =&gt; </span><span style="color:#bf616a;">self</span><span>.status = Status::OnGround,
+</span><span>        Event::TookOff </span><span style="color:#56b6c2;">=&gt; </span><span style="color:#e06c75;">self</span><span>.status </span><span style="color:#56b6c2;">= </span><span>Status::InAir,
+</span><span>        Event::Landed </span><span style="color:#56b6c2;">=&gt; </span><span style="color:#e06c75;">self</span><span>.status </span><span style="color:#56b6c2;">= </span><span>Status::OnGround,
+</span><span>        Event::OnGround </span><span style="color:#56b6c2;">=&gt; </span><span style="color:#e06c75;">self</span><span>.status </span><span style="color:#56b6c2;">= </span><span>Status::OnGround,
 </span><span>    }
 </span><span>}
 </span></code></pre>
 <h4 id="command-handler"><strong>Command handler</strong></h4>
 <p>We have a <code>Plane</code> that can be constructed with past events but we have no way of creating events.</p>
 <p>That where the <code>handle</code> function comes in, it will translate successful commands into events:</p>
-<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span>async </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">handle</span><span>(
-</span><span>    &amp;</span><span style="color:#bf616a;">self</span><span>,
-</span><span>    </span><span style="color:#bf616a;">command</span><span>: </span><span style="color:#b48ead;">Self::</span><span>Command,
-</span><span>    </span><span style="color:#bf616a;">_services</span><span>: &amp;</span><span style="color:#b48ead;">Self::</span><span>Services,
-</span><span>) -&gt; Result&lt;Vec&lt;</span><span style="color:#b48ead;">Self::</span><span>Event&gt;, </span><span style="color:#b48ead;">Self::</span><span>Error&gt; {
-</span><span>    </span><span style="color:#b48ead;">match</span><span> command {
-</span><span>        Command::Register { registration_id } =&gt; {
-</span><span>            </span><span style="color:#b48ead;">if </span><span style="color:#bf616a;">self</span><span>.registration_id != &quot;&quot; {
-</span><span>                </span><span style="color:#b48ead;">return </span><span>Err(Error::AlreadyRegistered);
+<pre data-lang="rust" style="background-color:#282c34;color:#abb2bf;" class="language-rust "><code class="language-rust" data-lang="rust"><span>async </span><span style="color:#c678dd;">fn </span><span style="color:#61afef;">handle</span><span>(
+</span><span>    </span><span style="color:#56b6c2;">&amp;</span><span style="font-style:italic;color:#e06c75;">self</span><span>,
+</span><span>    </span><span style="font-style:italic;color:#e06c75;">command</span><span>: </span><span style="color:#c678dd;">Self::</span><span>Command,
+</span><span>    </span><span style="font-style:italic;color:#e06c75;">_services</span><span>: </span><span style="color:#56b6c2;">&amp;</span><span style="color:#c678dd;">Self::</span><span>Services,
+</span><span>) -&gt; Result&lt;Vec&lt;</span><span style="color:#c678dd;">Self::</span><span>Event&gt;, </span><span style="color:#c678dd;">Self::</span><span>Error&gt; {
+</span><span>    </span><span style="color:#c678dd;">match</span><span> command {
+</span><span>        Command::Register { registration_id } </span><span style="color:#56b6c2;">=&gt; </span><span>{
+</span><span>            </span><span style="color:#c678dd;">if </span><span style="color:#e06c75;">self</span><span>.registration_id </span><span style="color:#56b6c2;">!= </span><span style="color:#98c379;">&quot;&quot; </span><span>{
+</span><span>                </span><span style="color:#c678dd;">return </span><span>Err(Error::AlreadyRegistered);
 </span><span>            }
 </span><span>            Ok(vec![Event::Registered { registration_id }, Event::OnGround])
 </span><span>        }
@@ -467,25 +467,25 @@ We create an <code>enum</code> with all possible errors and define a message ass
 </span><span>            latitude,
 </span><span>            longitude,
 </span><span>            altitude,
-</span><span>        } =&gt; Ok(vec![Event::PositionedAt {
-</span><span>            </span><span style="color:#65737e;">// here we should validate that coordinates are valid
+</span><span>        } </span><span style="color:#56b6c2;">=&gt; </span><span>Ok(vec![Event::PositionedAt {
+</span><span>            </span><span style="font-style:italic;color:#7f848e;">// here we should validate that coordinates are valid
 </span><span>            latitude,
 </span><span>            longitude,
 </span><span>            altitude,
 </span><span>        }]),
-</span><span>        Command::TakeOff =&gt; {
-</span><span>            </span><span style="color:#b48ead;">if </span><span style="color:#bf616a;">self</span><span>.status == Status::OnGround {
-</span><span>                </span><span style="color:#65737e;">// here we should call the TowerControl service to ensure we can takeoff
+</span><span>        Command::TakeOff </span><span style="color:#56b6c2;">=&gt; </span><span>{
+</span><span>            </span><span style="color:#c678dd;">if </span><span style="color:#e06c75;">self</span><span>.status </span><span style="color:#56b6c2;">== </span><span>Status::OnGround {
+</span><span>                </span><span style="font-style:italic;color:#7f848e;">// here we should call the TowerControl service to ensure we can takeoff
 </span><span>                Ok(vec![Event::TookOff])
-</span><span>            } </span><span style="color:#b48ead;">else </span><span>{
+</span><span>            } </span><span style="color:#c678dd;">else </span><span>{
 </span><span>                Err(Error::CannotTakeOff)
 </span><span>            }
 </span><span>        }
-</span><span>        Command::Land =&gt; {
-</span><span>            </span><span style="color:#b48ead;">if </span><span style="color:#bf616a;">self</span><span>.status == Status::InAir {
-</span><span>                </span><span style="color:#65737e;">// here we should call the TowerControl service to ensure we can land
+</span><span>        Command::Land </span><span style="color:#56b6c2;">=&gt; </span><span>{
+</span><span>            </span><span style="color:#c678dd;">if </span><span style="color:#e06c75;">self</span><span>.status </span><span style="color:#56b6c2;">== </span><span>Status::InAir {
+</span><span>                </span><span style="font-style:italic;color:#7f848e;">// here we should call the TowerControl service to ensure we can land
 </span><span>                Ok(vec![Event::Landed])
-</span><span>            } </span><span style="color:#b48ead;">else </span><span>{
+</span><span>            } </span><span style="color:#c678dd;">else </span><span>{
 </span><span>                Err(Error::CannotLand)
 </span><span>            }
 </span><span>        }
@@ -510,27 +510,27 @@ We create an <code>enum</code> with all possible errors and define a message ass
 <li>a plane cannot register once it is registered</li>
 </ul>
 <p>Example of a test, following <a href="https://en.wikipedia.org/wiki/Behavior-driven_development">wikipedia.org/Behavior driven development</a>:</p>
-<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#bf616a;">test</span><span>]
-</span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">test_a_plane_should_land</span><span>() {
-</span><span>    </span><span style="color:#b48ead;">let</span><span> past = vec![
+<pre data-lang="rust" style="background-color:#282c34;color:#abb2bf;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#e06c75;">test</span><span>]
+</span><span style="color:#c678dd;">fn </span><span style="color:#61afef;">test_a_plane_should_land</span><span>() {
+</span><span>    </span><span style="color:#c678dd;">let</span><span> past </span><span style="color:#56b6c2;">= </span><span>vec![
 </span><span>        Event::Registered {
-</span><span>            registration_id: &quot;</span><span style="color:#a3be8c;">F-TEST</span><span>&quot;.</span><span style="color:#96b5b4;">to_string</span><span>(),
+</span><span>            registration_id: </span><span style="color:#98c379;">&quot;F-TEST&quot;</span><span>.</span><span style="color:#56b6c2;">to_string</span><span>(),
 </span><span>        },
 </span><span>        Event::OnGround,
 </span><span>        Event::TookOff,
 </span><span>    ];
-</span><span>    </span><span style="color:#b48ead;">let</span><span> command = Command::Land;
-</span><span>    </span><span style="color:#b48ead;">let</span><span> expected = vec![Event::Landed];
-</span><span>    </span><span style="color:#b48ead;">let</span><span> services = ();
+</span><span>    </span><span style="color:#c678dd;">let</span><span> command </span><span style="color:#56b6c2;">= </span><span>Command::Land;
+</span><span>    </span><span style="color:#c678dd;">let</span><span> expected </span><span style="color:#56b6c2;">= </span><span>vec![Event::Landed];
+</span><span>    </span><span style="color:#c678dd;">let</span><span> services </span><span style="color:#56b6c2;">= </span><span>();
 </span><span>    PlaneTestFramework::with(services)
-</span><span>        .</span><span style="color:#96b5b4;">given</span><span>(past)
-</span><span>        .</span><span style="color:#96b5b4;">when</span><span>(command)
-</span><span>        .</span><span style="color:#96b5b4;">then_expect_events</span><span>(expected);
+</span><span>        .</span><span style="color:#56b6c2;">given</span><span>(past)
+</span><span>        .</span><span style="color:#56b6c2;">when</span><span>(command)
+</span><span>        .</span><span style="color:#56b6c2;">then_expect_events</span><span>(expected);
 </span><span>}
 </span></code></pre>
 <p><a href="https://github.com/aurelien-clu/example-ddd-es/blob/main/rust-cqrs/crates/domain-plane/src/domain/tests.rs">rust-cqrs/crates/domain-plane/src/domain/tests.rs</a></p>
 <p>We verify everything works as expected with:</p>
-<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">cargo</span><span> test
+<pre data-lang="bash" style="background-color:#282c34;color:#abb2bf;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#e06c75;">cargo</span><span> test
 </span></code></pre>
 <h3 id="queries">Queries</h3>
 <blockquote>
@@ -539,34 +539,34 @@ We create an <code>enum</code> with all possible errors and define a message ass
 <p>With <code>Command Query Responsibility Segregation</code> (CQRS) we should access past events with a &quot;Query&quot;.</p>
 <p>With our chosen library this means that we build a query over past event for our aggregate and as events happen, we will update the state of our query.</p>
 <p>Our <code>CurrentJourneyView</code> will track in its state the past <code>positions</code> so we don't need to access directly the event log whenever we want this information, we will look up our new query table (cf below).</p>
-<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#bf616a;">derive</span><span>(Debug, Default, Serialize, Deserialize)]
-</span><span style="color:#b48ead;">pub struct </span><span>CurrentJourneyView {
-</span><span>    </span><span style="color:#bf616a;">registration_id</span><span>: String,
-</span><span>    </span><span style="color:#bf616a;">status</span><span>: Status,
-</span><span>    </span><span style="color:#bf616a;">positions</span><span>: Vec&lt;Position&gt;,
+<pre data-lang="rust" style="background-color:#282c34;color:#abb2bf;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#e06c75;">derive</span><span>(Debug, Default, Serialize, Deserialize)]
+</span><span style="color:#c678dd;">pub struct </span><span>CurrentJourneyView {
+</span><span>    </span><span style="color:#e06c75;">registration_id</span><span>: String,
+</span><span>    </span><span style="color:#e06c75;">status</span><span>: Status,
+</span><span>    </span><span style="color:#e06c75;">positions</span><span>: Vec&lt;Position&gt;,
 </span><span>}
 </span><span>
-</span><span style="color:#b48ead;">pub type </span><span>CurrentJourneyQuery =
+</span><span style="color:#c678dd;">pub type </span><span style="color:#56b6c2;">CurrentJourneyQuery =
 </span><span>    GenericQuery&lt;PostgresViewRepository&lt;CurrentJourneyView, Plane&gt;, CurrentJourneyView, Plane&gt;;
 </span><span>
-</span><span style="color:#b48ead;">impl </span><span>View&lt;Plane&gt; </span><span style="color:#b48ead;">for </span><span>CurrentJourneyView {
-</span><span>    </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">update</span><span>(&amp;</span><span style="color:#b48ead;">mut </span><span style="color:#bf616a;">self</span><span>, </span><span style="color:#bf616a;">event</span><span>: &amp;EventEnvelope&lt;Plane&gt;) {
-</span><span>        </span><span style="color:#b48ead;">match </span><span>&amp;event.payload {
-</span><span>            Event::Registered { registration_id } =&gt; </span><span style="color:#bf616a;">self</span><span>.registration_id = registration_id.</span><span style="color:#96b5b4;">clone</span><span>(),
-</span><span>            Event::OnGround =&gt; </span><span style="color:#bf616a;">self</span><span>.status = Status::OnGround,
-</span><span>            Event::TookOff =&gt; {
-</span><span>                </span><span style="color:#bf616a;">self</span><span>.status = Status::InAir;
-</span><span>                </span><span style="color:#bf616a;">self</span><span>.positions.</span><span style="color:#96b5b4;">clear</span><span>();
+</span><span style="color:#c678dd;">impl </span><span>View&lt;Plane&gt; </span><span style="color:#c678dd;">for </span><span>CurrentJourneyView {
+</span><span>    </span><span style="color:#c678dd;">fn </span><span style="color:#61afef;">update</span><span>(</span><span style="color:#56b6c2;">&amp;</span><span style="color:#c678dd;">mut </span><span style="font-style:italic;color:#e06c75;">self</span><span>, </span><span style="font-style:italic;color:#e06c75;">event</span><span>: </span><span style="color:#56b6c2;">&amp;</span><span>EventEnvelope&lt;Plane&gt;) {
+</span><span>        </span><span style="color:#c678dd;">match </span><span style="color:#56b6c2;">&amp;</span><span>event.payload {
+</span><span>            Event::Registered { registration_id } </span><span style="color:#56b6c2;">=&gt; </span><span style="color:#e06c75;">self</span><span>.registration_id </span><span style="color:#56b6c2;">=</span><span> registration_id.</span><span style="color:#56b6c2;">clone</span><span>(),
+</span><span>            Event::OnGround </span><span style="color:#56b6c2;">=&gt; </span><span style="color:#e06c75;">self</span><span>.status </span><span style="color:#56b6c2;">= </span><span>Status::OnGround,
+</span><span>            Event::TookOff </span><span style="color:#56b6c2;">=&gt; </span><span>{
+</span><span>                </span><span style="color:#e06c75;">self</span><span>.status </span><span style="color:#56b6c2;">= </span><span>Status::InAir;
+</span><span>                </span><span style="color:#e06c75;">self</span><span>.positions.</span><span style="color:#56b6c2;">clear</span><span>();
 </span><span>            }
-</span><span>            Event::Landed =&gt; </span><span style="color:#bf616a;">self</span><span>.status = Status::OnGround,
+</span><span>            Event::Landed </span><span style="color:#56b6c2;">=&gt; </span><span style="color:#e06c75;">self</span><span>.status </span><span style="color:#56b6c2;">= </span><span>Status::OnGround,
 </span><span>            Event::PositionedAt {
 </span><span>                latitude,
 </span><span>                longitude,
 </span><span>                altitude,
-</span><span>            } =&gt; </span><span style="color:#bf616a;">self</span><span>.positions.</span><span style="color:#96b5b4;">push</span><span>(Position {
-</span><span>                latitude: *latitude,
-</span><span>                longitude: *longitude,
-</span><span>                altitude: *altitude,
+</span><span>            } </span><span style="color:#56b6c2;">=&gt; </span><span style="color:#e06c75;">self</span><span>.positions.</span><span style="color:#56b6c2;">push</span><span>(Position {
+</span><span>                latitude: </span><span style="color:#56b6c2;">*</span><span>latitude,
+</span><span>                longitude: </span><span style="color:#56b6c2;">*</span><span>longitude,
+</span><span>                altitude: </span><span style="color:#56b6c2;">*</span><span>altitude,
 </span><span>            }),
 </span><span>        }
 </span><span>    }
@@ -574,100 +574,100 @@ We create an <code>enum</code> with all possible errors and define a message ass
 </span></code></pre>
 <p><a href="https://github.com/aurelien-clu/example-ddd-es/blob/main/rust-cqrs/crates/domain-plane/src/queries/current_journey.rs">rust-cqrs/crates/domain-plane/src/queries/current_journey.rs</a></p>
 <p>Let's update the <code>init.sql</code> with our new query:</p>
-<pre data-lang="sql" style="background-color:#2b303b;color:#c0c5ce;" class="language-sql "><code class="language-sql" data-lang="sql"><span style="color:#b48ead;">CREATE TABLE </span><span style="color:#8fa1b3;">plane_current_journey_query
+<pre data-lang="sql" style="background-color:#282c34;color:#abb2bf;" class="language-sql "><code class="language-sql" data-lang="sql"><span style="color:#c678dd;">CREATE TABLE </span><span style="color:#61afef;">plane_current_journey_query
 </span><span>(
-</span><span>    view_id </span><span style="color:#b48ead;">text                        </span><span>NOT </span><span style="color:#d08770;">NULL</span><span>,
-</span><span>    version           </span><span style="color:#b48ead;">bigint CHECK</span><span> (version &gt;= </span><span style="color:#d08770;">0</span><span>) NOT </span><span style="color:#d08770;">NULL</span><span>,
-</span><span>    payload           json                        NOT </span><span style="color:#d08770;">NULL</span><span>,
-</span><span>    </span><span style="color:#b48ead;">PRIMARY KEY</span><span> (view_id)
+</span><span>    view_id </span><span style="color:#c678dd;">text                        </span><span style="color:#56b6c2;">NOT </span><span style="color:#d19a66;">NULL</span><span>,
+</span><span>    version           </span><span style="color:#c678dd;">bigint CHECK</span><span> (version </span><span style="color:#56b6c2;">&gt;= </span><span style="color:#d19a66;">0</span><span>) </span><span style="color:#56b6c2;">NOT </span><span style="color:#d19a66;">NULL</span><span>,
+</span><span>    payload           json                        </span><span style="color:#56b6c2;">NOT </span><span style="color:#d19a66;">NULL</span><span>,
+</span><span>    </span><span style="color:#c678dd;">PRIMARY KEY</span><span> (view_id)
 </span><span>);
 </span></code></pre>
 <h3 id="server">Server</h3>
 <p>Let's use <a href="https://github.com/tokio-rs/axum">github.com/tokio-rs/axum</a> for our server:</p>
-<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#bf616a;">tokio</span><span>::</span><span style="color:#bf616a;">main</span><span>]
-</span><span>async </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">main</span><span>() {
-</span><span>    </span><span style="color:#b48ead;">let</span><span> pool = </span><span style="color:#96b5b4;">default_postgress_pool</span><span>(&quot;</span><span style="color:#a3be8c;">postgresql://demo_user:demo_pass@localhost:5432/demo</span><span>&quot;).await;
+<pre data-lang="rust" style="background-color:#282c34;color:#abb2bf;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#e06c75;">tokio</span><span>::</span><span style="color:#e06c75;">main</span><span>]
+</span><span>async </span><span style="color:#c678dd;">fn </span><span style="color:#61afef;">main</span><span>() {
+</span><span>    </span><span style="color:#c678dd;">let</span><span> pool </span><span style="color:#56b6c2;">= default_postgress_pool</span><span>(</span><span style="color:#98c379;">&quot;postgresql://demo_user:demo_pass@localhost:5432/demo&quot;</span><span>).await;
 </span><span>
-</span><span>    </span><span style="color:#65737e;">// we setup and get ownership of our aggregate and query
-</span><span>    </span><span style="color:#b48ead;">let </span><span>(cqrs, current_journey_query) = domain_plane::config::cqrs_framework(pool);
+</span><span>    </span><span style="font-style:italic;color:#7f848e;">// we setup and get ownership of our aggregate and query
+</span><span>    </span><span style="color:#c678dd;">let </span><span>(cqrs, current_journey_query) </span><span style="color:#56b6c2;">= </span><span>domain_plane::config::cqrs_framework(pool);
 </span><span>
-</span><span>    </span><span style="color:#b48ead;">let</span><span> router = Router::new()
-</span><span>        .</span><span style="color:#96b5b4;">route</span><span>(
-</span><span>            &quot;</span><span style="color:#a3be8c;">/plane/:registration_id</span><span>&quot;,
-</span><span>            </span><span style="color:#96b5b4;">get</span><span>(routes::plane::query_handler).</span><span style="color:#96b5b4;">post</span><span>(routes::plane::command_handler),
+</span><span>    </span><span style="color:#c678dd;">let</span><span> router </span><span style="color:#56b6c2;">= </span><span>Router::new()
+</span><span>        .</span><span style="color:#56b6c2;">route</span><span>(
+</span><span>            </span><span style="color:#98c379;">&quot;/plane/:registration_id&quot;</span><span>,
+</span><span>            </span><span style="color:#56b6c2;">get</span><span>(routes::plane::query_handler).</span><span style="color:#56b6c2;">post</span><span>(routes::plane::command_handler),
 </span><span>        )
-</span><span>        </span><span style="color:#65737e;">// we use axum extensions to provide:
-</span><span>        .</span><span style="color:#96b5b4;">layer</span><span>(Extension(cqrs)) </span><span style="color:#65737e;">// - our aggregate to our command_handler
-</span><span>        .</span><span style="color:#96b5b4;">layer</span><span>(Extension(current_journey_query)); </span><span style="color:#65737e;">// - our current_journey_query to our query_handler
+</span><span>        </span><span style="font-style:italic;color:#7f848e;">// we use axum extensions to provide:
+</span><span>        .</span><span style="color:#56b6c2;">layer</span><span>(Extension(cqrs)) </span><span style="font-style:italic;color:#7f848e;">// - our aggregate to our command_handler
+</span><span>        .</span><span style="color:#56b6c2;">layer</span><span>(Extension(current_journey_query)); </span><span style="font-style:italic;color:#7f848e;">// - our current_journey_query to our query_handler
 </span><span>
-</span><span>    axum::Server::bind(&amp;&quot;</span><span style="color:#a3be8c;">0.0.0.0:3030</span><span>&quot;.</span><span style="color:#96b5b4;">parse</span><span>().</span><span style="color:#96b5b4;">unwrap</span><span>())
-</span><span>        .</span><span style="color:#96b5b4;">serve</span><span>(router.</span><span style="color:#96b5b4;">into_make_service</span><span>())
+</span><span>    axum::Server::bind(</span><span style="color:#56b6c2;">&amp;</span><span style="color:#98c379;">&quot;0.0.0.0:3030&quot;</span><span>.</span><span style="color:#56b6c2;">parse</span><span>().</span><span style="color:#56b6c2;">unwrap</span><span>())
+</span><span>        .</span><span style="color:#56b6c2;">serve</span><span>(router.</span><span style="color:#56b6c2;">into_make_service</span><span>())
 </span><span>        .await
-</span><span>        .</span><span style="color:#96b5b4;">unwrap</span><span>();
+</span><span>        .</span><span style="color:#56b6c2;">unwrap</span><span>();
 </span><span>}
 </span></code></pre>
 <p><a href="https://github.com/aurelien-clu/example-ddd-es/blob/main/rust-cqrs/crates/server/src/main.rs">rust-cqrs/crates/server/src/main.rs</a></p>
 <h4 id="queries-1"><strong>Queries</strong></h4>
 <p>We lookup our query for the given <code>registration_id</code> and return the response as <code>json</code> or an error.</p>
-<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">pub</span><span> async </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">query_handler</span><span>(
-</span><span>    Path(</span><span style="color:#bf616a;">registration_id</span><span>): Path&lt;String&gt;,
-</span><span>    Extension(</span><span style="color:#bf616a;">view_repo</span><span>): Extension&lt;Arc&lt;PostgresViewRepository&lt;CurrentJourneyView, Plane&gt;&gt;&gt;,
+<pre data-lang="rust" style="background-color:#282c34;color:#abb2bf;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#c678dd;">pub</span><span> async </span><span style="color:#c678dd;">fn </span><span style="color:#61afef;">query_handler</span><span>(
+</span><span>    Path(</span><span style="font-style:italic;color:#e06c75;">registration_id</span><span>): Path&lt;String&gt;,
+</span><span>    Extension(</span><span style="font-style:italic;color:#e06c75;">view_repo</span><span>): Extension&lt;Arc&lt;PostgresViewRepository&lt;CurrentJourneyView, Plane&gt;&gt;&gt;,
 </span><span>) -&gt; Response {
-</span><span>    </span><span style="color:#b48ead;">let</span><span> view = </span><span style="color:#b48ead;">match</span><span> view_repo.</span><span style="color:#96b5b4;">load</span><span>(&amp;registration_id).await {
-</span><span>        Ok(view) =&gt; view,
-</span><span>        Err(err) =&gt; {
-</span><span>            </span><span style="color:#b48ead;">return </span><span>(StatusCode::</span><span style="color:#d08770;">INTERNAL_SERVER_ERROR</span><span>, err.</span><span style="color:#96b5b4;">to_string</span><span>()).</span><span style="color:#96b5b4;">into_response</span><span>();
+</span><span>    </span><span style="color:#c678dd;">let</span><span> view </span><span style="color:#56b6c2;">= </span><span style="color:#c678dd;">match</span><span> view_repo.</span><span style="color:#56b6c2;">load</span><span>(</span><span style="color:#56b6c2;">&amp;</span><span>registration_id).await {
+</span><span>        Ok(view) </span><span style="color:#56b6c2;">=&gt;</span><span> view,
+</span><span>        Err(err) </span><span style="color:#56b6c2;">=&gt; </span><span>{
+</span><span>            </span><span style="color:#c678dd;">return </span><span>(StatusCode::</span><span style="color:#d19a66;">INTERNAL_SERVER_ERROR</span><span>, err.</span><span style="color:#56b6c2;">to_string</span><span>()).</span><span style="color:#56b6c2;">into_response</span><span>();
 </span><span>        }
 </span><span>    };
-</span><span>    </span><span style="color:#b48ead;">match</span><span> view {
-</span><span>        None =&gt; StatusCode::</span><span style="color:#d08770;">NOT_FOUND</span><span>.</span><span style="color:#96b5b4;">into_response</span><span>(),
-</span><span>        Some(account_view) =&gt; (StatusCode::</span><span style="color:#d08770;">OK</span><span>, Json(account_view)).</span><span style="color:#96b5b4;">into_response</span><span>(),
+</span><span>    </span><span style="color:#c678dd;">match</span><span> view {
+</span><span>        None </span><span style="color:#56b6c2;">=&gt; </span><span>StatusCode::</span><span style="color:#d19a66;">NOT_FOUND</span><span>.</span><span style="color:#56b6c2;">into_response</span><span>(),
+</span><span>        Some(account_view) </span><span style="color:#56b6c2;">=&gt; </span><span>(StatusCode::</span><span style="color:#d19a66;">OK</span><span>, Json(account_view)).</span><span style="color:#56b6c2;">into_response</span><span>(),
 </span><span>    }
 </span><span>}
 </span></code></pre>
 <h4 id="commands-1"><strong>Commands</strong></h4>
 <p>We receive a command as <code>json</code> and apply it to the aggregate matching the <code>registration_id</code>.</p>
 <p>Commands don't return data (cf <code>CQRS</code>) but a simple <code>204 NO CONTENT</code> successful response or an error.</p>
-<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">pub</span><span> async </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">command_handler</span><span>(
-</span><span>    Path(</span><span style="color:#bf616a;">registration_id</span><span>): Path&lt;String&gt;,
-</span><span>    Extension(</span><span style="color:#bf616a;">cqrs</span><span>): Extension&lt;Arc&lt;PostgresCqrs&lt;Plane&gt;&gt;&gt;,
-</span><span>    MetadataExtension(</span><span style="color:#bf616a;">metadata</span><span>): MetadataExtension,
-</span><span>    Json(</span><span style="color:#bf616a;">command</span><span>): Json&lt;Command&gt;,
+<pre data-lang="rust" style="background-color:#282c34;color:#abb2bf;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#c678dd;">pub</span><span> async </span><span style="color:#c678dd;">fn </span><span style="color:#61afef;">command_handler</span><span>(
+</span><span>    Path(</span><span style="font-style:italic;color:#e06c75;">registration_id</span><span>): Path&lt;String&gt;,
+</span><span>    Extension(</span><span style="font-style:italic;color:#e06c75;">cqrs</span><span>): Extension&lt;Arc&lt;PostgresCqrs&lt;Plane&gt;&gt;&gt;,
+</span><span>    MetadataExtension(</span><span style="font-style:italic;color:#e06c75;">metadata</span><span>): MetadataExtension,
+</span><span>    Json(</span><span style="font-style:italic;color:#e06c75;">command</span><span>): Json&lt;Command&gt;,
 </span><span>) -&gt; Response {
-</span><span>    </span><span style="color:#b48ead;">match</span><span> cqrs
-</span><span>        .</span><span style="color:#96b5b4;">execute_with_metadata</span><span>(&amp;registration_id, command, metadata)
+</span><span>    </span><span style="color:#c678dd;">match</span><span> cqrs
+</span><span>        .</span><span style="color:#56b6c2;">execute_with_metadata</span><span>(</span><span style="color:#56b6c2;">&amp;</span><span>registration_id, command, metadata)
 </span><span>        .await
 </span><span>    {
-</span><span>        Ok(_) =&gt; StatusCode::</span><span style="color:#d08770;">NO_CONTENT</span><span>.</span><span style="color:#96b5b4;">into_response</span><span>(),
-</span><span>        Err(err) =&gt; (StatusCode::</span><span style="color:#d08770;">BAD_REQUEST</span><span>, err.</span><span style="color:#96b5b4;">to_string</span><span>()).</span><span style="color:#96b5b4;">into_response</span><span>(),
+</span><span>        Ok(</span><span style="color:#56b6c2;">_</span><span>) </span><span style="color:#56b6c2;">=&gt; </span><span>StatusCode::</span><span style="color:#d19a66;">NO_CONTENT</span><span>.</span><span style="color:#56b6c2;">into_response</span><span>(),
+</span><span>        Err(err) </span><span style="color:#56b6c2;">=&gt; </span><span>(StatusCode::</span><span style="color:#d19a66;">BAD_REQUEST</span><span>, err.</span><span style="color:#56b6c2;">to_string</span><span>()).</span><span style="color:#56b6c2;">into_response</span><span>(),
 </span><span>    }
 </span><span>}
 </span></code></pre>
 <h3 id="tests-1">Tests</h3>
 <p>Let's see if our <code>API</code> works properly!</p>
-<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">RANDOM</span><span>=$</span><span style="color:#bf616a;">$
-</span><span style="color:#bf616a;">TEST_ACCT</span><span>=&quot;</span><span style="color:#a3be8c;">test-plane-</span><span>$</span><span style="color:#bf616a;">RANDOM</span><span>&quot;
-</span><span style="color:#bf616a;">TEST_URL</span><span>=&quot;</span><span style="color:#a3be8c;">localhost:3030/plane/</span><span>$</span><span style="color:#bf616a;">TEST_ACCT</span><span>&quot;
+<pre data-lang="bash" style="background-color:#282c34;color:#abb2bf;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#e06c75;">RANDOM</span><span style="color:#56b6c2;">=</span><span style="color:#98c379;">$</span><span style="color:#e5c07b;">$
+</span><span style="color:#e06c75;">TEST_ACCT</span><span style="color:#56b6c2;">=</span><span style="color:#98c379;">&quot;test-plane-$</span><span style="color:#e06c75;">RANDOM</span><span style="color:#98c379;">&quot;
+</span><span style="color:#e06c75;">TEST_URL</span><span style="color:#56b6c2;">=</span><span style="color:#98c379;">&quot;localhost:3030/plane/$</span><span style="color:#e06c75;">TEST_ACCT</span><span style="color:#98c379;">&quot;
 </span><span>
-</span><span style="color:#96b5b4;">echo </span><span>&quot;</span><span style="color:#a3be8c;">***************************</span><span>&quot;
-</span><span style="color:#96b5b4;">echo </span><span>&quot;</span><span style="color:#a3be8c;">* Plane: </span><span>$</span><span style="color:#bf616a;">TEST_ACCT</span><span>&quot;
-</span><span style="color:#96b5b4;">echo </span><span>&quot;</span><span style="color:#a3be8c;">***************************</span><span>&quot;
+</span><span style="color:#56b6c2;">echo </span><span style="color:#98c379;">&quot;***************************&quot;
+</span><span style="color:#56b6c2;">echo </span><span style="color:#98c379;">&quot;* Plane: $</span><span style="color:#e06c75;">TEST_ACCT</span><span style="color:#98c379;">&quot;
+</span><span style="color:#56b6c2;">echo </span><span style="color:#98c379;">&quot;***************************&quot;
 </span><span>
-</span><span style="color:#96b5b4;">echo </span><span>&quot;</span><span style="color:#a3be8c;">Registering plane</span><span>&quot;
-</span><span style="color:#bf616a;">curl --location --request</span><span> POST $</span><span style="color:#bf616a;">TEST_URL --header </span><span>&#39;</span><span style="color:#a3be8c;">Content-Type: application/json</span><span>&#39;</span><span style="color:#bf616a;"> --data-raw </span><span>&quot;</span><span style="color:#a3be8c;">{</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">Register</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">: {</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">registration_id</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">: </span><span style="color:#96b5b4;">\&quot;</span><span>$</span><span style="color:#bf616a;">TEST_ACCT</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">}}</span><span>&quot;
+</span><span style="color:#56b6c2;">echo </span><span style="color:#98c379;">&quot;Registering plane&quot;
+</span><span style="color:#e06c75;">curl</span><span style="font-style:italic;color:#e06c75;"> --location --request</span><span> POST $</span><span style="color:#e06c75;">TEST_URL</span><span style="font-style:italic;color:#e06c75;"> --header </span><span style="color:#98c379;">&#39;Content-Type: application/json&#39;</span><span style="font-style:italic;color:#e06c75;"> --data-raw </span><span style="color:#98c379;">&quot;{</span><span style="color:#56b6c2;">\&quot;</span><span style="color:#98c379;">Register</span><span style="color:#56b6c2;">\&quot;</span><span style="color:#98c379;">: {</span><span style="color:#56b6c2;">\&quot;</span><span style="color:#98c379;">registration_id</span><span style="color:#56b6c2;">\&quot;</span><span style="color:#98c379;">: </span><span style="color:#56b6c2;">\&quot;</span><span style="color:#98c379;">$</span><span style="color:#e06c75;">TEST_ACCT</span><span style="color:#56b6c2;">\&quot;</span><span style="color:#98c379;">}}&quot;
 </span><span>
-</span><span style="color:#96b5b4;">echo </span><span style="color:#bf616a;">-e </span><span>&quot;</span><span style="color:#a3be8c;">\nUpdating position</span><span>&quot;
-</span><span style="color:#bf616a;">curl --location --request</span><span> POST $</span><span style="color:#bf616a;">TEST_URL --header </span><span>&#39;</span><span style="color:#a3be8c;">Content-Type: application/json</span><span>&#39;</span><span style="color:#bf616a;"> --data-raw </span><span>&quot;</span><span style="color:#a3be8c;">{</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">UpdatePosition</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">: {</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">latitude</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">: 1.0, </span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">longitude</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">: 2.0, </span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">altitude</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">: 0 }}</span><span>&quot;
+</span><span style="color:#56b6c2;">echo </span><span style="font-style:italic;color:#e06c75;">-e </span><span style="color:#98c379;">&quot;\nUpdating position&quot;
+</span><span style="color:#e06c75;">curl</span><span style="font-style:italic;color:#e06c75;"> --location --request</span><span> POST $</span><span style="color:#e06c75;">TEST_URL</span><span style="font-style:italic;color:#e06c75;"> --header </span><span style="color:#98c379;">&#39;Content-Type: application/json&#39;</span><span style="font-style:italic;color:#e06c75;"> --data-raw </span><span style="color:#98c379;">&quot;{</span><span style="color:#56b6c2;">\&quot;</span><span style="color:#98c379;">UpdatePosition</span><span style="color:#56b6c2;">\&quot;</span><span style="color:#98c379;">: {</span><span style="color:#56b6c2;">\&quot;</span><span style="color:#98c379;">latitude</span><span style="color:#56b6c2;">\&quot;</span><span style="color:#98c379;">: 1.0, </span><span style="color:#56b6c2;">\&quot;</span><span style="color:#98c379;">longitude</span><span style="color:#56b6c2;">\&quot;</span><span style="color:#98c379;">: 2.0, </span><span style="color:#56b6c2;">\&quot;</span><span style="color:#98c379;">altitude</span><span style="color:#56b6c2;">\&quot;</span><span style="color:#98c379;">: 0 }}&quot;
 </span><span>
-</span><span style="color:#65737e;"># [...]
+</span><span style="color:#7f848e;"># [...]
 </span></code></pre>
 <p><a href="https://github.com/aurelien-clu/example-ddd-es/blob/main/rust-cqrs/test/test_api_plane.sh">rust-cqrs/test/test_api_plane.sh</a></p>
-<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;"># terminal 1
-</span><span style="color:#bf616a;">docker-compose</span><span> up</span><span style="color:#bf616a;"> -d
-</span><span style="color:#bf616a;">cargo</span><span> run
+<pre data-lang="bash" style="background-color:#282c34;color:#abb2bf;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#7f848e;"># terminal 1
+</span><span style="color:#e06c75;">docker-compose</span><span> up</span><span style="font-style:italic;color:#e06c75;"> -d
+</span><span style="color:#e06c75;">cargo</span><span> run
 </span><span>
-</span><span style="color:#65737e;"># terminal 2
-</span><span style="color:#bf616a;">./test/test_api_plane.sh
+</span><span style="color:#7f848e;"># terminal 2
+</span><span style="color:#e06c75;">./test/test_api_plane.sh
 </span></code></pre>
 <h4 id="expected-terminal-1-output"><strong>Expected terminal 1 output</strong></h4>
 <p><a href="https://github.com/aurelien-clu/example-ddd-es/blob/main/rust-cqrs/crates/domain-plane/src/queries/logger.rs">rust-cqrs/crates/domain-plane/src/queries/logger.rs</a> logs every <code>Plane</code> events, useful for debugging.</p>
@@ -676,7 +676,7 @@ We create an <code>enum</code> with all possible errors and define a message ass
 <p>id: '{{Aggregate ID}}', sequence: {{Event number for the given aggregate}}</p>
 <p>{{event as a JSON unless the event contains no data (e.g. &quot;OnGround&quot;)}}</p>
 </blockquote>
-<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>******************************************************
+<pre style="background-color:#282c34;color:#abb2bf;"><code><span>******************************************************
 </span><span>id: &#39;test-plane-27355&#39;, sequence: 1
 </span><span>{
 </span><span>  &quot;Registered&quot;: {
@@ -722,7 +722,7 @@ We create an <code>enum</code> with all possible errors and define a message ass
 </span></code></pre>
 <h4 id="expected-terminal-2-output"><strong>Expected terminal 2 output</strong></h4>
 <p>The journey shows the plane's status and the current or last journey positions (history is cleared upon take off)</p>
-<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>***************************
+<pre style="background-color:#282c34;color:#abb2bf;"><code><span>***************************
 </span><span>* Plane: test-plane-27355
 </span><span>***************************
 </span><span>Registering plane
