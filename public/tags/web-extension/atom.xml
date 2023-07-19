@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Cluzeau - Web extension</title>
+    <link href="https://cluzeau.pro/tags/web-extension/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://cluzeau.pro"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-07-19T00:00:00+00:00</updated>
+    <id>https://cluzeau.pro/tags/web-extension/atom.xml</id>
+    <entry xml:lang="en">
+        <title>KanjiSensei</title>
+        <published>2023-07-19T00:00:00+00:00</published>
+        <updated>2023-07-19T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://cluzeau.pro/kanji-sensei/" type="text/html"/>
+        <id>https://cluzeau.pro/kanji-sensei/</id>
+        
+        <summary type="html">&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;chrome.google.com&#x2F;webstore&#x2F;detail&#x2F;kanjisensei-learn-kanji-w&#x2F;bnfleamolloogjkddoaocllogcokncfl&quot;&gt;KanjiSensei&lt;&#x2F;a&gt; is a Chrome web extension to learn Kanji while browsing the web.&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+</feed>
