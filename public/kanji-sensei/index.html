@@ -275,6 +275,7 @@
 </span><span style="font-style:italic;color:#7f848e;">// runs when the extension popup sends a message
 </span><span style="color:#e06c75;">chrome</span><span>.</span><span style="color:#e06c75;">runtime</span><span>.</span><span style="color:#e06c75;">onMessage</span><span>.</span><span style="color:#61afef;">addListener</span><span>(</span><span style="color:#c678dd;">function</span><span>(</span><span style="font-style:italic;color:#e06c75;">message</span><span>, </span><span style="font-style:italic;color:#e06c75;">sender</span><span>, </span><span style="font-style:italic;color:#e06c75;">sendResponse</span><span>) {
 </span><span>  </span><span style="font-style:italic;color:#7f848e;">// [...]
+</span><span>  </span><span style="color:#c678dd;">const </span><span style="color:#e5c07b;">event </span><span style="color:#56b6c2;">= </span><span style="color:#e06c75;">message</span><span>.</span><span style="color:#e06c75;">event </span><span style="color:#56b6c2;">|| </span><span style="color:#98c379;">&#39;NA&#39;</span><span>;
 </span><span>
 </span><span>  </span><span style="color:#c678dd;">if </span><span>(</span><span style="color:#e06c75;">event </span><span style="color:#56b6c2;">== </span><span style="color:#98c379;">&#39;toggle-clicked&#39;</span><span>) {
 </span><span>    </span><span style="font-style:italic;color:#7f848e;">// reloading the page to remove our modifications or to modify the page
@@ -325,7 +326,7 @@
 </span><span>
 </span><span>    </span><span style="color:#c678dd;">function </span><span style="color:#61afef;">updateContentScript</span><span>(</span><span style="font-style:italic;color:#e06c75;">event</span><span>) {
 </span><span>      </span><span style="color:#e06c75;">chrome</span><span>.</span><span style="color:#e06c75;">tabs</span><span>.</span><span style="color:#61afef;">query</span><span>({</span><span style="color:#e06c75;">active</span><span>: </span><span style="color:#d19a66;">true</span><span>, </span><span style="color:#e06c75;">currentWindow</span><span>: </span><span style="color:#d19a66;">true</span><span>}, </span><span style="color:#c678dd;">function</span><span>(</span><span style="font-style:italic;color:#e06c75;">tabs</span><span>) {
-</span><span>        </span><span style="color:#e06c75;">chrome</span><span>.</span><span style="color:#e06c75;">tabs</span><span>.</span><span style="color:#61afef;">sendMessage</span><span>(</span><span style="color:#e06c75;">tabs</span><span>[</span><span style="color:#d19a66;">0</span><span>].</span><span style="color:#e06c75;">id</span><span>, { </span><span style="color:#e06c75;">toggleState </span><span>});
+</span><span>        </span><span style="color:#e06c75;">chrome</span><span>.</span><span style="color:#e06c75;">tabs</span><span>.</span><span style="color:#61afef;">sendMessage</span><span>(</span><span style="color:#e06c75;">tabs</span><span>[</span><span style="color:#d19a66;">0</span><span>].</span><span style="color:#e06c75;">id</span><span>, { </span><span style="color:#e06c75;">event</span><span>, </span><span style="color:#e06c75;">toggleState </span><span>});
 </span><span>      });
 </span><span>    }
 </span><span>

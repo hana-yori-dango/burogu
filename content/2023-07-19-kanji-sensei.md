@@ -80,6 +80,7 @@ chrome.storage.local.get([ 'toggleState', ... ], function(localState) {
 // runs when the extension popup sends a message
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
   // [...]
+  const event = message.event || 'NA';
 
   if (event == 'toggle-clicked') {
     // reloading the page to remove our modifications or to modify the page
@@ -140,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateContentScript(event) {
       chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, { toggleState });
+        chrome.tabs.sendMessage(tabs[0].id, { event, toggleState });
       });
     }
 
