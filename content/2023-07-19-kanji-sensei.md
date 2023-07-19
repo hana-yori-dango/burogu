@@ -60,6 +60,10 @@ src
 
 ### Content script
 
+The content script is responsible for modifying the web page.
+
+Below we update the paragraphs (`<p>`) of the page by replacing the words with their kanji equivalent on the page load and on events sent by the popup.
+
 ```js
 function modifyParagraphs(state) {
   // modify paragraphs based on the settings and the page language
@@ -184,6 +188,19 @@ To ensure our extension can run on any webpage, we match on `<all_urls>`.
   ]
 }
 ```
+
+## Potential future improvements
+
+- only JLPT N5 kanji are available
+- verb matching are limited
+- number matching is not supported
+- fixed UI, a user could want to change the tooltip size, position, colors, etc.
+- modified word lose their link or other html attributes
+- runs on every page, we could want to have white/black lists
+- only English and French are supported
+- only works on `<p>` tags
+
+I will fix some of these limitations, as for the others it will depends on my future needs or feedbacks I receive. ;)
 
 ## Links
 

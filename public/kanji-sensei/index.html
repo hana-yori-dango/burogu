@@ -181,6 +181,11 @@
                 </li>
                 
                 <li>
+                    <a href="https://cluzeau.pro/kanji-sensei/#potential-future-improvements" class="toc-link">Potential future improvements</a>
+                    
+                </li>
+                
+                <li>
                     <a href="https://cluzeau.pro/kanji-sensei/#links" class="toc-link">Links</a>
                     
                 </li>
@@ -256,6 +261,8 @@
 </span><span>└── manifest.json  # browser extension manifest, required to make it all work together
 </span></code></pre>
 <h3 id="content-script">Content script</h3>
+<p>The content script is responsible for modifying the web page.</p>
+<p>Below we update the paragraphs (<code>&lt;p&gt;</code>) of the page by replacing the words with their kanji equivalent on the page load and on events sent by the popup.</p>
 <pre data-lang="js" style="background-color:#282c34;color:#abb2bf;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#c678dd;">function </span><span style="color:#61afef;">modifyParagraphs</span><span>(</span><span style="font-style:italic;color:#e06c75;">state</span><span>) {
 </span><span>  </span><span style="font-style:italic;color:#7f848e;">// modify paragraphs based on the settings and the page language
 </span><span>}
@@ -363,6 +370,18 @@
 </span><span>  ]
 </span><span>}
 </span></code></pre>
+<h2 id="potential-future-improvements">Potential future improvements</h2>
+<ul>
+<li>only JLPT N5 kanji are available</li>
+<li>verb matching are limited</li>
+<li>number matching is not supported</li>
+<li>fixed UI, a user could want to change the tooltip size, position, colors, etc.</li>
+<li>modified word lose their link or other html attributes</li>
+<li>runs on every page, we could want to have white/black lists</li>
+<li>only English and French are supported</li>
+<li>only works on <code>&lt;p&gt;</code> tags</li>
+</ul>
+<p>I will fix some of these limitations, as for the others it will depends on my future needs or feedbacks I receive. ;)</p>
 <h2 id="links">Links</h2>
 <ul>
 <li><a href="https://developer.chrome.com/docs/extensions/">https://developer.chrome.com/docs/extensions/</a></li>
