@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title>Cluzeau - pointers</title>
-    <link href="https://cluzeau.pro/tags/pointers/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://cluzeau.pro"/>
+    <link rel="self" type="application/atom+xml" href="https://cluzeau.pro/tags/pointers/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://cluzeau.pro"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2023-04-03T00:00:00+00:00</updated>
     <id>https://cluzeau.pro/tags/pointers/atom.xml</id>
@@ -10,10 +10,16 @@
         <title>Rust smart pointers</title>
         <published>2023-04-03T00:00:00+00:00</published>
         <updated>2023-04-03T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://cluzeau.pro/rust-pointers/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://cluzeau.pro/rust-pointers/"/>
         <id>https://cluzeau.pro/rust-pointers/</id>
         
         <summary type="html">&lt;p&gt;Quick overview of Rust smart pointers Box, Rc, RefCell, Cow, Arc, Mutex &amp;amp; RwLock.&lt;&#x2F;p&gt;

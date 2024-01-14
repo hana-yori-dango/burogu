@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title>Cluzeau - DDD</title>
-    <link href="https://cluzeau.pro/tags/ddd/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://cluzeau.pro"/>
+    <link rel="self" type="application/atom+xml" href="https://cluzeau.pro/tags/ddd/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://cluzeau.pro"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2023-04-04T00:00:00+00:00</updated>
     <id>https://cluzeau.pro/tags/ddd/atom.xml</id>
@@ -10,10 +10,16 @@
         <title>Domain Driven Design</title>
         <published>2023-04-04T00:00:00+00:00</published>
         <updated>2023-04-04T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://cluzeau.pro/ddd/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://cluzeau.pro/ddd/"/>
         <id>https://cluzeau.pro/ddd/</id>
         
         <summary type="html">&lt;p&gt;Domain Driven Design (DDD) is an approach to software development that emphasizes understanding and modeling the domain of the problem being solved. It involves collaboration between domain experts, software developers, and stakeholders to build software systems that accurately reflect the needs of the business. &lt;&#x2F;p&gt;
@@ -24,10 +30,16 @@
         <title>Domain Driven Design example</title>
         <published>2023-04-03T00:00:00+00:00</published>
         <updated>2023-04-03T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://cluzeau.pro/ddd-example/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://cluzeau.pro/ddd-example/"/>
         <id>https://cluzeau.pro/ddd-example/</id>
         
         <summary type="html">&lt;p&gt;Let&#x27;s create an API controlling a Plane able to:&lt;&#x2F;p&gt;

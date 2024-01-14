@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title>Cluzeau - books</title>
-    <link href="https://cluzeau.pro/tags/books/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://cluzeau.pro"/>
+    <link rel="self" type="application/atom+xml" href="https://cluzeau.pro/tags/books/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://cluzeau.pro"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2023-03-26T00:00:00+00:00</updated>
     <id>https://cluzeau.pro/tags/books/atom.xml</id>
@@ -10,10 +10,16 @@
         <title>My dev library</title>
         <published>2023-03-26T00:00:00+00:00</published>
         <updated>2023-03-26T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://cluzeau.pro/my-dev-library/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://cluzeau.pro/my-dev-library/"/>
         <id>https://cluzeau.pro/my-dev-library/</id>
         
         <summary type="html">&lt;p&gt;The technical books in my library, some are classics that could be helpful to some of you ;).&lt;&#x2F;p&gt;

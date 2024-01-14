@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title>Cluzeau - definition</title>
-    <link href="https://cluzeau.pro/tags/definition/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://cluzeau.pro"/>
+    <link rel="self" type="application/atom+xml" href="https://cluzeau.pro/tags/definition/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://cluzeau.pro"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2023-04-04T00:00:00+00:00</updated>
     <id>https://cluzeau.pro/tags/definition/atom.xml</id>
@@ -10,10 +10,16 @@
         <title>Command Query Responsibility Segregation</title>
         <published>2023-04-04T00:00:00+00:00</published>
         <updated>2023-04-04T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://cluzeau.pro/cqrs/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://cluzeau.pro/cqrs/"/>
         <id>https://cluzeau.pro/cqrs/</id>
         
         <summary type="html">&lt;p&gt;CQRS is an architectural pattern that separates read and write operations into separate models. By optimizing each model for its specific responsibilities, it can improve the performance and scalability of complex systems.&lt;&#x2F;p&gt;
@@ -24,10 +30,16 @@
         <title>Domain Driven Design</title>
         <published>2023-04-04T00:00:00+00:00</published>
         <updated>2023-04-04T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://cluzeau.pro/ddd/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://cluzeau.pro/ddd/"/>
         <id>https://cluzeau.pro/ddd/</id>
         
         <summary type="html">&lt;p&gt;Domain Driven Design (DDD) is an approach to software development that emphasizes understanding and modeling the domain of the problem being solved. It involves collaboration between domain experts, software developers, and stakeholders to build software systems that accurately reflect the needs of the business. &lt;&#x2F;p&gt;
@@ -38,10 +50,16 @@
         <title>Event Sourcing</title>
         <published>2023-04-04T00:00:00+00:00</published>
         <updated>2023-04-04T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://cluzeau.pro/event-sourcing/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://cluzeau.pro/event-sourcing/"/>
         <id>https://cluzeau.pro/event-sourcing/</id>
         
         <summary type="html">&lt;p&gt;Event sourcing is an approach to software development where every action that changes the state of a system is captured as an immutable event and stored in an event log. By replaying these events, the system&#x27;s state can be reconstructed at any point in time, providing a complete audit trail of all changes and enabling advanced features.&lt;&#x2F;p&gt;
